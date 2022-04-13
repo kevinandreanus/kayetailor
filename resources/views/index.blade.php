@@ -111,18 +111,22 @@
         <div class="text-center">
             <div class="row">
                 <div class="col padding-0" style="padding-left: 12;">
-                    <img class="lookbookimg" src="{{ asset('images/look_book/wedding.PNG') }}" alt="">
+                    <a href="/lookbook/wedding"><img class="lookbookimg"
+                            src="{{ asset('images/look_book/wedding.PNG') }}" alt=""></a>
                 </div>
                 <div class="col padding-0" style="padding-right: 12; padding-left: 8;">
-                    <img class="lookbookimg" src="{{ asset('images/look_book/daily.PNG') }}" alt="">
+                    <a href="/lookbook/daily"><img class="lookbookimg" src="{{ asset('images/look_book/daily.PNG') }}"
+                            alt=""></a>
                 </div>
             </div>
             <div class="row mt-2">
                 <div class="col padding-0" style="padding-left: 12;">
-                    <img class="lookbookimg" src="{{ asset('images/look_book/casual.PNG') }}" alt="">
+                    <a href="/lookbook/casual"><img class="lookbookimg"
+                            src="{{ asset('images/look_book/casual.PNG') }}" alt=""></a>
                 </div>
                 <div class="col padding-0" style="padding-right: 12; padding-left: 8;">
-                    <img class="lookbookimg" src="{{ asset('images/look_book/ceremony.PNG') }}" alt="">
+                    <a href="/lookbook/ceremony"><img class="lookbookimg"
+                            src="{{ asset('images/look_book/ceremony.PNG') }}" alt=""></a>
                 </div>
             </div>
         </div>

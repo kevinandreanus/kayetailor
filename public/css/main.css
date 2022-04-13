@@ -1,4 +1,16 @@
 /* Custom */
+.lookBookP {
+  padding-left: 159px;
+  padding-right: 159px;
+}
+
+@media only screen and (max-width: 600px) {
+  .lookBookP {
+      padding-left: 0;
+      padding-right: 0;
+  }
+}
+
 .loremz{
   padding-left: 18px; padding-right: 12px; text-align: left; margin-top: 5px;
 }
