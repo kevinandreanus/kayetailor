@@ -16,3 +16,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('/lookbook/wedding', function(){
+    return view('look_book.wedding');
+});
+Route::get('/lookbook/daily', function(){
+    return view('look_book.daily');
+});
+Route::get('/lookbook/casual', function(){
+    return view('look_book.casual');
+});
+Route::get('/lookbook/ceremony', function(){
+    return view('look_book.ceremony');
+});

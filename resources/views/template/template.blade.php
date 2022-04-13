@@ -62,8 +62,8 @@
                         </svg>
                     </div>
                 </div>
-                <div class="logo-wrapper"><a href="page-home.html" style="color: #806e4f !important;"><img alt=""><img
-                            src="logo.PNG" alt=""></a></div>
+                <div class="logo-wrapper"><a href="/" style="color: #806e4f !important;"><img alt=""><img
+                            src="{{ asset('images/logo.PNG') }}" alt=""></a></div>
                 <div class="user-profile-wrapper" style="background-color: #1a2b28 !important;"><a
                         style="background-color: #1a2b28 !important;" class="user-profile-trigger-btn" href="#"><img
                             style="width: 25px;" src="{{ asset('images/white_instagram.png') }}" alt=""></a></div>
