@@ -16,3 +16,30 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('/services/suit', function () {
+    return view('services/suit');
+});
+
+Route::get('/services/shirt', function () {
+    return view('services/shirt');
+});
+
+Route::get('/services/batik', function () {
+    return view('services/batik');
+});
+
+Route::get('/services/cheongsam', function () {
+    return view('services/cheongsam');
+});
+
+Route::get('/services/trouser', function () {
+    return view('services/trouser');
+});
+
+Route::get('/services/alteration', function () {
+    return view('services/alteration');
+});
+
+
+

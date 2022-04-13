@@ -55,24 +55,24 @@
         <div class="text-center">
             <div class="row">
                 <div class="col padding-0" style="padding-left: 12;">
-                    <img src="{{ asset('images/services/5.PNG') }}" alt="">
+                    <a href="/services/suit"><img src="{{ asset('images/services/5.PNG') }}" alt=""></a>
                 </div>
                 <div class="col padding-0" style="padding-left: 8;">
-                    <a href="services/shirt.html"><img src="{{ asset('images/services/6.PNG') }}" alt=""></a>
+                    <a href="/services/shirt"><img src="{{ asset('images/services/6.PNG') }}" alt=""></a>
                 </div>
                 <div class="col padding-0" style="padding-right: 12; padding-left: 8;">
-                    <img src="{{ asset('images/services/7.PNG') }}" alt="">
+                    <a href="/services/batik"><img src="{{ asset('images/services/7.PNG') }}" alt=""></a>
                 </div>
             </div>
             <div class="row mt-2">
                 <div class="col padding-0" style="padding-left: 12;">
-                    <img src="{{ asset('images/services/8.PNG') }}" alt="">
+                    <a href="/services/cheongsam"><img src="{{ asset('images/services/8.PNG') }}" alt=""></a>
                 </div>
                 <div class="col padding-0" style="padding-left: 8;">
-                    <img src="{{ asset('images/services/9.PNG') }}" alt="">
+                    <a href="/services/trouser"><img src="{{ asset('images/services/9.PNG') }}" alt=""></a>
                 </div>
                 <div class="col padding-0" style="padding-right: 12; padding-left: 8;">
-                    <img src="{{ asset('images/services/10.PNG') }}" alt="">
+                    <a href="/services/alteration"><img src="{{ asset('images/services/10.PNG') }}" alt=""></a>
                 </div>
             </div>
         </div>
