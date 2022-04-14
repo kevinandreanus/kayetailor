@@ -71,6 +71,9 @@
         </div>
     </div>
     @yield('content')
+    <div id="myDiv">
+
+    </div>
     <div class="container">
         <footer class="text-center text-lg-start text-muted">
             <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
@@ -101,7 +104,7 @@
         </footer>
     </div>
 
-    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ asset('js/slideToggle.min.js') }}"></script>
     <script src="{{ asset('js/internet-status.js') }}"></script>
     <script src="{{ asset('js/baguetteBox.min.js') }}"></script>

@@ -55,3 +55,13 @@ Route::get('/lookbook/casual', function(){
 Route::get('/lookbook/ceremony', function(){
     return view('look_book.ceremony');
 });
+
+Route::get('/fabric-catalogue/wool', function(){
+    return view('fabric_catalogue.wool');
+});
+Route::get('/fabric-catalogue/semiwool', function(){
+    return view('fabric_catalogue.semiwool');
+});
+Route::get('/fabric-catalogue/linen', function(){
+    return view('fabric_catalogue.linen');
+});

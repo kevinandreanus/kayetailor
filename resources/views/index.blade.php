@@ -1,10 +1,6 @@
 @extends('template.template')
 @section('content')
     <div class="container">
-        <div id="myDiv">
-
-        </div>
-
         <div class="owl-carousel" style="margin-top: 80px;">
             <div> <img src="{{ asset('images/carousel_image/1.jpg') }}" alt=""> </div>
             <div> <img src="{{ asset('images/carousel_image/2.jpg') }}" alt=""> </div>
@@ -91,16 +87,19 @@
         <div class="text-center">
             <div class="row">
                 <div class="col padding-0" style="padding-left: 12;">
-                    <img class="mb-3" src="{{ asset('images/fabric_catalogue/wool.PNG') }}" alt=""><br>
-                    <a class="fabricbtn" href="">Wool</a>
+                    <a href="/fabric-catalogue/wool"><img class="mb-3"
+                            src="{{ asset('images/fabric_catalogue/wool.PNG') }}" alt=""></a><br>
+                    <a class="fabricbtn" href="/fabric-catalogue/wool">Wool</a>
                 </div>
                 <div class="col padding-0" style="padding-left: 8;">
-                    <img class="mb-3" src="{{ asset('images/fabric_catalogue/semiwool.PNG') }}" alt=""><br>
-                    <a class="fabricbtn" href="">Semi-Wool</a>
+                    <a href="/fabric-catalogue/semiwool"><img class="mb-3"
+                            src="{{ asset('images/fabric_catalogue/semiwool.PNG') }}" alt=""></a><br>
+                    <a class="fabricbtn" href="/fabric-catalogue/semiwool">Semi-Wool</a>
                 </div>
                 <div class="col padding-0" style="padding-right: 12; padding-left: 8;">
-                    <img class="mb-3" src="{{ asset('images/fabric_catalogue/linen.PNG') }}" alt=""><br>
-                    <a class="fabricbtn" href="">Linen</a>
+                    <a href="/fabric-catalogue/linen"><img class="mb-3"
+                            src="{{ asset('images/fabric_catalogue/linen.PNG') }}" alt=""></a><br>
+                    <a class="fabricbtn" href="/fabric-catalogue/linen">Linen</a>
                 </div>
             </div>
         </div>
