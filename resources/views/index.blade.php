@@ -7,6 +7,9 @@
             <div> <img src="{{ asset('images/carousel_image/3.jpg') }}" alt=""> </div>
         </div>
 
+        <div id="aboutussection" style="margin-bottom: 100px;">
+
+        </div>
         <div class="text-center mt-4">
             <h3 style="color: #806e4f !important;">ABOUT US</h3>
         </div>
@@ -17,6 +20,9 @@
         <p>Kaye Brothers is a local men's clothing store based in Jakarta, Indonesia. We provide well
             costume tailored suits and we manufactures our products exclusively for our brand only.</p>
 
+        <div id="coresection" style="margin-bottom: 100px;">
+
+        </div>
         <div class="text-center mt-5">
             <h3 style="color: #806e4f !important;">OUR CORE VALUES</h3>
         </div>
@@ -45,6 +51,9 @@
             </div>
         </div>
 
+        <div id="servicesection" style="margin-bottom: 100px;">
+
+        </div>
         <div class="text-center mt-5">
             <h3 style="color: #806e4f !important;">SERVICES</h3>
         </div>
@@ -73,6 +82,9 @@
             </div>
         </div>
 
+        <div id="processsection" style="margin-bottom: 100px;">
+
+        </div>
         <div class="text-center mt-5">
             <h3 style="color: #806e4f !important;">PROCESS</h3>
         </div>
@@ -80,10 +92,15 @@
     <div class="text-center">
         <img src="{{ asset('images/process/11.PNG') }}" alt="">
     </div>
+    <div id="fabricsection" style="margin-bottom: 100px">
+
+    </div>
     <div class="container">
+
         <div class="text-center mt-5">
             <h3 style="color: #806e4f !important;">FABRIC CATALOGUE</h3>
         </div>
+
         <div class="text-center">
             <div class="row">
                 <div class="col padding-0" style="padding-left: 12;">
@@ -104,6 +121,9 @@
             </div>
         </div>
 
+        <div id="lookbooksection" style="margin-bottom: 100px;">
+
+        </div>
         <div class="text-center mt-5">
             <h3 style="color: #806e4f !important;">LOOK BOOK</h3>
         </div>
@@ -130,6 +150,9 @@
             </div>
         </div>
 
+        <div id="contactsection" style="margin-bottom: 100px;">
+
+        </div>
         <div class="text-center mt-5">
             <h3 style="color: #806e4f !important;">CONTACT US</h3>
         </div>
@@ -153,6 +176,9 @@
         </form>
         <br>
 
+        <div id="blogsection" style="margin-bottom: 100px;">
+
+        </div>
         <div class="text-center mt-5">
             <h3 style="color: #806e4f !important;">BLOGS</h3>
         </div>
@@ -192,6 +218,16 @@
                 autoplayHoverPause: true,
                 dots: true,
                 nav: false
+            });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
     </script>

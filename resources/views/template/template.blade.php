@@ -11,6 +11,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/custstyle.css') }}">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/bootstrap-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('css/baguetteBox.min.css') }}">
@@ -26,7 +27,21 @@
 
     </style>
     @stack('custom-css')
+    <style>
+        p {
+            color: white !important;
+        }
 
+        .bg-gradient {
+            background-color: #1e3430 !important;
+        }
+
+        #affanOffcanvas {
+            background-color: #1e3430 !important;
+            width: 70% !important;
+        }
+
+    </style>
 </head>
 
 <body style="background-color: #1e3430 !important;">
@@ -38,41 +53,47 @@
                 <div class="navbar--toggler" id="affanNavbarToggler" data-bs-toggle="offcanvas"
                     data-bs-target="#affanOffcanvas" aria-controls="affanOffcanvas"
                     style="background-color: #1a2b28 !important;">
-                    <svg>
-                        <defs>
-                            <filter id="gooeyness">
-                                <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="blur" />
-                                <feColorMatrix in="blur" mode="matrix"
-                                    values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10" result="gooeyness" />
-                                <feComposite in="SourceGraphic" in2="gooeyness" operator="atop" />
-                            </filter>
-                        </defs>
-                    </svg>
-                    <div class="plate plate1" onclick="this.classList.toggle('active')">
-                        <svg class="burger" version="1.1" height="20" width="20" viewBox="0 0 100 100">
-                            <path class="line line1" d="M 30,65 H 70" />
-                            <path class="line line2"
-                                d="M 70,50 H 30 C 30,50 18.644068,50.320751 18.644068,36.016949 C 18.644068,21.712696 24.988973,6.5812347 38.79661,11.016949 C 52.604247,15.452663 46.423729,62.711864 46.423729,62.711864 L 50.423729,49.152542 L 50.423729,16.101695" />
-                            <path class="line line3"
-                                d="M 30,35 H 70 C 70,35 80.084746,36.737688 80.084746,25.423729 C 80.084746,19.599612 75.882239,9.3123528 64.711864,13.559322 C 53.541489,17.806291 54.423729,62.711864 54.423729,62.711864 L 50.423729,49.152542 V 16.101695" />
-                        </svg>
-                        <svg class="x" version="1.1" height="20" width="20" viewBox="0 0 100 100">
-                            <path class="line" d="M 34,32 L 66,68" />
-                            <path class="line" d="M 66,32 L 34,68" />
-                        </svg>
-                    </div>
+                    <img src="{{ asset('raw/3.png') }}" alt="">
                 </div>
+
                 <div class="logo-wrapper"><a href="/" style="color: #806e4f !important;"><img alt=""><img
-                            src="{{ asset('images/logo.PNG') }}" alt=""></a></div>
+                            src="{{ asset('raw/1.PNG') }}" alt=""></a></div>
                 <div class="user-profile-wrapper" style="background-color: #1a2b28 !important;"><a
-                        style="background-color: #1a2b28 !important;" class="user-profile-trigger-btn" href="#"><img
-                            style="width: 25px;" src="{{ asset('images/white_instagram.png') }}" alt=""></a></div>
+                        style="background-color: #1a2b28 !important;" class="user-profile-trigger-btn" target="_blank"
+                        href="https://www.instagram.com/kayetailor"><img style="width: 25px;"
+                            src="{{ asset('raw/4.png') }}" alt=""></a></div>
             </div>
+
         </div>
     </div>
     @yield('content')
     <div id="myDiv">
 
+    </div>
+    <div class="offcanvas offcanvas-start" id="affanOffcanvas" data-bs-scroll="true" tabindex="-1"
+        aria-labelledby="affanOffcanvsLabel">
+        <button class="btn-close btn-close-white text-reset" type="button" data-bs-dismiss="offcanvas"
+            aria-label="Close"></button>
+        <div class="offcanvas-body p-0">
+            <div class="sidenav-wrapper">
+                <div class="sidenav-profile bg-gradient">
+
+                </div>
+                <ul class="sidenav-nav ps-0">
+                    <li><a class="sideBtn" href="#aboutussection">ABOUT US</a></li>
+                    <li><a class="sideBtn" href="#coresection">CORE VALUE</a></li>
+                    <li><a class="sideBtn" href="#servicesection">SERVICES</a></li>
+                    <li><a class="sideBtn" href="#processsection">PROCESS</a></li>
+                    <li><a class="sideBtn" href="#fabricsection">FABRIC CATALOGUE</a></li>
+                    <li><a class="sideBtn" href="#lookbooksection">LOOK BOOK</a></li>
+                    <li><a class="sideBtn" href="#contactsection">CONTACT US</a></li>
+                    <li><a class="sideBtn" href="#blogsection">BLOGS</a></li>
+                </ul>
+                <a class="sideIG" target="_blank" href="https://www.instagram.com/kayetailor"><img
+                        style="width: 25px; height: 25px;" src="{{ asset('raw/4.png') }}" alt="">
+                    @kayetailor</a>
+            </div>
+        </div>
     </div>
     <div class="container">
         <footer class="text-center text-lg-start text-muted">
@@ -105,6 +126,7 @@
     </div>
 
     <script type="text/javascript" src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
     <script src="{{ asset('js/slideToggle.min.js') }}"></script>
     <script src="{{ asset('js/internet-status.js') }}"></script>
     <script src="{{ asset('js/baguetteBox.min.js') }}"></script>
@@ -123,6 +145,8 @@
             $('#myDiv').floatingWhatsApp({
                 phone: '6282311115888'
             });
+
+
         });
     </script>
     @stack('custom-js')

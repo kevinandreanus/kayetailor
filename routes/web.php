@@ -65,3 +65,7 @@ Route::get('/fabric-catalogue/semiwool', function(){
 Route::get('/fabric-catalogue/linen', function(){
     return view('fabric_catalogue.linen');
 });
+
+Route::get('/testing', function(){
+    return view('testing');
+});
