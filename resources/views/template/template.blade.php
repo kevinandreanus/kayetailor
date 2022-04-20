@@ -57,7 +57,7 @@
                 </div>
 
                 <div class="logo-wrapper"><a href="/" style="color: #806e4f !important;"><img alt=""><img
-                            src="{{ asset('raw/1.PNG') }}" alt=""></a></div>
+                            src="{{ asset('raw/1.png') }}" alt=""></a></div>
                 <div class="user-profile-wrapper" style="background-color: #1a2b28 !important;"></div>
             </div>
 
