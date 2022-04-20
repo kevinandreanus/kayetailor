@@ -3,7 +3,7 @@
     <div class="container">
         <div class="text-center" style="margin-top: 100px">
             <h3 style="color: #806e4f !important;">SERVICES</h3>
-            <img class="mt-3" src="{{ asset('images/services/shirt.png') }}" alt="">
+            <img class="mt-3" src="{{ asset('images/services/shirt.PNG') }}" alt="">
 
             <h3 class="mt-5" style="color: #806e4f !important;">SHIRT</h3>
             <p class="lookBookP">Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
