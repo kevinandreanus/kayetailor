@@ -1,4 +1,19 @@
 /* Custom */
+#aboutussection, #coresection, #servicesection, #processsection, #fabricsection, #lookbooksection, #contactsection, #blogsection{
+  scroll-margin-top: 80px;
+}
+
+
+.titlecus{
+  font-family: 'EB Garamond', serif;
+  font-weight: 700;
+  font-size: 26px !important;
+}
+
+p{
+  font-family: 'EB Garamond', serif;
+  font-size: 14px !important;
+}
 
 .sideBtn{
   color: #806e4f !important;
@@ -27,6 +42,7 @@
 
 .loremz{
   padding-left: 18px; padding-right: 12px; text-align: left; margin-top: 5px;
+  font-size: 12px !important;
 }
 .footertext{
   color: #806e4f;

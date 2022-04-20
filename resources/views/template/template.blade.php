@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="{{ asset('library/owlcarousel/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('library/owlcarousel/owl.theme.default.min.css') }}">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Montserrat&display=swap');
 
     </style>
     @stack('custom-css')
@@ -53,15 +53,12 @@
                 <div class="navbar--toggler" id="affanNavbarToggler" data-bs-toggle="offcanvas"
                     data-bs-target="#affanOffcanvas" aria-controls="affanOffcanvas"
                     style="background-color: #1a2b28 !important;">
-                    <img src="{{ asset('raw/3.png') }}" alt="">
+                    <img src="{{ asset('raw/3.png') }}" alt="" style="width: 30px">
                 </div>
 
                 <div class="logo-wrapper"><a href="/" style="color: #806e4f !important;"><img alt=""><img
                             src="{{ asset('raw/1.PNG') }}" alt=""></a></div>
-                <div class="user-profile-wrapper" style="background-color: #1a2b28 !important;"><a
-                        style="background-color: #1a2b28 !important;" class="user-profile-trigger-btn" target="_blank"
-                        href="https://www.instagram.com/kayetailor"><img style="width: 25px;"
-                            src="{{ asset('raw/4.png') }}" alt=""></a></div>
+                <div class="user-profile-wrapper" style="background-color: #1a2b28 !important;"></div>
             </div>
 
         </div>

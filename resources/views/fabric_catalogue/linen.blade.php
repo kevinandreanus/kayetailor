@@ -7,12 +7,8 @@
             <h3 class="mt-5" style="color: white">LINEN</h3>
             <img class="mt-2" style="width: 100%" src="{{ asset('images/fabric_catalogue/linen2.PNG') }}" alt="">
 
-            <p style="text-align: left" class="mt-5">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                diam nonummy nibh
-                euismod
-                tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
-                nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-                Duis autem vel eum.</p>
+            <p style="text-align: left" class="mt-5">Linen is popular for summertime fabric, because linen breathes
+                very easily. It' really suitable for Indonesia's tropical weathe</p>
 
             <img class="mt-5 w-100" src="{{ asset('images/1.PNG') }}" alt=""><br>
             <img class="mt-3 w-100" src="{{ asset('images/2.PNG') }}" alt=""><br>

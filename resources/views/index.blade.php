@@ -7,11 +7,8 @@
             <div> <img src="{{ asset('images/carousel_image/3.jpg') }}" alt=""> </div>
         </div>
 
-        <div id="aboutussection" style="margin-bottom: 100px;">
-
-        </div>
-        <div class="text-center mt-4">
-            <h3 style="color: #806e4f !important;">ABOUT US</h3>
+        <div class="text-center mt-4" id="aboutussection">
+            <h3 style="color: #806e4f !important;" class="titlecus">ABOUT US</h3>
         </div>
         <p>Founded by two gentlemen who are very passionate about men's fashion, Kaye Brothers
             wants our customers to become real gentlemen and the best version of themselves. We
@@ -20,42 +17,36 @@
         <p>Kaye Brothers is a local men's clothing store based in Jakarta, Indonesia. We provide well
             costume tailored suits and we manufactures our products exclusively for our brand only.</p>
 
-        <div id="coresection" style="margin-bottom: 100px;">
 
-        </div>
-        <div class="text-center mt-5">
-            <h3 style="color: #806e4f !important;">OUR CORE VALUES</h3>
+        <div class="text-center mt-5" id="coresection">
+            <h3 style="color: #806e4f !important;" class="titlecus">OUR CORE VALUES</h3>
         </div>
         <div class="text-center">
             <div class="row">
                 <div class="col padding-0" style="padding-left: 12;">
                     <img src="{{ asset('images/core_values/1.PNG') }}" alt="">
-                    <p class="loremz">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro
-                        officiis iure, fuga cupiditate nemo mollitia labore ducimus qui sunt aspernatur?</p>
+                    <p class="loremz">The key points for a great suit are taking an accurate
+                        body measurements and fitting to make them fits perfectly on your body</p>
                 </div>
                 <div class="col padding-0" style="margin-top: 12px; padding-right: 5; padding-left: 5;">
                     <img src="{{ asset('images/core_values/2.PNG') }}" alt="">
-                    <p class="loremz">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro
-                        officiis iure, fuga cupiditate nemo mollitia labore ducimus qui sunt aspernatur?</p>
+                    <p class="loremz">All the fabrics have been selected to meet your comfort, you shouldn't be
+                        conscious of the fact that you're wearing a suit.</p>
                 </div>
                 <div class="col padding-0">
                     <img src="{{ asset('images/core_values/3.PNG') }}" alt="">
-                    <p class="loremz">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro
-                        officiis iure, fuga cupiditate nemo mollitia labore ducimus qui sunt aspernatur?</p>
+                    <p class="loremz">Perfectly made based on your character and preferences</p>
                 </div>
                 <div class="col padding-0" style="margin-top: 12px; padding-right: 12; padding-left: 5;">
                     <img src="{{ asset('images/core_values/4.PNG') }}" alt="">
-                    <p class="loremz">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro
-                        officiis iure, fuga cupiditate nemo mollitia labore ducimus qui sunt aspernatur?</p>
+                    <p class="loremz">We always make sure that all our clients are fully satisfied with our
+                        exceptional service</p>
                 </div>
             </div>
         </div>
 
-        <div id="servicesection" style="margin-bottom: 100px;">
-
-        </div>
-        <div class="text-center mt-5">
-            <h3 style="color: #806e4f !important;">SERVICES</h3>
+        <div class="text-center mt-5" id="servicesection">
+            <h3 style="color: #806e4f !important;" class="titlecus">SERVICES</h3>
         </div>
         <div class="text-center">
             <div class="row">
@@ -82,23 +73,18 @@
             </div>
         </div>
 
-        <div id="processsection" style="margin-bottom: 100px;">
-
-        </div>
-        <div class="text-center mt-5">
-            <h3 style="color: #806e4f !important;">PROCESS</h3>
+        <div class="text-center mt-5" id="processsection">
+            <h3 style="color: #806e4f !important;" class="titlecus">PROCESS</h3>
         </div>
     </div>
     <div class="text-center">
         <img src="{{ asset('images/process/11.PNG') }}" alt="">
     </div>
-    <div id="fabricsection" style="margin-bottom: 100px">
 
-    </div>
     <div class="container">
 
-        <div class="text-center mt-5">
-            <h3 style="color: #806e4f !important;">FABRIC CATALOGUE</h3>
+        <div class="text-center mt-5" id="fabricsection">
+            <h3 style="color: #806e4f !important;" class="titlecus">FABRIC CATALOGUE</h3>
         </div>
 
         <div class="text-center">
@@ -121,11 +107,8 @@
             </div>
         </div>
 
-        <div id="lookbooksection" style="margin-bottom: 100px;">
-
-        </div>
-        <div class="text-center mt-5">
-            <h3 style="color: #806e4f !important;">LOOK BOOK</h3>
+        <div class="text-center mt-5" id="lookbooksection">
+            <h3 style="color: #806e4f !important;" class="titlecus">LOOK BOOK</h3>
         </div>
         <div class="text-center">
             <div class="row">
@@ -150,11 +133,8 @@
             </div>
         </div>
 
-        <div id="contactsection" style="margin-bottom: 100px;">
-
-        </div>
-        <div class="text-center mt-5">
-            <h3 style="color: #806e4f !important;">CONTACT US</h3>
+        <div class="text-center mt-5" id="contactsection">
+            <h3 style="color: #806e4f !important;" class="titlecus">CONTACT US</h3>
         </div>
         <form>
             <div class="form-group">
@@ -176,11 +156,8 @@
         </form>
         <br>
 
-        <div id="blogsection" style="margin-bottom: 100px;">
-
-        </div>
-        <div class="text-center mt-5">
-            <h3 style="color: #806e4f !important;">BLOGS</h3>
+        <div class="text-center mt-5" id="blogsection">
+            <h3 style="color: #806e4f !important;" class="titlecus">BLOGS</h3>
         </div>
         <div class="text-center">
             <div class="row mb-2">
