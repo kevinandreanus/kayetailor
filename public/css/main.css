@@ -1,4 +1,9 @@
 /* Custom */
+.row>.asiap{
+  padding-left: 2 !important;
+  padding-right: 2 !important;
+}
+
 #aboutussection, #coresection, #servicesection, #processsection, #fabricsection, #lookbooksection, #contactsection, #blogsection{
   scroll-margin-top: 80px;
 }

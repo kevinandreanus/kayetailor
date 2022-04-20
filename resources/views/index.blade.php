@@ -7,14 +7,17 @@
             <div> <img src="{{ asset('images/carousel_image/3.jpg') }}" alt=""> </div>
         </div>
 
-        <div class="text-center mt-4" id="aboutussection">
+        <div class="text-center mt-5" id="aboutussection">
             <h3 style="color: #806e4f !important;" class="titlecus">ABOUT US</h3>
         </div>
-        <p>Founded by two gentlemen who are very passionate about men's fashion, Kaye Brothers
+        <p style="text-align: justify !important" class="mt-4">Founded by two gentlemen who are very passionate
+            about men's fashion, Kaye
+            Brothers
             wants our customers to become real gentlemen and the best version of themselves. We
             want to fully engage with our customers to make them completely satisfied with all
             aspects of their suits.</p>
-        <p>Kaye Brothers is a local men's clothing store based in Jakarta, Indonesia. We provide well
+        <p style="text-align: justify !important">Kaye Brothers is a local men's clothing store based in Jakarta, Indonesia.
+            We provide well
             costume tailored suits and we manufactures our products exclusively for our brand only.</p>
 
 
@@ -22,22 +25,22 @@
             <h3 style="color: #806e4f !important;" class="titlecus">OUR CORE VALUES</h3>
         </div>
         <div class="text-center">
-            <div class="row">
-                <div class="col padding-0" style="padding-left: 12;">
+            <div class="row mt-5">
+                <div class="col padding-0 asiap" style="padding-left: 12 !important;">
                     <img src="{{ asset('images/core_values/1.PNG') }}" alt="">
                     <p class="loremz">The key points for a great suit are taking an accurate
                         body measurements and fitting to make them fits perfectly on your body</p>
                 </div>
-                <div class="col padding-0" style="margin-top: 12px; padding-right: 5; padding-left: 5;">
+                <div class="col padding-0 asiap" style="margin-top: 12px; padding-right: 5; padding-left: 5;">
                     <img src="{{ asset('images/core_values/2.PNG') }}" alt="">
                     <p class="loremz">All the fabrics have been selected to meet your comfort, you shouldn't be
                         conscious of the fact that you're wearing a suit.</p>
                 </div>
-                <div class="col padding-0">
+                <div class="col padding-0 asiap">
                     <img src="{{ asset('images/core_values/3.PNG') }}" alt="">
                     <p class="loremz">Perfectly made based on your character and preferences</p>
                 </div>
-                <div class="col padding-0" style="margin-top: 12px; padding-right: 12; padding-left: 5;">
+                <div class="col padding-0 asiap" style="margin-top: 12px; padding-right: 12 !important;">
                     <img src="{{ asset('images/core_values/4.PNG') }}" alt="">
                     <p class="loremz">We always make sure that all our clients are fully satisfied with our
                         exceptional service</p>
@@ -45,29 +48,29 @@
             </div>
         </div>
 
-        <div class="text-center mt-5" id="servicesection">
+        <div class="text-center mt-4" id="servicesection">
             <h3 style="color: #806e4f !important;" class="titlecus">SERVICES</h3>
         </div>
         <div class="text-center">
-            <div class="row">
-                <div class="col padding-0" style="padding-left: 12;">
+            <div class="row mt-5">
+                <div class="col padding-0 asiap" style="padding-left: 12 !important;">
                     <a href="/services/suit"><img src="{{ asset('images/services/5.PNG') }}" alt=""></a>
                 </div>
-                <div class="col padding-0" style="padding-left: 8;">
+                <div class="col padding-0 asiap" style="padding-left: 8;">
                     <a href="/services/shirt"><img src="{{ asset('images/services/6.PNG') }}" alt=""></a>
                 </div>
-                <div class="col padding-0" style="padding-right: 12; padding-left: 8;">
+                <div class="col padding-0 asiap" style="padding-right: 12 !important;">
                     <a href="/services/batik"><img src="{{ asset('images/services/7.PNG') }}" alt=""></a>
                 </div>
             </div>
-            <div class="row mt-2">
-                <div class="col padding-0" style="padding-left: 12;">
+            <div class="row mt-1">
+                <div class="col padding-0 asiap" style="padding-left: 12 !important;">
                     <a href="/services/cheongsam"><img src="{{ asset('images/services/8.PNG') }}" alt=""></a>
                 </div>
-                <div class="col padding-0" style="padding-left: 8;">
+                <div class="col padding-0 asiap" style="padding-left: 8;">
                     <a href="/services/trouser"><img src="{{ asset('images/services/9.PNG') }}" alt=""></a>
                 </div>
-                <div class="col padding-0" style="padding-right: 12; padding-left: 8;">
+                <div class="col padding-0 asiap" style="padding-right: 12 !important;">
                     <a href="/services/alteration"><img src="{{ asset('images/services/10.PNG') }}" alt=""></a>
                 </div>
             </div>
@@ -77,7 +80,7 @@
             <h3 style="color: #806e4f !important;" class="titlecus">PROCESS</h3>
         </div>
     </div>
-    <div class="text-center">
+    <div class="text-center mt-4">
         <img src="{{ asset('images/process/11.PNG') }}" alt="">
     </div>
 
@@ -88,7 +91,7 @@
         </div>
 
         <div class="text-center">
-            <div class="row">
+            <div class="row mt-5">
                 <div class="col padding-0" style="padding-left: 12;">
                     <a href="/fabric-catalogue/wool"><img class="mb-3"
                             src="{{ asset('images/fabric_catalogue/wool.PNG') }}" alt=""></a><br>
@@ -111,8 +114,8 @@
             <h3 style="color: #806e4f !important;" class="titlecus">LOOK BOOK</h3>
         </div>
         <div class="text-center">
-            <div class="row">
-                <div class="col padding-0" style="padding-left: 12;">
+            <div class="row mt-5">
+                <div class="col padding-0 asiap" style="padding-left: 12 !important;">
                     <a href="/lookbook/wedding"><img class="lookbookimg"
                             src="{{ asset('images/look_book/wedding.PNG') }}" alt=""></a>
                 </div>
@@ -122,7 +125,7 @@
                 </div>
             </div>
             <div class="row mt-2">
-                <div class="col padding-0" style="padding-left: 12;">
+                <div class="col padding-0 asiap" style="padding-left: 12 !important;">
                     <a href="/lookbook/casual"><img class="lookbookimg"
                             src="{{ asset('images/look_book/casual.PNG') }}" alt=""></a>
                 </div>
@@ -136,7 +139,7 @@
         <div class="text-center mt-5" id="contactsection">
             <h3 style="color: #806e4f !important;" class="titlecus">CONTACT US</h3>
         </div>
-        <form>
+        <form class="mt-5">
             <div class="form-group">
                 <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                     placeholder="Name">
@@ -159,12 +162,14 @@
         <div class="text-center mt-5" id="blogsection">
             <h3 style="color: #806e4f !important;" class="titlecus">BLOGS</h3>
         </div>
-        <div class="text-center">
+        <div class="text-center mt-5">
             <div class="row mb-2">
                 <div class="col padding-0" style="padding-left: 12;">
                     <img class="mb-2" src="{{ asset('images/blogs/blog1.PNG') }}" alt=""
                         style="border-radius: 15px;"><br>
-                    <a href="" class="blogtitle">How To Dress Up According Your Body Type</a>
+                    <a style="font-family: 'EB Garamond', serif; font-weight: 700" href="" class="blogtitle">How To
+                        Dress Up According
+                        Your Body Type</a>
                     <p class="blogdate">14 March 2022</p>
                     <p class="blogdesc">Founded by two gentlemen who
                         are very passionate about men's
@@ -173,7 +178,9 @@
                 <div class="col padding-0" style="padding-right: 12; padding-left: 8;">
                     <img class="mb-2" src="{{ asset('images/blogs/blog2.PNG') }}" alt=""
                         style="border-radius: 15px;"><br>
-                    <a href="" class="blogtitle">Tips To Take Care Of Your Shoes</a>
+                    <a style="font-family: 'EB Garamond', serif; font-weight: 700" href="" class="blogtitle">Tips To
+                        Take Care Of Your
+                        Shoes</a>
                     <p class="blogdate">14 March 2022</p>
                     <p class="blogdesc">Founded by two gentlemen who
                         are very passionate about men's
