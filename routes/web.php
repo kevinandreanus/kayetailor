@@ -74,6 +74,14 @@ Route::get('/admin/topbanner/list', 'AdminController@topBannerList');
 Route::get('/admin/blogs/list/top2', 'AdminController@blogsListTop2');
 Route::post('/admin/blogs/2more', 'AdminController@blogs2more');
 
+Route::get('/blog/{id}', function($id){
+    $blog = blog::find($id);
+
+    $content = $blog->contents;
+
+    return view('blog', compact('blog', 'content'));
+});
+
 Route::get('/', function () {
 
     $aboutus = AboutUsHomepageText::orderBy('paragraph')->get();

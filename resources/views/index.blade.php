@@ -157,7 +157,7 @@
                     <div class="col padding-0 cardnich" style="padding-left: 12;" data-id="{{ $a->id }}">
                         <img class="mb-2" src="{{ $a->front_image_path }}" alt=""
                             style="border-radius: 15px;"><br>
-                        <a style="font-family: 'EB Garamond', serif; font-weight: 700" href=""
+                        <a style="font-family: 'EB Garamond', serif; font-weight: 700" href="/blog/{{ $a->id }}"
                             class="blogtitle">{{ $a->title }}</a>
                         <p class="blogdate">{{ $a->date_string }}</p>
                         <p class="blogdesc">{{ $a->caption }}</p>
@@ -222,7 +222,7 @@
                             v.id + `">
                                 <img class="mb-2" src="` + v.front_image_path + `" alt=""
                                     style="border-radius: 15px;"><br>
-                                <a style="font-family: 'EB Garamond', serif; font-weight: 700" href=""
+                                <a style="font-family: 'EB Garamond', serif; font-weight: 700" href="/blog/` + v.id + `"
                                     class="blogtitle">` + v.title + `</a>
                                 <p class="blogdate">` + v.date_string + `</p>
                                 <p class="blogdesc">` + v.caption + `</p>
