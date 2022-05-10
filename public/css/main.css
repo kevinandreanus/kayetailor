@@ -19,19 +19,19 @@
   font-size: 26px !important;
 }
 
-input::-webkit-input-placeholder {
+::-webkit-input-placeholder {
   font-family: 'EB Garamond', serif;
 }
 
-input:-ms-input-placeholder {
+:-ms-input-placeholder {
   font-family: 'EB Garamond', serif;
 }
 
-input:-moz-placeholder {
+:-moz-placeholder {
   font-family: 'EB Garamond', serif;
 }
 
-input::-moz-placeholder {
+::-moz-placeholder {
   font-family: 'EB Garamond', serif;
 }
 
