@@ -49,6 +49,12 @@
             }
         }
 
+        .floating-wpp-button {
+            width: 50px !important;
+            height: 50px !important;
+            padding-bottom: 4px !important;
+        }
+
     </style>
 </head>
 

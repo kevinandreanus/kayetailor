@@ -19,6 +19,26 @@
   font-size: 26px !important;
 }
 
+input::-webkit-input-placeholder {
+  font-family: 'EB Garamond', serif;
+}
+
+input:-ms-input-placeholder {
+  font-family: 'EB Garamond', serif;
+}
+
+input:-moz-placeholder {
+  font-family: 'EB Garamond', serif;
+}
+
+input::-moz-placeholder {
+  font-family: 'EB Garamond', serif;
+}
+
+.fabricbtn, .sendmsgbtn, .seemorebtn, .footertext{
+  font-family: 'EB Garamond', serif;
+}
+
 p{
   font-family: 'EB Garamond', serif;
   font-size: 14px !important;
