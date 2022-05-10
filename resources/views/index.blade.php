@@ -2,24 +2,16 @@
 @section('content')
     <div class="container">
         <div class="owl-carousel" style="margin-top: 80px;">
-            <div> <img src="{{ asset('images/carousel_image/1.jpg') }}" alt=""> </div>
-            <div> <img src="{{ asset('images/carousel_image/2.jpg') }}" alt=""> </div>
-            <div> <img src="{{ asset('images/carousel_image/3.jpg') }}" alt=""> </div>
         </div>
 
-        <div class="text-center mt-5" id="aboutussection">
+        <div class="text-center mt-5 mb-5" id="aboutussection">
             <h3 style="color: #806e4f !important;" class="titlecus">ABOUT US</h3>
         </div>
-        <p style="text-align: justify !important" class="mt-4">Founded by two gentlemen who are very passionate
-            about men's fashion, Kaye
-            Brothers
-            wants our customers to become real gentlemen and the best version of themselves. We
-            want to fully engage with our customers to make them completely satisfied with all
-            aspects of their suits.</p>
-        <p style="text-align: justify !important">Kaye Brothers is a local men's clothing store based in Jakarta, Indonesia.
-            We provide well
-            costume tailored suits and we manufactures our products exclusively for our brand only.</p>
-
+        <div class="aboutusdynamic">
+            @foreach ($aboutus as $a)
+                <p style="text-align: justify !important">{{ $a->text }}</p>
+            @endforeach
+        </div>
 
         <div class="text-center mt-5" id="coresection">
             <h3 style="color: #806e4f !important;" class="titlecus">OUR CORE VALUES</h3>
@@ -27,23 +19,20 @@
         <div class="text-center">
             <div class="row mt-5">
                 <div class="col padding-0 asiap" style="padding-left: 12 !important;">
-                    <img src="{{ asset('images/core_values/1.PNG') }}" alt="">
-                    <p class="loremz">The key points for a great suit are taking an accurate
-                        body measurements and fitting to make them fits perfectly on your body</p>
+                    <img src="{{ $corevalue[0]->image_path ?? '' }}" alt="">
+                    <p class="loremz">{{ $corevalue[0]->text ?? '' }}</p>
                 </div>
                 <div class="col padding-0 asiap" style="margin-top: 12px; padding-right: 5; padding-left: 5;">
-                    <img src="{{ asset('images/core_values/2.PNG') }}" alt="">
-                    <p class="loremz">All the fabrics have been selected to meet your comfort, you shouldn't be
-                        conscious of the fact that you're wearing a suit.</p>
+                    <img src="{{ $corevalue[1]->image_path ?? '' }}" alt="">
+                    <p class="loremz">{{ $corevalue[1]->text ?? '' }}</p>
                 </div>
                 <div class="col padding-0 asiap">
-                    <img src="{{ asset('images/core_values/3.PNG') }}" alt="">
-                    <p class="loremz">Perfectly made based on your character and preferences</p>
+                    <img src="{{ $corevalue[2]->image_path ?? '' }}" alt="">
+                    <p class="loremz">{{ $corevalue[2]->text }}</p>
                 </div>
                 <div class="col padding-0 asiap" style="margin-top: 12px; padding-right: 12 !important;">
-                    <img src="{{ asset('images/core_values/4.PNG') }}" alt="">
-                    <p class="loremz">We always make sure that all our clients are fully satisfied with our
-                        exceptional service</p>
+                    <img src="{{ $corevalue[3]->image_path ?? '' }}" alt="">
+                    <p class="loremz">{{ $corevalue[3]->text ?? '' }}</p>
                 </div>
             </div>
         </div>
@@ -54,24 +43,24 @@
         <div class="text-center">
             <div class="row mt-5">
                 <div class="col padding-0 asiap" style="padding-left: 12 !important;">
-                    <a href="/services/suit"><img src="{{ asset('images/services/5.PNG') }}" alt=""></a>
+                    <a href="/services/suit"><img src="{{ $services[0]->image_path ?? '' }}" alt=""></a>
                 </div>
                 <div class="col padding-0 asiap" style="padding-left: 8;">
-                    <a href="/services/shirt"><img src="{{ asset('images/services/6.PNG') }}" alt=""></a>
+                    <a href="/services/shirt"><img src="{{ $services[1]->image_path ?? '' }}" alt=""></a>
                 </div>
                 <div class="col padding-0 asiap" style="padding-right: 12 !important;">
-                    <a href="/services/batik"><img src="{{ asset('images/services/7.PNG') }}" alt=""></a>
+                    <a href="/services/batik"><img src="{{ $services[2]->image_path ?? '' }}" alt=""></a>
                 </div>
             </div>
             <div class="row mt-1">
                 <div class="col padding-0 asiap" style="padding-left: 12 !important;">
-                    <a href="/services/cheongsam"><img src="{{ asset('images/services/8.PNG') }}" alt=""></a>
+                    <a href="/services/cheongsam"><img src="{{ $services[3]->image_path ?? '' }}" alt=""></a>
                 </div>
                 <div class="col padding-0 asiap" style="padding-left: 8;">
-                    <a href="/services/trouser"><img src="{{ asset('images/services/9.PNG') }}" alt=""></a>
+                    <a href="/services/trouser"><img src="{{ $services[4]->image_path ?? '' }}" alt=""></a>
                 </div>
                 <div class="col padding-0 asiap" style="padding-right: 12 !important;">
-                    <a href="/services/alteration"><img src="{{ asset('images/services/10.PNG') }}" alt=""></a>
+                    <a href="/services/alteration"><img src="{{ $services[5]->image_path ?? '' }}" alt=""></a>
                 </div>
             </div>
         </div>
@@ -81,7 +70,7 @@
         </div>
     </div>
     <div class="text-center mt-4">
-        <img src="{{ asset('images/process/11.PNG') }}" alt="">
+        <img src="{{ $process->image_path ?? '' }}" alt="">
     </div>
 
     <div class="container">
@@ -93,19 +82,19 @@
         <div class="text-center">
             <div class="row mt-5">
                 <div class="col padding-0" style="padding-left: 12;">
-                    <a href="/fabric-catalogue/wool"><img class="mb-3"
-                            src="{{ asset('images/fabric_catalogue/wool.PNG') }}" alt=""></a><br>
-                    <a class="fabricbtn" href="/fabric-catalogue/wool">Wool</a>
+                    <a href="/fabric-catalogue/wool"><img class="mb-3" src="{{ $fabric[0]->image_path ?? '' }}"
+                            alt=""></a><br>
+                    <a class="fabricbtn" href="/fabric-catalogue/wool">{{ $fabric[0]->text ?? '' }}</a>
                 </div>
                 <div class="col padding-0" style="padding-left: 8;">
                     <a href="/fabric-catalogue/semiwool"><img class="mb-3"
-                            src="{{ asset('images/fabric_catalogue/semiwool.PNG') }}" alt=""></a><br>
-                    <a class="fabricbtn" href="/fabric-catalogue/semiwool">Semi-Wool</a>
+                            src="{{ $fabric[1]->image_path ?? '' }}" alt=""></a><br>
+                    <a class="fabricbtn" href="/fabric-catalogue/semiwool">{{ $fabric[1]->text ?? '' }}</a>
                 </div>
                 <div class="col padding-0" style="padding-right: 12; padding-left: 8;">
                     <a href="/fabric-catalogue/linen"><img class="mb-3"
-                            src="{{ asset('images/fabric_catalogue/linen.PNG') }}" alt=""></a><br>
-                    <a class="fabricbtn" href="/fabric-catalogue/linen">Linen</a>
+                            src="{{ $fabric[2]->image_path ?? '' }}" alt=""></a><br>
+                    <a class="fabricbtn" href="/fabric-catalogue/linen">{{ $fabric[2]->text ?? '' }}</a>
                 </div>
             </div>
         </div>
@@ -116,22 +105,22 @@
         <div class="text-center">
             <div class="row mt-5">
                 <div class="col padding-0 asiap" style="padding-left: 12 !important;">
-                    <a href="/lookbook/wedding"><img class="lookbookimg"
-                            src="{{ asset('images/look_book/wedding.PNG') }}" alt=""></a>
+                    <a href="/lookbook/wedding"><img class="lookbookimg" src="{{ $lookbook[0]->image_path }}"
+                            alt=""></a>
                 </div>
                 <div class="col padding-0" style="padding-right: 12; padding-left: 8;">
-                    <a href="/lookbook/daily"><img class="lookbookimg" src="{{ asset('images/look_book/daily.PNG') }}"
+                    <a href="/lookbook/daily"><img class="lookbookimg" src="{{ $lookbook[1]->image_path }}"
                             alt=""></a>
                 </div>
             </div>
             <div class="row mt-2">
                 <div class="col padding-0 asiap" style="padding-left: 12 !important;">
-                    <a href="/lookbook/casual"><img class="lookbookimg"
-                            src="{{ asset('images/look_book/casual.PNG') }}" alt=""></a>
+                    <a href="/lookbook/casual"><img class="lookbookimg" src="{{ $lookbook[2]->image_path }}"
+                            alt=""></a>
                 </div>
                 <div class="col padding-0" style="padding-right: 12; padding-left: 8;">
-                    <a href="/lookbook/ceremony"><img class="lookbookimg"
-                            src="{{ asset('images/look_book/ceremony.PNG') }}" alt=""></a>
+                    <a href="/lookbook/ceremony"><img class="lookbookimg" src="{{ $lookbook[3]->image_path }}"
+                            alt=""></a>
                 </div>
             </div>
         </div>
@@ -162,38 +151,42 @@
         <div class="text-center mt-5" id="blogsection">
             <h3 style="color: #806e4f !important;" class="titlecus">BLOGS</h3>
         </div>
-        <div class="text-center mt-5">
-            <div class="row mb-2">
-                <div class="col padding-0" style="padding-left: 12;">
-                    <img class="mb-2" src="{{ asset('images/blogs/blog1.PNG') }}" alt=""
-                        style="border-radius: 15px;"><br>
-                    <a style="font-family: 'EB Garamond', serif; font-weight: 700" href="" class="blogtitle">How To
-                        Dress Up According
-                        Your Body Type</a>
-                    <p class="blogdate">14 March 2022</p>
-                    <p class="blogdesc">Founded by two gentlemen who
-                        are very passionate about men's
-                        fashion.</p>
-                </div>
-                <div class="col padding-0" style="padding-right: 12; padding-left: 8;">
-                    <img class="mb-2" src="{{ asset('images/blogs/blog2.PNG') }}" alt=""
-                        style="border-radius: 15px;"><br>
-                    <a style="font-family: 'EB Garamond', serif; font-weight: 700" href="" class="blogtitle">Tips To
-                        Take Care Of Your
-                        Shoes</a>
-                    <p class="blogdate">14 March 2022</p>
-                    <p class="blogdesc">Founded by two gentlemen who
-                        are very passionate about men's
-                        fashion.</p>
-                </div>
+        <div class="text-center mt-5 blogcontainer">
+            <div class="row mb-2 yaudah">
+                @foreach ($blogs2 as $a)
+                    <div class="col padding-0 cardnich" style="padding-left: 12;" data-id="{{ $a->id }}">
+                        <img class="mb-2" src="{{ $a->front_image_path }}" alt=""
+                            style="border-radius: 15px;"><br>
+                        <a style="font-family: 'EB Garamond', serif; font-weight: 700" href=""
+                            class="blogtitle">{{ $a->title }}</a>
+                        <p class="blogdate">{{ $a->date_string }}</p>
+                        <p class="blogdesc">{{ $a->caption }}</p>
+                    </div>
+                @endforeach
             </div>
-            <a href="" class="seemorebtn">SEE MORE</a>
+            <a href="#" id="blogseemore" class="seemorebtn">SEE MORE</a>
         </div>
     </div>
 @endsection
 @push('custom-js')
     <script>
-        $(document).ready(function() {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $.ajax({
+            url: '/admin/topbanner/list',
+            success: function(result) {
+                var data = result.data;
+
+                $.each(data, function(index, value) {
+                    $('.owl-carousel').append('<div> <img src="' + value.image_path +
+                        '" alt=""> </div>');
+                });
+            }
+        }).then(function() {
             $(".owl-carousel").owlCarousel({
                 items: 1,
                 loop: true,
@@ -202,6 +195,44 @@
                 autoplayHoverPause: true,
                 dots: true,
                 nav: false
+            });
+        });
+
+        $('#blogseemore').on('click', function() {
+            done = [];
+            $.each($('.cardnich'), function(i, v) {
+                done.push($(v).data('id'))
+            });
+
+            $.ajax({
+                method: 'post',
+                url: '/admin/blogs/2more',
+                data: {
+                    data: done
+                },
+                success: function(result) {
+                    if (result.length > 0) {
+                        $(`<div class="row mb-2 yaudah"></div`)
+                            .insertBefore("#blogseemore");
+                    }
+
+                    $.each(result, function(i, v) {
+                        $($(".yaudah").last()).append(`
+                            <div class="col padding-0 cardnich" style="padding-left: 12;" data-id="` +
+                            v.id + `">
+                                <img class="mb-2" src="` + v.front_image_path + `" alt=""
+                                    style="border-radius: 15px;"><br>
+                                <a style="font-family: 'EB Garamond', serif; font-weight: 700" href=""
+                                    class="blogtitle">` + v.title + `</a>
+                                <p class="blogdate">` + v.date_string + `</p>
+                                <p class="blogdesc">` + v.caption + `</p>
+                            </div>
+                        `).hide().fadeIn(500);
+                    });
+                },
+                error: function(xhr, ajaxOptions, thrownError) {
+                    console.log(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+                }
             });
         });
 

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Kaye Brother's Tailor</title>
 
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
@@ -38,7 +39,14 @@
 
         #affanOffcanvas {
             background-color: #1e3430 !important;
-            width: 70% !important;
+            width: 35% !important;
+        }
+
+        @media only screen and (max-width: 600px) {
+            #affanOffcanvas {
+                background-color: #1e3430 !important;
+                width: 70% !important;
+            }
         }
 
     </style>
@@ -58,7 +66,9 @@
 
                 <div class="logo-wrapper"><a href="/" style="color: #806e4f !important;"><img alt=""><img
                             src="{{ asset('raw/1.png') }}" alt=""></a></div>
-                <div class="user-profile-wrapper" style="background-color: #1a2b28 !important;"></div>
+                <div class="user-profile-wrapper" style="background-color: #1a2b28 !important;">
+                    <div class="logocontroller"></div>
+                </div>
             </div>
 
         </div>
@@ -93,19 +103,18 @@
         </div>
     </div>
     <div class="container">
-        <footer class="text-center text-lg-start text-muted">
+        <footer class="text-lg-start text-muted">
             <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
 
             </section>
             <section class="">
-                <div class="container text-center text-md-start mt-5">
+                <div class="container text-md-start mt-5">
                     <div class="row mt-3">
 
                         <div class="col mb-4">
                             <h6 class="text-uppercase fw-bold mb-4 footertext">
                                 CONTACT US
                             </h6>
-                            <p><i class="fas fa-phone me-3"></i> 021 5698 3847</p>
                             <p><i class="fa fa-whatsapp me-3"></i> 0812 1316 9595</p>
                             <p>
                                 <i class="fas fa-envelope me-3"></i>
