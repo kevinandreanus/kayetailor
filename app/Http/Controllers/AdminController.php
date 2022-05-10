@@ -85,12 +85,12 @@ class AdminController extends Controller
     {
         $file = $request->file('image');
         $filename = uniqid() . $file->getClientOriginalName();
-        $file->move(public_path('/images/core_values/'), $filename);
+        $file->move('/home/u1653387/public_html/images/core_values/', $filename);
 
         $edit = OurCoreValue::find($request->id);
 
         $edit->text = $request->text;
-        $edit->image_path = 'images/core_values/' . $filename;
+        $edit->image_path = '/images/core_values/' . $filename;
         $edit->save();
 
         return redirect()->back();
@@ -118,7 +118,7 @@ class AdminController extends Controller
     {
         $file = $request->file('image');
         $filename = uniqid() . $file->getClientOriginalName();
-        $file->move(public_path('/images/services/'), $filename);
+        $file->move('/home/u1653387/public_html/images/services/', $filename);
 
         $edit = Service::find($request->id);
 
@@ -146,7 +146,7 @@ class AdminController extends Controller
     {
         $file = $request->file('image');
         $filename = uniqid() . $file->getClientOriginalName();
-        $file->move(public_path('/images/process/'), $filename);
+        $file->move('/home/u1653387/public_html/images/process/', $filename);
 
         $edit = Process::find($request->id);
 
@@ -174,7 +174,7 @@ class AdminController extends Controller
     {
         $file = $request->file('image');
         $filename = uniqid() . $file->getClientOriginalName();
-        $file->move(public_path('/images/fabric_catalogue/'), $filename);
+        $file->move('/home/u1653387/public_html/images/fabric_catalogue/', $filename);
 
         $edit = FabricCatalogue::find($request->id);
 
@@ -203,7 +203,7 @@ class AdminController extends Controller
     {
         $file = $request->file('image');
         $filename = uniqid() . $file->getClientOriginalName();
-        $file->move(public_path('/images/lookbook/'), $filename);
+        $file->move('/home/u1653387/public_html/images/lookbook/', $filename);
 
         $edit = LookBook::find($request->id);
 
@@ -250,11 +250,11 @@ class AdminController extends Controller
     {
         $file = $request->file('frontimage');
         $filename = uniqid() . $file->getClientOriginalName();
-        $file->move(public_path('/images/blogs/'), $filename);
+        $file->move('/home/u1653387/public_html/images/blogs/', $filename);
 
         $file2 = $request->file('insideimage');
         $filename2 = uniqid() . $file2->getClientOriginalName();
-        $file2->move(public_path('/images/blogs/'), $filename2);
+        $file2->move('/home/u1653387/public_html/images/blogs/', $filename2);
 
         $a = new blog();
 
@@ -299,7 +299,7 @@ class AdminController extends Controller
     {
         $file = $request->file('image');
         $filename = uniqid() . $file->getClientOriginalName();
-        $file->move(public_path('/images/blogs/inside/'), $filename);
+        $file->move('/home/u1653387/public_html/images/blogs/inside/', $filename);
 
         $a = new BlogContent();
         $a->blog_id = $request->id;
