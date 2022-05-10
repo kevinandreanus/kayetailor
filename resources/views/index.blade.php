@@ -4,7 +4,7 @@
         <div class="owl-carousel" style="margin-top: 80px;">
         </div>
 
-        <div class="text-center mt-5 mb-5" id="aboutussection">
+        <div class="text-center mt-4 mb-4" id="aboutussection">
             <h3 style="color: #806e4f !important;" class="titlecus">ABOUT US</h3>
         </div>
         <div class="aboutusdynamic">
