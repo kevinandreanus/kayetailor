@@ -30,10 +30,10 @@ class AdminController extends Controller
     {
         $file = $request->file('fileTopBanner');
         $filename = uniqid() . $file->getClientOriginalName();
-        $file->move(public_path('/images/carousel_image/'), $filename);
+        $file->move('/home/u1653387/public_html/images/carousel_image/', $filename);
 
         $new = new TopBanner();
-        $new->image_path = 'images/carousel_image/' . $filename;
+        $new->image_path = '/home/u1653387/public_html/images/carousel_image/' . $filename;
         $new->save();
 
         return redirect()->back();
