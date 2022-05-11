@@ -55,6 +55,15 @@
             padding-bottom: 4px !important;
         }
 
+        .bottomleft {
+            position: absolute;
+            bottom: 18px;
+            left: 18px;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+        }
+
     </style>
 </head>
 
@@ -80,9 +89,9 @@
         </div>
     </div>
     @yield('content')
-    <div id="myDiv">
+    {{-- <div id="myDiv">
 
-    </div>
+    </div> --}}
     <div class="offcanvas offcanvas-start" id="affanOffcanvas" data-bs-scroll="true" tabindex="-1"
         aria-labelledby="affanOffcanvsLabel">
         <button class="btn-close btn-close-white text-reset" type="button" data-bs-dismiss="offcanvas"
@@ -135,6 +144,8 @@
             </section>
 
         </footer>
+        <div class="bottomleft"><a href="https://api.whatsapp.com/send?phone=6282311115888" target="_blank"><img
+                    src="/images/walogo.png" alt=""></a></div>
     </div>
 
     <script type="text/javascript" src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
@@ -154,9 +165,9 @@
     <script src="https://kit.fontawesome.com/1b71a3858f.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
         $(function() {
-            $('#myDiv').floatingWhatsApp({
-                phone: '6282311115888'
-            });
+            // $('#myDiv').floatingWhatsApp({
+            //     phone: '6282311115888'
+            // });
 
 
         });

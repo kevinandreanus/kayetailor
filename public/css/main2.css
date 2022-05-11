@@ -136,6 +136,7 @@
     color: white;
     border: 1px solid #806e4f;
     font-size: 12px;
+    font-weight: 600;
     padding: 4px 12px;
   }
   .header-content.header-style-five .navbar--toggler{

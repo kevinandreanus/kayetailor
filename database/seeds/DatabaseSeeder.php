@@ -45,7 +45,7 @@ class DatabaseSeeder extends Seeder
         };
 
         $core_values_image_array = ["images/core_values/1.PNG", "images/core_values/2.PNG", "images/core_values/3.PNG", "images/core_values/4.PNG"];
-        $core_values_text_array = ["The key points for a great suit are taking an accurate body measurements and fitting to make them fits perfectly on your body", "All the fabrics have been selected to meet your comfort, you shouldn't be conscious of the fact that you're wearing a suit.", "Perfectly made based on your character and preferences", "We always make sure that all our clients are fully satisfied with our exceptional service"];
+        $core_values_text_array = ["", "", "", ""];
 
         foreach($core_values_image_array as $key => $c){
             $new = new OurCoreValue();
