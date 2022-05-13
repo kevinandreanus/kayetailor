@@ -7,7 +7,8 @@
 <div class="container">
 
     <div class="text-center" style="margin-top: 100px; margin-bottom: 20px">
-        <h3 style="color: #806e4f !important;">{{ $blog->title }}</h3>
+        <h3 style="color: #806e4f !important;" class="titlecus">{{ strtoupper($blog->title) }}</h3>
+        <h3 style="color:gray;font-size:20px;" class="mt-1">{{ $blog->date_string }}</h3>
     </div>
 
     @foreach ($content as $key => $b)

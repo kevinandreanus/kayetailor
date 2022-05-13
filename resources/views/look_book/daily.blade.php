@@ -3,10 +3,10 @@
 @section('content')
     <div class="container">
         <div class="text-center" style="margin-top: 100px">
-            <h3 style="color: #806e4f !important;">LOOK BOOK</h3>
+            <h3 style="color: #806e4f !important;" class="titlecus">LOOK BOOK</h3>
             <img class="mt-3" src="{{ asset('images/look_book/daily2.PNG') }}" alt="">
 
-            <h3 class="mt-5" style="color: #806e4f !important;">DAILY</h3>
+            <h3 class="mt-5 titlecus" style="color: #806e4f !important;">DAILY</h3>
             <p class="lookBookP">Lorem ipsum dolor sit amet,
                 consectetuer adipiscing elit,
                 sed

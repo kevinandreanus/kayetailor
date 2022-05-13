@@ -3,8 +3,8 @@
 @section('content')
     <div class="container">
         <div class="text-center" style="margin-top: 100px">
-            <h3 style="color: #806e4f !important;">FABRIC CATALOGUE</h3>
-            <h3 class="mt-5" style="color: white">SEMI-WOOL</h3>
+            <h3 style="color: #806e4f !important;" class="titlecus">FABRIC CATALOGUE</h3>
+            <h3 class="mt-5" style="color: white; font-family: 'EB Garamond', serif;font-weight:700;letter-spacing:2px;">SEMI-WOOL</h3>
             <img class="mt-2" style="width: 100%" src="{{ asset('images/fabric_catalogue/semiwool2.PNG') }}"
                 alt="">
 

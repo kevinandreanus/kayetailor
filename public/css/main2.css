@@ -1,4 +1,9 @@
 /* Custom */
+h3{
+    font-family: 'EB Garamond', serif;
+    font-weight: 700;
+}
+
 .logocontroller{
     padding-left: 50px;
   }
@@ -16,6 +21,7 @@
   .titlecus{
     font-family: 'EB Garamond', serif;
     font-weight: 700;
+    letter-spacing: 2px;
     font-size: 26px !important;
   }
   

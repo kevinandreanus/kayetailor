@@ -2,10 +2,10 @@
 @section('content')
     <div class="container">
         <div class="text-center" style="margin-top: 100px">
-            <h3 style="color: #806e4f !important;">SERVICES</h3>
+            <h3 style="color: #806e4f !important;" class="titlecus">SERVICES</h3>
             <img class="mt-3" src="{{ asset('images/services/cheongsam.png') }}" alt="">
 
-            <h3 class="mt-5" style="color: #806e4f !important;">CHEONGSAM</h3>
+            <h3 class="mt-5 titlecus" style="color: #806e4f !important;">CHEONGSAM</h3>
             <p class="lookBookP">Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
                 sed diam nonummy nibh euismod
                 tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
