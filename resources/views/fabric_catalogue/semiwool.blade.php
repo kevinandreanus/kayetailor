@@ -8,7 +8,7 @@
             <img class="mt-2" style="width: 100%" src="{{ asset('images/fabric_catalogue/semiwool2.PNG') }}"
                 alt="">
 
-            <p style="text-align: left" class="mt-5">Semiwool came from 50-70% wool and mixture from another
+            <p style="text-align: justify" class="mt-5">Semiwool came from 50-70% wool and mixture from another
                 fabrics. They have soft feeling and good warmth , yet luxurious feels</p>
 
             <img class="mt-5 w-100" src="{{ asset('images/1.PNG') }}" alt=""><br>

@@ -126,7 +126,7 @@
                     <img class="carousel-item" src="{{ asset('images/fabric_catalogue/bershka.png') }}" alt="">
                 </div>
             </div>
-            <p style="text-align: left" class="mt-5">Wool is one of the most common fabrics for suits. Light
+            <p style="text-align: justify" class="mt-5">Wool is one of the most common fabrics for suits. Light
                 weight wools are suitable for tropical climates, on the other side heavy weight wools are great to keep you
                 warm on cold temperature . They are so durable and breathable.</p>
 
