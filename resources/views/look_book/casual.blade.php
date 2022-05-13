@@ -7,7 +7,7 @@
             <img class="mt-3" src="{{ asset('images/look_book/casual2.PNG') }}" alt="">
 
             <h3 class="mt-5 titlecus" style="color: #806e4f !important;">CASUAL STYLE</h3>
-            <p class="lookBookP">Lorem ipsum dolor sit amet,
+            <p class="center-justified">Lorem ipsum dolor sit amet,
                 consectetuer adipiscing elit,
                 sed
                 diam nonummy nibh

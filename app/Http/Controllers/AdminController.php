@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
+    // Access Token Github (kevinandreanus)
+    // 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
     public function topBannerList()
     {
         $data = TopBanner::all();

@@ -4,12 +4,12 @@
         <div class="owl-carousel" style="margin-top: 80px;">
         </div>
 
-        <div class="text-center mt-4 mb-4" id="aboutussection">
+        <div class="text-center mt-4 mb-1" id="aboutussection">
             <h3 style="color: #806e4f !important;" class="titlecus">ABOUT US</h3>
         </div>
         <div class="aboutusdynamic">
             @foreach ($aboutus as $a)
-                <p style="text-align: justify !important">{{ $a->text }}</p>
+                <p style="text-align: justify !important; line-height: 200%;" class="mt-4">{{ $a->text }}</p>
             @endforeach
         </div>
 
@@ -127,8 +127,9 @@
 
         <div class="text-center mt-5" id="contactsection">
             <h3 style="color: #806e4f !important;" class="titlecus">CONTACT US</h3>
+            <img src="/images/contactus.png" alt="" width="65px" class="mt-3">
         </div>
-        <form class="mt-5">
+        <form class="mt-4">
             <div class="form-group">
                 <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                     placeholder="Name">

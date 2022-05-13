@@ -10,6 +10,7 @@
         <h3 style="color: #806e4f !important;" class="titlecus">{{ strtoupper($blog->title) }}</h3>
         <h3 style="color:gray;font-size:20px;" class="mt-1">{{ $blog->date_string }}</h3>
     </div>
+    <hr style="background-color: #806e4f; opacity: 100">
 
     @foreach ($content as $key => $b)
         @if ($b->type == 'image')

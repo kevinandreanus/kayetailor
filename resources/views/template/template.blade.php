@@ -112,7 +112,7 @@
                     <li><a class="sideBtn" href="#blogsection">BLOGS</a></li>
                 </ul>
                 <a class="sideIG" target="_blank" href="https://www.instagram.com/kayetailor"><img
-                        style="width: 25px; height: 25px;" src="{{ asset('raw/4.png') }}" alt="">
+                        style="width: 25px; height: 25px; margin-right:5px;" src="{{ asset('raw/4.png') }}" alt="">
                     @kayetailor</a>
             </div>
         </div>
