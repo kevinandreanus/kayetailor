@@ -8,7 +8,7 @@
             <img class="mt-2" style="width: 100%" src="{{ asset('images/fabric_catalogue/linen2.PNG') }}" alt="">
 
             <p style="text-align: justify" class="mt-5">Linen is popular for summertime fabric, because linen breathes
-                very easily. It' really suitable for Indonesia's tropical weathe</p>
+                very easily. It' really suitable for Indonesia's tropical weather</p>
 
             <img class="mt-5 w-100" src="{{ asset('images/1.PNG') }}" alt=""><br>
             <img class="mt-3 w-100" src="{{ asset('images/2.PNG') }}" alt=""><br>
