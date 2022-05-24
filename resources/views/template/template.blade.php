@@ -64,6 +64,73 @@
             cursor: pointer;
         }
 
+        @media screen and (min-width: 800px) {
+            #headerArea {
+                visibility: hidden !important;
+            }
+
+            #aboutussection,
+            #coresection,
+            #servicesection,
+            #processsection,
+            #fabricsection,
+            #lookbooksection,
+            #contactsection,
+            #blogsection {
+                scroll-margin-top: 180px;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            #headerDesktop {
+                visibility: hidden !important;
+            }
+
+            #aboutussection,
+            #coresection,
+            #servicesection,
+            #processsection,
+            #fabricsection,
+            #lookbooksection,
+            #contactsection,
+            #blogsection {
+                scroll-margin-top: 80px;
+            }
+        }
+
+        .nav-link {
+            font-family: 'EB Garamond', serif;
+            font-weight: bold;
+            color: #806e4f;
+        }
+
+        .nav-link:hover {
+            color: #806e4f !important;
+        }
+
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #806e4f;
+            transition: width .3s;
+
+        }
+
+        .nav-link:focus {
+            color: #806e4f !important;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+            //transition: width .3s;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
     </style>
 </head>
 
@@ -88,10 +155,47 @@
 
         </div>
     </div>
-    @yield('content')
-    {{-- <div id="myDiv">
+    <div class="header-area" id="headerDesktop" style="padding-bottom: 165px;">
 
-    </div> --}}
+        <div class="text-center" style="margin-top: 40px">
+            <a href="/" style="color: #806e4f !important;"><img src="{{ asset('raw/1.png') }}"
+                    style="width: 250px;"></a>
+            <a href="https://www.instagram.com/kayetailor"><img src="{{ asset('images/white_instagram.png') }}"
+                    alt="" style="width: 25px; margin-right: 4%; float: right; margin-top: 10px;"></a>
+        </div>
+        <div style="margin-top: 40px">
+            <ul class="nav nav-fill">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#aboutussection">ABOUT US</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#coresection">CORE VALUE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#servicesection">SERVICES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#processsection">PROCESS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#fabricsection">FABRIC CATALOGUE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#lookbooksection">LOOK BOOK</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contactsection">CONTACT US</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#blogsection">BLOGS</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    </div>
+    @yield('content')
+
     <div class="offcanvas offcanvas-start" id="affanOffcanvas" data-bs-scroll="true" tabindex="-1"
         aria-labelledby="affanOffcanvsLabel">
         <button class="btn-close btn-close-white text-reset" type="button" data-bs-dismiss="offcanvas"
