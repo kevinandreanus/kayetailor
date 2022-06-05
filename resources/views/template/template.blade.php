@@ -7,7 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Kaye Brother's Tailor</title>
 
-    <link rel="stylesheet" href="{{ asset('css/main3.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/main2.css') }}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
@@ -64,6 +64,14 @@
             cursor: pointer;
         }
 
+        .walogoni {
+            transition: transform .2s;
+        }
+
+        .walogoni:hover {
+            transform: scale(1.1);
+        }
+
         @media screen and (min-width: 800px) {
             #headerArea {
                 visibility: hidden !important;
@@ -78,6 +86,22 @@
             #contactsection,
             #blogsection {
                 scroll-margin-top: 180px;
+            }
+
+            .walogoni {
+                transition: transform .2s;
+            }
+
+            .walogoni:hover {
+                transform: scale(1.1);
+            }
+
+            #mobilefooter {
+                display: none !important;
+            }
+
+            #desktopfooter {
+                background-color: white;
             }
         }
 
@@ -96,7 +120,21 @@
             #blogsection {
                 scroll-margin-top: 80px;
             }
+
+            #desktopfooter {
+                display: none !important;
+            }
+
+            .walogoni {
+                transition: transform .2s;
+            }
+
+            .walogoni:hover {
+                transform: scale(1.1);
+            }
         }
+
+
 
         .nav-link {
             font-family: 'EB Garamond', serif;
@@ -221,7 +259,7 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container" id="mobilefooter">
         <footer class="text-lg-start text-muted">
             <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
 
@@ -249,7 +287,49 @@
 
         </footer>
         <div class="bottomleft"><a href="https://api.whatsapp.com/send?phone=6282311115888" target="_blank"><img
-                    src="/images/walogo.png" alt=""></a></div>
+                    class="walogoni" src="/images/walogo.png" alt=""></a></div>
+    </div>
+    <div class="mt-5" id="desktopfooter">
+        <div class="container" style="padding-top: 42px; padding-bottom: 80px; height: 90px;">
+            <div style="float: left" class="mb-2">
+                <h6 style="color: #806e4f; font-family: 'EB Garamond', serif; font-weight: 700">CONTACT US</h6>
+                <p style="font-family: 'EB Garamond', serif; color: black !important; font-weight: 500">Ruko Theme Park
+                    Golf Island, RGIE
+                    No.100, PIK</p>
+            </div>
+            <div style="float: right" class="mb-2">
+                <p> </p>
+                <ul style="list-style-type: none; margin: 0; padding: 0;">
+                    <li
+                        style="display: inline; margin-right: 20px;font-family: 'EB Garamond', serif; color: black !important;">
+                        |</li>
+                    <li
+                        style="display: inline; margin-right: 20px;font-family: 'EB Garamond', serif; color: black !important;">
+                        <i class="fa fa-phone"></i> 021 5698 3847
+                    </li>
+                    <li
+                        style="display: inline; margin-right: 20px;font-family: 'EB Garamond', serif; color: black !important;">
+                        <i class="fa fa-whatsapp"></i> 0812 1316 9595
+                    </li>
+                    <li
+                        style="display: inline; margin-right: 20px;font-family: 'EB Garamond', serif; color: black !important;">
+                        <i class="fa fa-envelope"></i>
+                        kayebrotherstailor@gmail.com
+                    </li>
+                    <li style="display: inline;font-family: 'EB Garamond', serif; color: black !important;"><i
+                            class="fa fa-instagram"></i> @kayetailor</li>
+                </ul>
+                {{-- <h6 style="color: #806e4f; font-family: 'EB Garamond', serif; font-weight: 700">CONTACT US</h6>
+                <p style="font-family: 'EB Garamond', serif; color: black !important; font-weight: 500">Ruko Theme Park
+                    Golf Island, RGIE
+                    No.100, PIK</p> --}}
+            </div>
+            {{-- <p style="float: right; font-family: 'EB Garamond', serif; color: black !important;" class="mb-2">
+                asdasd</p>
+            <p></p> --}}
+        </div>
+        <div class="bottomleft"><a href="https://api.whatsapp.com/send?phone=6282311115888" target="_blank"><img
+                    class="walogoni" src="/images/walogo.png" alt=""></a></div>
     </div>
 
     <script type="text/javascript" src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>

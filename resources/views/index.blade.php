@@ -29,6 +29,20 @@
             .servicedesktopni {
                 width: 365px;
                 height: 365px;
+                transition: transform .2s;
+            }
+
+            .servicedesktopni:hover,
+            .fabricnic:hover,
+            .lookbooknich:hover,
+            .senddesktop:hover {
+                transform: scale(1.1);
+            }
+
+            .fabricnic,
+            .lookbooknich,
+            .senddesktop {
+                transition: transform .2s;
             }
 
             .lookbookmobile {
@@ -38,6 +52,27 @@
 
             #contactmobile {
                 display: none !important;
+            }
+
+            .aboutusdynamic {
+                padding-left: 200px;
+                padding-right: 200px;
+            }
+
+            .fabricbtn {
+                color: white;
+                border: 1px solid #806e4f;
+                font-size: 16px;
+                font-weight: 800;
+                width: 300px;
+                padding: 8px 24px;
+                margin-top: 10px;
+                text-transform: uppercase;
+            }
+
+            #lookbooksection,
+            #fabricsection {
+                padding-bottom: 28px;
             }
         }
 
@@ -49,6 +84,14 @@
 
             #contactdesktop {
                 display: none !important;
+            }
+
+            .fabricbtn {
+                color: white;
+                border: 1px solid #806e4f;
+                font-size: 13px;
+                font-weight: 800;
+                padding: 4px 12px;
             }
         }
 
@@ -62,7 +105,7 @@
         <div class="text-center mt-4 mb-1" id="aboutussection">
             <h3 style="color: #806e4f !important;" class="titlecus">ABOUT US</h3>
         </div>
-        <div class="aboutusdynamic">
+        <div class="aboutusdynamic pt-4">
             @foreach ($aboutus as $a)
                 <p style="text-align: justify !important; line-height: 200%;" class="mt-4">{{ $a->text }}</p>
             @endforeach
@@ -72,7 +115,7 @@
             <h3 style="color: #806e4f !important;" class="titlecus">OUR CORE VALUES</h3>
         </div>
         <div class="text-center">
-            <div class="d-flex justify-content-center">
+            <div class="d-flex justify-content-center pt-4">
                 <div style="margin-right: 5px;">
                     <img src="{{ $corevalue[0]->image_path ?? '' }}" alt="">
                     <p class="loremz">{{ $corevalue[0]->text ?? '' }}</p>
@@ -96,7 +139,7 @@
             <h3 style="color: #806e4f !important;" class="titlecus">SERVICES</h3>
         </div>
         <div class="text-center">
-            <div class="d-flex justify-content-center">
+            <div class="d-flex justify-content-center pt-4">
                 <div style="margin-right: 10px">
                     <a href="/services/suit"><img class="servicedesktopni" src="{{ $services[0]->image_path ?? '' }}"
                             alt=""></a>
@@ -141,19 +184,19 @@
         </div>
 
         <div class="text-center">
-            <div class="d-flex justify-content-center mt-1">
+            <div class="d-flex justify-content-center pt-4">
                 <div style="margin-right: 10px">
-                    <a href="/fabric-catalogue/wool"><img style="width: 360px" class="mb-3"
+                    <a href="/fabric-catalogue/wool"><img style="width: 360px" class="mb-3 fabricnic"
                             src="{{ $fabric[0]->image_path ?? '' }}" alt=""></a><br>
                     <a class="fabricbtn" href="/fabric-catalogue/wool">{{ $fabric[0]->text ?? '' }}</a>
                 </div>
                 <div style="margin-right: 10px">
-                    <a href="/fabric-catalogue/semiwool"><img style="width: 360px" class="mb-3"
+                    <a href="/fabric-catalogue/semiwool"><img style="width: 360px" class="mb-3 fabricnic"
                             src="{{ $fabric[1]->image_path ?? '' }}" alt=""></a><br>
                     <a class="fabricbtn" href="/fabric-catalogue/semiwool">{{ $fabric[1]->text ?? '' }}</a>
                 </div>
                 <div>
-                    <a href="/fabric-catalogue/linen"><img style="width: 360px" class="mb-3"
+                    <a href="/fabric-catalogue/linen"><img style="width: 360px" class="mb-3 fabricnic"
                             src="{{ $fabric[2]->image_path ?? '' }}" alt=""></a><br>
                     <a class="fabricbtn" href="/fabric-catalogue/linen">{{ $fabric[2]->text ?? '' }}</a>
                 </div>
@@ -164,21 +207,21 @@
             <h3 style="color: #806e4f !important;" class="titlecus">LOOK BOOK</h3>
         </div>
         <div class="text-center">
-            <div class="d-flex justify-content-center mt-1" id="lookbookdesktop">
+            <div class="d-flex justify-content-center pt-4" id="lookbookdesktop">
                 <div style="margin-right: 10px">
-                    <a href="/lookbook/wedding"><img style="width: 360px" class="lookbookimg"
+                    <a href="/lookbook/wedding"><img style="width: 360px" class="lookbookimg lookbooknich"
                             src="{{ $lookbook[0]->image_path }}" alt=""></a>
                 </div>
                 <div style="margin-right: 10px">
-                    <a href="/lookbook/daily"><img style="width: 360px" class="lookbookimg"
+                    <a href="/lookbook/daily"><img style="width: 360px" class="lookbookimg lookbooknich"
                             src="{{ $lookbook[1]->image_path }}" alt=""></a>
                 </div>
                 <div style="margin-right: 10px">
-                    <a href="/lookbook/casual"><img style="width: 360px" class="lookbookimg"
+                    <a href="/lookbook/casual"><img style="width: 360px" class="lookbookimg lookbooknich"
                             src="{{ $lookbook[2]->image_path }}" alt=""></a>
                 </div>
                 <div>
-                    <a href="/lookbook/ceremony"><img style="width: 360px" class="lookbookimg"
+                    <a href="/lookbook/ceremony"><img style="width: 360px" class="lookbookimg lookbooknich"
                             src="{{ $lookbook[3]->image_path }}" alt=""></a>
                 </div>
             </div>
@@ -227,7 +270,7 @@
                         <div class="form-group">
                             <textarea rows="3" class="form-control" placeholder="Message"></textarea>
                         </div>
-                        <button style="float: left;" type="submit" class="sendmsgbtn">SEND MESSAGE</button>
+                        <button style="float: left;" type="submit" class="sendmsgbtn senddesktop">SEND MESSAGE</button>
                     </form>
                 </div>
                 <div class="col mt-4 ms-5">
@@ -266,8 +309,8 @@
         <div class="text-center mt-5" id="blogsection">
             <h3 style="color: #806e4f !important;" class="titlecus">BLOGS</h3>
         </div>
-        <div class="text-center mt-5 blogcontainer">
-            <div class="row mb-2 yaudah">
+        <div class="text-center pt-4 blogcontainer">
+            <div class="row mb-2 yaudah" style="padding-right: 12 !important">
                 @foreach ($blogs2 as $a)
                     <div class="col padding-0 cardnich" style="padding-left: 12 !important;" data-id="{{ $a->id }}">
                         <img class="mb-2" src="{{ $a->front_image_path }}" alt=""
@@ -284,6 +327,15 @@
     </div>
 @endsection
 @push('custom-js')
+    @if ($isMobile == 1)
+        <script>
+            var urlnya = '/admin/blogs/2more';
+        </script>
+    @else
+        <script>
+            var urlnya = '/admin/blogs/4more';
+        </script>
+    @endif
     <script>
         $.ajaxSetup({
             headers: {
@@ -321,13 +373,13 @@
 
             $.ajax({
                 method: 'post',
-                url: '/admin/blogs/2more',
+                url: urlnya,
                 data: {
                     data: done
                 },
                 success: function(result) {
                     if (result.length > 0) {
-                        $(`<div class="row mb-2 yaudah"></div`)
+                        $(`<div class="row mb-2 yaudah" style="padding-right: 12 !important"></div`)
                             .insertBefore("#blogseemore");
                     }
 

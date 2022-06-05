@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\DB;
 class AdminController extends Controller
 {
     // Access Token Github (kevinandreanus)
-    // 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
+    // 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
     public function topBannerList()
     {
         $data = TopBanner::all();
@@ -244,6 +244,16 @@ class AdminController extends Controller
         $validation = implode(",",$data);
         
         $more = DB::select("SELECT * FROM blogs WHERE id not in ($validation) ORDER BY created_at DESC LIMIT 2");
+
+        return $more;
+    }
+
+    public function blogs4more(Request $request)
+    {
+        $data = $request->data;
+        $validation = implode(",",$data);
+        
+        $more = DB::select("SELECT * FROM blogs WHERE id not in ($validation) ORDER BY created_at DESC LIMIT 4");
 
         return $more;
     }
