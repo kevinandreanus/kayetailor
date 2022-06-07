@@ -77,6 +77,14 @@
                 visibility: hidden !important;
             }
 
+            p {
+                font-size: 16px !important;
+            }
+
+            .footerbtnya:hover {
+                text-decoration: underline !important;
+            }
+
             #aboutussection,
             #coresection,
             #servicesection,
@@ -195,7 +203,7 @@
     </div>
     <div class="header-area" id="headerDesktop" style="padding-bottom: 165px;">
 
-        <div class="text-center" style="margin-top: 40px">
+        <div class="text-center" style="margin-top: 40px; margin-left: 85px;">
             <a href="/" style="color: #806e4f !important;"><img src="{{ asset('raw/1.png') }}"
                     style="width: 250px;"></a>
             <a href="https://www.instagram.com/kayetailor"><img src="{{ asset('images/white_instagram.png') }}"
@@ -305,19 +313,27 @@
                         |</li>
                     <li
                         style="display: inline; margin-right: 20px;font-family: 'EB Garamond', serif; color: black !important;">
-                        <i class="fa fa-phone"></i> 021 5698 3847
+                        <a class="footerbtnya" style="font-family: 'EB Garamond', serif; color: black !important;"
+                            href="tel:021-5698-3847"><i class="fa fa-phone"></i> 021 5698 3847</a>
                     </li>
                     <li
                         style="display: inline; margin-right: 20px;font-family: 'EB Garamond', serif; color: black !important;">
-                        <i class="fa fa-whatsapp"></i> 0812 1316 9595
+                        <a class="footerbtnya" style="font-family: 'EB Garamond', serif; color: black !important;"
+                            href="
+                            https://api.whatsapp.com/send?phone=6282311115888"><i class="fa fa-whatsapp"></i> 0812
+                            1316 9595</a>
                     </li>
                     <li
                         style="display: inline; margin-right: 20px;font-family: 'EB Garamond', serif; color: black !important;">
-                        <i class="fa fa-envelope"></i>
-                        kayebrotherstailor@gmail.com
+                        <a class="footerbtnya" style="font-family: 'EB Garamond', serif; color: black !important;"
+                            href="mailto:kayebrotherstailor@gmail.com">
+                            <i class="fa fa-envelope"></i>
+                            kayebrotherstailor@gmail.com</a>
                     </li>
-                    <li style="display: inline;font-family: 'EB Garamond', serif; color: black !important;"><i
-                            class="fa fa-instagram"></i> @kayetailor</li>
+                    <li style="display: inline;font-family: 'EB Garamond', serif; color: black !important;">
+                        <a class="footerbtnya" style="font-family: 'EB Garamond', serif; color: black !important;"
+                            href="https://www.instagram.com/kayetailor"><i class="fa fa-instagram"></i> @kayetailor</a>
+                    </li>
                 </ul>
                 {{-- <h6 style="color: #806e4f; font-family: 'EB Garamond', serif; font-weight: 700">CONTACT US</h6>
                 <p style="font-family: 'EB Garamond', serif; color: black !important; font-weight: 500">Ruko Theme Park
