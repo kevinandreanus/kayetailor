@@ -38,7 +38,7 @@
 
 <div id="desktopviewz">
     <div class="bannertopz">
-        <img src="/{{ $blog->back_image_path }}" alt="" width="100%">
+        <img src="/{{ $blog->back_image_path }}" alt="" width="100%" style="height: 650px;">
         <div class="centered">
             <h3 style="color: #ac956d !important; font-size: 40px !important;" class="titlecus">BLOGS</h3>
         </div>

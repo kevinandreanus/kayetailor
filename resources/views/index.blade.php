@@ -8,7 +8,7 @@
             }
 
             .owl-carousel .owl-item img {
-                height: 900px;
+                height: 650px;
             }
 
             #aboutussection,

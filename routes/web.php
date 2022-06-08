@@ -110,7 +110,9 @@ Route::get('/', function () {
         $isMobile = 0;
     }
     
-    return view('index', compact('aboutus', 'corevalue', 'services', 'process', 'fabric', 'lookbook', 'blogs2', 'isMobile'));
+    $isIndex = 1;
+
+    return view('index', compact('aboutus', 'corevalue', 'services', 'process', 'fabric', 'lookbook', 'blogs2', 'isMobile', 'isIndex'));
 });
 
 Route::get('/services/suit', function () {

@@ -212,28 +212,37 @@
         <div style="margin-top: 40px">
             <ul class="nav nav-fill">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#aboutussection">ABOUT US</a>
+                    <a class="nav-link active"
+                        href="{{ isset($isIndex) ? '#aboutussection' : '/#aboutussection' }}">ABOUT
+                        US</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#coresection">CORE VALUE</a>
+                    <a class="nav-link" href="{{ isset($isIndex) ? '#coresection' : '/#coresection' }}">CORE
+                        VALUE</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#servicesection">SERVICES</a>
+                    <a class="nav-link"
+                        href="{{ isset($isIndex) ? '#servicesection' : '/#servicesection' }}">SERVICES</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#processsection">PROCESS</a>
+                    <a class="nav-link"
+                        href="{{ isset($isIndex) ? '#processsection' : '/#processsection' }}">PROCESS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#fabricsection">FABRIC CATALOGUE</a>
+                    <a class="nav-link"
+                        href="{{ isset($isIndex) ? '#fabricsection' : '/#fabricsection' }}">FABRIC CATALOGUE</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#lookbooksection">LOOK BOOK</a>
+                    <a class="nav-link"
+                        href="{{ isset($isIndex) ? '#lookbooksection' : '/#lookbooksection' }}">LOOK BOOK</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#contactsection">CONTACT US</a>
+                    <a class="nav-link"
+                        href="{{ isset($isIndex) ? '#contactsection' : '/#contactsection' }}">CONTACT US</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#blogsection">BLOGS</a>
+                    <a class="nav-link"
+                        href="{{ isset($isIndex) ? '#blogsection' : '/#blogsection' }}">BLOGS</a>
                 </li>
             </ul>
         </div>

@@ -43,7 +43,7 @@
 @section('content')
     <div id="desktopviewz">
         <div class="bannertopz">
-            <img src="{{ asset('images/fabric_catalogue/semiwool2.PNG') }}" alt="" width="100%">
+            <img src="{{ asset('images/fabric_catalogue/semiwool2.PNG') }}" alt="" width="100%" style="height: 650px;">
             <div class="centered">
                 <h3 style="color: #ac956d !important; font-size: 40px !important;" class="titlecus">FABRIC CATALOGUE
                 </h3>
