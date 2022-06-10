@@ -94,7 +94,6 @@
                 padding: 4px 12px;
             }
         }
-
     </style>
 @endpush
 
@@ -141,29 +140,29 @@
         <div class="text-center">
             <div class="d-flex justify-content-center pt-4">
                 <div style="margin-right: 10px">
-                    <a href="/services/suit"><img class="servicedesktopni" src="{{ $services[0]->image_path ?? '' }}"
-                            alt=""></a>
+                    <a href="/services/suit"><img width="133px" height="133px" class="servicedesktopni"
+                            src="{{ $services[0]->image_path ?? '' }}" alt=""></a>
                 </div>
                 <div style="margin-right: 10px">
-                    <a href="/services/shirt"><img class="servicedesktopni" src="{{ $services[1]->image_path ?? '' }}"
-                            alt=""></a>
+                    <a href="/services/shirt"><img width="133px" height="133px" class="servicedesktopni"
+                            src="{{ $services[1]->image_path ?? '' }}" alt=""></a>
                 </div>
                 <div>
-                    <a href="/services/batik"><img class="servicedesktopni" src="{{ $services[2]->image_path ?? '' }}"
-                            alt=""></a>
+                    <a href="/services/batik"><img width="133px" height="133px" class="servicedesktopni"
+                            src="{{ $services[2]->image_path ?? '' }}" alt=""></a>
                 </div>
             </div>
             <div class="d-flex justify-content-center mt-1">
                 <div style="margin-right: 10px">
-                    <a href="/services/cheongsam"><img class="servicedesktopni"
+                    <a href="/services/cheongsam"><img width="133px" height="133px" class="servicedesktopni"
                             src="{{ $services[3]->image_path ?? '' }}" alt=""></a>
                 </div>
                 <div style="margin-right: 10px">
-                    <a href="/services/trouser"><img class="servicedesktopni" src="{{ $services[4]->image_path ?? '' }}"
-                            alt=""></a>
+                    <a href="/services/trouser"><img width="133px" height="133px" class="servicedesktopni"
+                            src="{{ $services[4]->image_path ?? '' }}" alt=""></a>
                 </div>
                 <div>
-                    <a href="/services/alteration"><img class="servicedesktopni"
+                    <a href="/services/alteration"><img width="133px" height="133px" class="servicedesktopni"
                             src="{{ $services[5]->image_path ?? '' }}" alt=""></a>
                 </div>
             </div>
