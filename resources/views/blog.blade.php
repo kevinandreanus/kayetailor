@@ -32,7 +32,6 @@
                 right: 16px;
             }
         }
-
     </style>
 @endpush
 
@@ -69,14 +68,16 @@
                 <img src="/{{ $b->image_path }}" alt="">
             </div>
         @else
-            @if ($content[$key - 1]->type == 'image')
-                <div class="text-justify mt-4">
-                    <p>{{ $b->text }}</p>
-                </div>
-            @else
-                <div class="text-justify">
-                    <p>{{ $b->text }}</p>
-                </div>
+            @if ($content)
+                @if ($content[$key - 1]->type == 'image')
+                    <div class="text-justify mt-4">
+                        <p>{{ $b->text }}</p>
+                    </div>
+                @else
+                    <div class="text-justify">
+                        <p>{{ $b->text }}</p>
+                    </div>
+                @endif
             @endif
         @endif
     @endforeach
