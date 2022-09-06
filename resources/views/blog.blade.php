@@ -58,14 +58,15 @@
                     <img src="/{{ $b->image_path }}" alt="">
                 </div>
             @else
-                <div class="text-justify mt-4">
-                    <p>{{ $b->text }}</p>
-                    <p>{{ $key }}</p>
-                </div>
-                <div class="text-justify">
-                    <p>{{ $b->text }}</p>
-                    <p>{{ $key }}</p>
-                </div>
+                @if ($content[$key]->type == 'image')
+                    <div class="text-justify mt-4">
+                        <p>{{ $b->text }}</p>
+                    </div>
+                @else
+                    <div class="text-justify">
+                        <p>{{ $b->text }}</p>
+                    </div>
+                @endif
             @endif
         @endforeach
     </div>
@@ -85,14 +86,15 @@
                 <img src="/{{ $b->image_path }}" alt="">
             </div>
         @else
-            <div class="text-justify mt-4">
-                <p>{{ $b->text }}</p>
-                <p>{{ $key }}</p>
-            </div>
-            <div class="text-justify">
-                <p>{{ $b->text }}</p>
-                <p>{{ $key }}</p>
-            </div>
+            @if ($content[$key]->type == 'image')
+                <div class="text-justify mt-4">
+                    <p>{{ $b->text }}</p>
+                </div>
+            @else
+                <div class="text-justify">
+                    <p>{{ $b->text }}</p>
+                </div>
+            @endif
         @endif
     @endforeach
 
