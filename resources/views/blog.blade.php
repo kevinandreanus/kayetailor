@@ -51,6 +51,23 @@
             <h3 style="color:gray;font-size:20px;" class="mt-1">{{ $blog->date_string }}</h3>
         </div>
         <hr style="background-color: #806e4f; opacity: 100">
+
+        @foreach ($content as $key => $b)
+            @if ($b->type == 'image')
+                <div class="text-center mt-2">
+                    <img src="/{{ $b->image_path }}" alt="">
+                </div>
+            @else
+                <div class="text-justify mt-4">
+                    <p>{{ $b->text }}</p>
+                    <p>{{ $key }}</p>
+                </div>
+                <div class="text-justify">
+                    <p>{{ $b->text }}</p>
+                    <p>{{ $key }}</p>
+                </div>
+            @endif
+        @endforeach
     </div>
 </div>
 
@@ -63,7 +80,20 @@
     <hr style="background-color: #806e4f; opacity: 100">
 
     @foreach ($content as $key => $b)
-        <p>{{ $b->text }}</p>
+        @if ($b->type == 'image')
+            <div class="text-center mt-2">
+                <img src="/{{ $b->image_path }}" alt="">
+            </div>
+        @else
+            <div class="text-justify mt-4">
+                <p>{{ $b->text }}</p>
+                <p>{{ $key }}</p>
+            </div>
+            <div class="text-justify">
+                <p>{{ $b->text }}</p>
+                <p>{{ $key }}</p>
+            </div>
+        @endif
     @endforeach
 
 </div>
