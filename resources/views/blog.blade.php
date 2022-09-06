@@ -69,9 +69,10 @@
             </div>
         @else
             @if ($content)
-                @if ($content[$key - 1]->type == 'image')
+                @if ($content[$key]->type == 'image')
                     <div class="text-justify mt-4">
                         <p>{{ $b->text }}</p>
+                        {{ $key }}
                     </div>
                 @else
                     <div class="text-justify">
