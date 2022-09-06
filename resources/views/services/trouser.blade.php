@@ -36,7 +36,6 @@
                 right: 16px;
             }
         }
-
     </style>
 @endpush
 
@@ -57,7 +56,7 @@
         </div>
         <div class="container">
             <div class="aboutusdynamic pt-3 pb-5">
-                <p style="line-height: 200%; text-align: center !important;" class="mt-4">made by yours truly so
+                <p style="line-height: 200%; text-align: center !important;" class="mt-4">Made by yours truly so
                     you can use as well for business
                     occasion or casual look
                 </p>

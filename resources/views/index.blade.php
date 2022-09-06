@@ -11,6 +11,10 @@
                 height: 650px;
             }
 
+            .form-control {
+                color: white !important;
+            }
+
             #aboutussection,
             #coresection,
             #servicesection,
@@ -253,21 +257,21 @@
         <div id="contactdesktop">
             <div class="row">
                 <div class="col">
-                    <form class="mt-4">
+                    <form class="mt-4" action="{{ route('send-email') }}">
                         <div class="form-group">
-                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                                placeholder="Name">
+                            <input type="text" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="Name" name="name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                                placeholder="Email">
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="Email" name="email" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                                placeholder="Subject">
+                            <input type="text" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="Subject" name="subject" required>
                         </div>
                         <div class="form-group">
-                            <textarea rows="3" class="form-control" placeholder="Message"></textarea>
+                            <textarea rows="3" class="form-control" placeholder="Message" name="message" required></textarea>
                         </div>
                         <button style="float: left;" type="submit" class="sendmsgbtn senddesktop">SEND MESSAGE</button>
                     </form>
@@ -284,21 +288,21 @@
             </div>
         </div>
         <div id="contactmobile">
-            <form class="mt-4">
+            <form class="mt-4" action="{{ route('send-email') }}">
                 <div class="form-group">
                     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                        placeholder="Name">
+                        placeholder="Name" name="name" required>
                 </div>
                 <div class="form-group">
                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                        placeholder="Email">
+                        placeholder="Email" name="email" required>
                 </div>
                 <div class="form-group">
                     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                        placeholder="Subject">
+                        placeholder="Subject" name="subject" required>
                 </div>
                 <div class="form-group">
-                    <textarea rows="3" class="form-control" placeholder="Message"></textarea>
+                    <textarea rows="3" class="form-control" placeholder="Message" name="message" required></textarea>
                 </div>
                 <button style="float: left;" type="submit" class="sendmsgbtn">SEND MESSAGE</button>
             </form>
@@ -311,7 +315,8 @@
         <div class="text-center pt-4 blogcontainer">
             <div class="row mb-2 yaudah" style="padding-right: 12 !important">
                 @foreach ($blogs2 as $a)
-                    <div class="col padding-0 cardnich" style="padding-left: 12 !important;" data-id="{{ $a->id }}">
+                    <div class="col padding-0 cardnich" style="padding-left: 12 !important;"
+                        data-id="{{ $a->id }}">
                         <img class="mb-2" src="{{ $a->front_image_path }}" alt=""
                             style="border-radius: 15px;"><br>
                         <a style="font-family: 'EB Garamond', serif; font-weight: 700" href="/blog/{{ $a->id }}"

@@ -3,6 +3,7 @@
 use App\AboutUsHomepageText;
 use App\blog;
 use App\FabricCatalogue;
+use App\Http\Controllers\PHPMailerController;
 use App\LookBook;
 use App\OurCoreValue;
 use App\Process;
@@ -25,6 +26,10 @@ Auth::routes([
     'reset' => false,
     'verify' => false
 ]);
+
+Route::get("/email", 'PHPMailerController@email')->name("email");
+ 
+Route::get("/send-email", 'PHPMailerController@composeEmail')->name("send-email");
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin', function(){

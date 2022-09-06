@@ -12,6 +12,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
         rel="stylesheet">
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}" />
     <link rel="stylesheet" href="{{ asset('css/custstyle.css') }}">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/bootstrap-icons.css') }}">
@@ -25,7 +26,6 @@
     <link rel="stylesheet" href="{{ asset('library/owlcarousel/owl.theme.default.min.css') }}">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Montserrat&display=swap');
-
     </style>
     @stack('custom-css')
     <style>
@@ -58,7 +58,7 @@
         .bottomleft {
             position: absolute;
             bottom: 18px;
-            left: 18px;
+            right: 18px;
             width: 50px;
             height: 50px;
             cursor: pointer;
@@ -176,7 +176,6 @@
         body::-webkit-scrollbar {
             display: none;
         }
-
     </style>
 </head>
 
@@ -229,20 +228,19 @@
                         href="{{ isset($isIndex) ? '#processsection' : '/#processsection' }}">PROCESS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"
-                        href="{{ isset($isIndex) ? '#fabricsection' : '/#fabricsection' }}">FABRIC CATALOGUE</a>
+                    <a class="nav-link" href="{{ isset($isIndex) ? '#fabricsection' : '/#fabricsection' }}">FABRIC
+                        CATALOGUE</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"
-                        href="{{ isset($isIndex) ? '#lookbooksection' : '/#lookbooksection' }}">LOOK BOOK</a>
+                    <a class="nav-link" href="{{ isset($isIndex) ? '#lookbooksection' : '/#lookbooksection' }}">LOOK
+                        BOOK</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"
-                        href="{{ isset($isIndex) ? '#contactsection' : '/#contactsection' }}">CONTACT US</a>
+                    <a class="nav-link" href="{{ isset($isIndex) ? '#contactsection' : '/#contactsection' }}">CONTACT
+                        US</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"
-                        href="{{ isset($isIndex) ? '#blogsection' : '/#blogsection' }}">BLOGS</a>
+                    <a class="nav-link" href="{{ isset($isIndex) ? '#blogsection' : '/#blogsection' }}">BLOGS</a>
                 </li>
             </ul>
         </div>
@@ -271,7 +269,8 @@
                     <li><a class="sideBtn" href="#blogsection">BLOGS</a></li>
                 </ul>
                 <a class="sideIG" target="_blank" href="https://www.instagram.com/kayetailor"><img
-                        style="width: 25px; height: 25px; margin-right:5px;" src="{{ asset('raw/4.png') }}" alt="">
+                        style="width: 25px; height: 25px; margin-right:5px;" src="{{ asset('raw/4.png') }}"
+                        alt="">
                     @kayetailor</a>
             </div>
         </div>
@@ -329,7 +328,8 @@
                         style="display: inline; margin-right: 20px;font-family: 'EB Garamond', serif; color: black !important;">
                         <a class="footerbtnya" style="font-family: 'EB Garamond', serif; color: black !important;"
                             href="
-                            https://api.whatsapp.com/send?phone=6282311115888"><i class="fa fa-whatsapp"></i> 0812
+                            https://api.whatsapp.com/send?phone=6282311115888"><i
+                                class="fa fa-whatsapp"></i> 0812
                             1316 9595</a>
                     </li>
                     <li
@@ -341,7 +341,8 @@
                     </li>
                     <li style="display: inline;font-family: 'EB Garamond', serif; color: black !important;">
                         <a class="footerbtnya" style="font-family: 'EB Garamond', serif; color: black !important;"
-                            href="https://www.instagram.com/kayetailor"><i class="fa fa-instagram"></i> @kayetailor</a>
+                            href="https://www.instagram.com/kayetailor"><i class="fa fa-instagram"></i>
+                            @kayetailor</a>
                     </li>
                 </ul>
                 {{-- <h6 style="color: #806e4f; font-family: 'EB Garamond', serif; font-weight: 700">CONTACT US</h6>

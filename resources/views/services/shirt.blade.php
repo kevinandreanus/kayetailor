@@ -36,7 +36,6 @@
                 right: 16px;
             }
         }
-
     </style>
 @endpush
 
@@ -57,26 +56,8 @@
         </div>
         <div class="container">
             <div class="aboutusdynamic pt-3 pb-5">
-                <p style="line-height: 200%;" class="mt-4">Lorem ipsum dolor sit amet
-                    consectetur, adipisicing elit. Consequatur voluptas at laudantium veritatis nostrum, natus consequuntur
-                    magnam
-                    ipsa, reiciendis molestias praesentium neque sint similique eos inventore qui officia! Nostrum molestiae
-                    voluptate, asperiores odio tempora, dicta ducimus illo culpa, soluta unde facilis corporis in distinctio
-                    nemo
-                    qui ut error aperiam? Est itaque iste sed quis tempora! Autem, reprehenderit. Sed possimus laborum,
-                    dicta
-                    est
-                    placeat veritatis ratione fugit voluptates molestiae facilis cupiditate odit at explicabo veniam
-                    molestias
-                    hic
-                    laboriosam quae dolorum? Possimus quas, placeat cumque, facere perferendis maiores quisquam tenetur
-                    neque
-                    fuga
-                    quibusdam, adipisci necessitatibus asperiores! Ullam rerum nulla placeat quas natus, inventore
-                    distinctio
-                    fugit
-                    sunt? Eaque quo saepe quis aut reprehenderit, dignissimos vel laudantium laborum debitis temporibus!
-                    Eveniet,
+                <p style="line-height: 200%;" class="mt-4">Inner for Fullset suit that made from cotton. Tailored &
+                    customized for you as well
                 </p>
             </div>
         </div>
