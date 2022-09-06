@@ -88,11 +88,8 @@
             <img class="mt-3" src="{{ asset('images/services/cheongsam.png') }}" alt="">
 
             <h3 class="mt-5 titlecus" style="color: #806e4f !important;">CHEONGSAM</h3>
-            <p class="center-justified">Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                sed diam nonummy nibh euismod
-                tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
-                nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-                Duis autem vel eum.</p>
+            <p class="center-justified">We prodivde Sateen Cheongsam for chinese tradition of Sangjit
+                ceremony</p>
             <img class="mt-5" src="{{ asset('images/services/pic1.png') }}" alt="">
             <img class="mt-3" src="{{ asset('images/services/pic2.png') }}" alt="">
             <img class="mt-3" src="{{ asset('images/services/pic3.png') }}" alt="">
