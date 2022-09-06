@@ -260,25 +260,28 @@ class AdminController extends Controller
 
     public function storeBlogs(Request $request)
     {
+        $a = new blog();
         if($request->file('frontimage')){
             $file = $request->file('frontimage');
             $filename = uniqid() . $file->getClientOriginalName();
             $file->move('/home/kayepngh/public_html/images/blogs/', $filename);
+            $a->front_image_path = 'images/blogs/' . $filename;
         }
 
         if($request->file('insideimage')){
             $file2 = $request->file('insideimage');
             $filename2 = uniqid() . $file2->getClientOriginalName();
             $file2->move('/home/kayepngh/public_html/images/blogs/', $filename2);
+            $a->back_image_path = 'images/blogs/' . $filename2;
         }
 
-        $a = new blog();
+        
 
         $a->title = $request->title;
         $a->caption = $request->caption;
         $a->date_string = date('d F Y');
-        $a->front_image_path = 'images/blogs/' . $filename;
-        $a->back_image_path = 'images/blogs/' . $filename2;
+        
+        
         $a->save();
 
         return redirect()->back();
