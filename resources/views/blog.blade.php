@@ -68,7 +68,11 @@
                 <img src="/{{ $b->image_path }}" alt="">
             </div>
         @else
-            @if ($content[$key]->type == 'image')
+            <div class="text-justify mt-4">
+                <p>{{ $b->text }}</p>
+                <p>{{ $key }}</p>
+            </div>
+            {{-- @if ($content[$key]->type == 'image')
                 <div class="text-justify mt-4">
                     <p>{{ $b->text }}</p>
                     <p>{{ $key }}</p>
@@ -78,7 +82,7 @@
                     <p>{{ $b->text }}</p>
                     <p>{{ $key }}</p>
                 </div>
-            @endif
+            @endif --}}
         @endif
     @endforeach
 
