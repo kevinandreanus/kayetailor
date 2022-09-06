@@ -85,6 +85,8 @@ Route::get('/blog/{id}', function($id){
 
     $content = $blog->contents;
 
+    dd($content);
+
     return view('blog', compact('blog', 'content'));
 });
 
