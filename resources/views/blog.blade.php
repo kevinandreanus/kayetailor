@@ -63,7 +63,8 @@
     <hr style="background-color: #806e4f; opacity: 100">
 
     @foreach ($content as $key => $b)
-        @if ($b->type == 'image')
+        <p>{{ $b->text }}</p>
+        {{-- @if ($b->type == 'image')
             <div class="text-center mt-2">
                 <img src="/{{ $b->image_path }}" alt="">
             </div>
@@ -83,7 +84,7 @@
                     <p>{{ $key }}</p>
                 </div>
             @endif --}}
-        @endif
+    @endif --}}
     @endforeach
 
 </div>
