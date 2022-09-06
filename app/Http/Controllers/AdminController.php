@@ -290,6 +290,7 @@ class AdminController extends Controller
     public function getBlogsEach($id)
     {
         blog::find($id)->delete();
+        dd($id);
 
         return redirect()->back();
     }
