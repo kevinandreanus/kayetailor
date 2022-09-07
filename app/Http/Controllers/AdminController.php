@@ -32,7 +32,7 @@ class AdminController extends Controller
     {
         $file = $request->file('fileTopBanner');
         $filename = uniqid() . $file->getClientOriginalName();
-        $file->move('/home/u1653387/public_html/images/carousel_image/', $filename);
+        $file->move('/home/kayepngh/public_html/images/carousel_image/', $filename);
 
         $new = new TopBanner();
         $new->image_path = '/images/carousel_image/' . $filename;
@@ -87,7 +87,7 @@ class AdminController extends Controller
     {
         $file = $request->file('image');
         $filename = uniqid() . $file->getClientOriginalName();
-        $file->move('/home/u1653387/public_html/images/core_values/', $filename);
+        $file->move('/home/kayepngh/public_html/images/core_values/', $filename);
 
         $edit = OurCoreValue::find($request->id);
 
@@ -120,7 +120,7 @@ class AdminController extends Controller
     {
         $file = $request->file('image');
         $filename = uniqid() . $file->getClientOriginalName();
-        $file->move('/home/u1653387/public_html/images/services/', $filename);
+        $file->move('/home/kayepngh/public_html/images/services/', $filename);
 
         $edit = Service::find($request->id);
 
@@ -148,7 +148,7 @@ class AdminController extends Controller
     {
         $file = $request->file('image');
         $filename = uniqid() . $file->getClientOriginalName();
-        $file->move('/home/u1653387/public_html/images/process/', $filename);
+        $file->move('/home/kayepngh/public_html/images/process/', $filename);
 
         $edit = Process::find($request->id);
 
@@ -176,7 +176,7 @@ class AdminController extends Controller
     {
         $file = $request->file('image');
         $filename = uniqid() . $file->getClientOriginalName();
-        $file->move('/home/u1653387/public_html/images/fabric_catalogue/', $filename);
+        $file->move('/home/kayepngh/public_html/images/fabric_catalogue/', $filename);
 
         $edit = FabricCatalogue::find($request->id);
 
@@ -205,7 +205,7 @@ class AdminController extends Controller
     {
         $file = $request->file('image');
         $filename = uniqid() . $file->getClientOriginalName();
-        $file->move('/home/u1653387/public_html/images/lookbook/', $filename);
+        $file->move('/home/kayepngh/public_html/images/lookbook/', $filename);
 
         $edit = LookBook::find($request->id);
 
@@ -290,7 +290,6 @@ class AdminController extends Controller
     public function getBlogsEach($id)
     {
         blog::find($id)->delete();
-        dd($id);
 
         return redirect()->back();
     }
@@ -319,7 +318,7 @@ class AdminController extends Controller
     {
         $file = $request->file('image');
         $filename = uniqid() . $file->getClientOriginalName();
-        $file->move('/home/u1653387/public_html/images/blogs/inside/', $filename);
+        $file->move('/home/kayepngh/public_html/images/blogs/inside/', $filename);
 
         $a = new BlogContent();
         $a->blog_id = $request->id;
