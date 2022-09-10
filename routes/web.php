@@ -22,6 +22,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// kayepngh
+// fsW1kZCWX3zC
+
 Auth::routes([
     'register' => false,
     'reset' => false,
