@@ -211,6 +211,9 @@ class AdminController extends Controller
         $file->move('/home/kayepngh/public_html/images/WoolSlider/', $filename);
 
         $sl = new WoolSlider();
+        // Check Biggest Order
+        $biggest = WoolSlider::orderBy('order', 'DESC')->first();
+        $sl->order = $biggest + 1;
         $sl->image_path = 'images/WoolSlider/' . $filename;
         $sl->save();
 
