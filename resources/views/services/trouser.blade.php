@@ -77,9 +77,6 @@
             </div>
         </div>
 
-        <div class="text-center mt-5">
-            <a href="" class="seemorebtn">SEE MORE</a>
-        </div>
     </div>
 
     <div class="container" id="mobileviewz">
@@ -94,8 +91,6 @@
             <img class="mt-3" src="{{ asset('images/services/pic3.png') }}" alt="">
             <br>
         </div>
-        <div class="text-center mt-5">
-            <a href="" class="seemorebtn">SEE MORE</a>
-        </div>
+
     </div>
 @endsection

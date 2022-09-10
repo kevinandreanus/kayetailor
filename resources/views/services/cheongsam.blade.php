@@ -56,7 +56,8 @@
         </div>
         <div class="container">
             <div class="aboutusdynamic pt-3 pb-5">
-                <p style="line-height: 200%;" class="mt-4">We prodivde Sateen Cheongsam for chinese tradition of Sangjit
+                <p style="line-height: 200%; text-align: center !important;" class="mt-4">We prodivde Sateen Cheongsam for
+                    chinese tradition of Sangjit
                     ceremony
                 </p>
             </div>
@@ -76,9 +77,6 @@
             </div>
         </div>
 
-        <div class="text-center mt-5">
-            <a href="" class="seemorebtn">SEE MORE</a>
-        </div>
     </div>
 
 
@@ -95,8 +93,6 @@
             <img class="mt-3" src="{{ asset('images/services/pic3.png') }}" alt="">
             <br>
         </div>
-        <div class="text-center mt-5">
-            <a href="" class="seemorebtn">SEE MORE</a>
-        </div>
+
     </div>
 @endsection

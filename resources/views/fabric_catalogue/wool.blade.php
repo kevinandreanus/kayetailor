@@ -112,7 +112,6 @@
                 right: 16px;
             }
         }
-
     </style>
 @endpush
 
@@ -131,42 +130,11 @@
         </div>
         <div class="container">
             <div class="owl-carousel owl-theme mt-5 aboutusdynamic">
-                <div class="item">
-                    <img class="carousel-item" src="{{ asset('images/fabric_catalogue/cerruti.png') }}" alt="">
-                </div>
-                <div class="item">
-                    <img class="carousel-item" src="{{ asset('images/fabric_catalogue/zara.png') }}" alt="">
-                </div>
-                <div class="item">
-                    <img class="carousel-item" src="{{ asset('images/fabric_catalogue/h&m.png') }}" alt="">
-                </div>
-                <div class="item">
-                    <img class="carousel-item" src="{{ asset('images/fabric_catalogue/bershka.png') }}" alt="">
-                </div>
-                <div class="item">
-                    <img class="carousel-item" src="{{ asset('images/fabric_catalogue/cerruti.png') }}" alt="">
-                </div>
-                <div class="item">
-                    <img class="carousel-item" src="{{ asset('images/fabric_catalogue/zara.png') }}" alt="">
-                </div>
-                <div class="item">
-                    <img class="carousel-item" src="{{ asset('images/fabric_catalogue/h&m.png') }}" alt="">
-                </div>
-                <div class="item">
-                    <img class="carousel-item" src="{{ asset('images/fabric_catalogue/bershka.png') }}" alt="">
-                </div>
-                <div class="item">
-                    <img class="carousel-item" src="{{ asset('images/fabric_catalogue/cerruti.png') }}" alt="">
-                </div>
-                <div class="item">
-                    <img class="carousel-item" src="{{ asset('images/fabric_catalogue/zara.png') }}" alt="">
-                </div>
-                <div class="item">
-                    <img class="carousel-item" src="{{ asset('images/fabric_catalogue/h&m.png') }}" alt="">
-                </div>
-                <div class="item">
-                    <img class="carousel-item" src="{{ asset('images/fabric_catalogue/bershka.png') }}" alt="">
-                </div>
+                @foreach ($wool_slider as $i)
+                    <div class="item">
+                        <img class="carousel-item" src="{{ asset($i->image_path) }}" alt="">
+                    </div>
+                @endforeach
             </div>
             <div class="aboutusdynamic pt-3 pb-5">
                 <p style="line-height: 200%;" class="mt-4">Wool is one of the most common fabrics for suits. Light
@@ -191,56 +159,21 @@
             </div>
         </div>
 
-        <div class="text-center mt-5">
-            <a href="" class="seemorebtn">SEE MORE</a>
-        </div>
     </div>
 
     <div class="container" id="mobileviewz">
         <div class="text-center" style="margin-top: 100px">
             <h3 style="color: #806e4f !important;" class="titlecus">FABRIC CATALOGUE</h3>
-            <h3 class="mt-5"
-                style="color: white; font-family: 'EB Garamond', serif;font-weight:700;letter-spacing:2px;">WOOL</h3>
-            <img class="mt-2" style="width: 100%" src="{{ asset('images/fabric_catalogue/wool2.PNG') }}"
-                alt="">
+            <h3 class="mt-5" style="color: white; font-family: 'EB Garamond', serif;font-weight:700;letter-spacing:2px;">
+                WOOL</h3>
+            <img class="mt-2" style="width: 100%" src="{{ asset('images/fabric_catalogue/wool2.PNG') }}" alt="">
 
             <div class="owl-carousel owl-theme mt-5">
-                <div class="item">
-                    <img class="carousel-item" src="{{ asset('images/fabric_catalogue/cerruti.png') }}" alt="">
-                </div>
-                <div class="item">
-                    <img class="carousel-item" src="{{ asset('images/fabric_catalogue/zara.png') }}" alt="">
-                </div>
-                <div class="item">
-                    <img class="carousel-item" src="{{ asset('images/fabric_catalogue/h&m.png') }}" alt="">
-                </div>
-                <div class="item">
-                    <img class="carousel-item" src="{{ asset('images/fabric_catalogue/bershka.png') }}" alt="">
-                </div>
-                <div class="item">
-                    <img class="carousel-item" src="{{ asset('images/fabric_catalogue/cerruti.png') }}" alt="">
-                </div>
-                <div class="item">
-                    <img class="carousel-item" src="{{ asset('images/fabric_catalogue/zara.png') }}" alt="">
-                </div>
-                <div class="item">
-                    <img class="carousel-item" src="{{ asset('images/fabric_catalogue/h&m.png') }}" alt="">
-                </div>
-                <div class="item">
-                    <img class="carousel-item" src="{{ asset('images/fabric_catalogue/bershka.png') }}" alt="">
-                </div>
-                <div class="item">
-                    <img class="carousel-item" src="{{ asset('images/fabric_catalogue/cerruti.png') }}" alt="">
-                </div>
-                <div class="item">
-                    <img class="carousel-item" src="{{ asset('images/fabric_catalogue/zara.png') }}" alt="">
-                </div>
-                <div class="item">
-                    <img class="carousel-item" src="{{ asset('images/fabric_catalogue/h&m.png') }}" alt="">
-                </div>
-                <div class="item">
-                    <img class="carousel-item" src="{{ asset('images/fabric_catalogue/bershka.png') }}" alt="">
-                </div>
+                @foreach ($wool_slider as $i)
+                    <div class="item">
+                        <img class="carousel-item" src="{{ asset($i->image_path) }}" alt="">
+                    </div>
+                @endforeach
             </div>
             <p style="text-align: justify" class="mt-5">Wool is one of the most common fabrics for suits. Light
                 weight wools are suitable for tropical climates, on the other side heavy weight wools are great to keep you
@@ -250,21 +183,14 @@
             <img class="mt-3 w-100" src="{{ asset('images/2.PNG') }}" alt=""><br>
             <img class="mt-3 w-100" src="{{ asset('images/3.PNG') }}" alt="">
         </div>
-        <div class="text-center mt-5">
-            <a href="" class="seemorebtn">SEE MORE</a>
-        </div>
+
     </div>
 @endsection
 
 @push('custom-js')
     <script>
         $(document).ready(function() {
-            // $(".owl-carousel").owlCarousel({
-            //     items: 4,
-            //     loop: true,
-            //     nav: true,
 
-            // });
             $('.owl-carousel').owlCarousel({
                 items: 4,
                 loop: true,
@@ -274,7 +200,7 @@
                 autoplayTimeout: 3000,
                 autoplayHoverPause: true,
                 slideBy: 'page'
-            })
+            });
 
         });
     </script>

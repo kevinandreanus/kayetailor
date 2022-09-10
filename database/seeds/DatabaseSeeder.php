@@ -9,6 +9,7 @@ use App\Process;
 use App\Service;
 use App\TopBanner;
 use App\User;
+use App\WoolSlider;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -98,6 +99,14 @@ class DatabaseSeeder extends Seeder
             $new->caption = $blogs_array_caption[$key];
             $new->date_string = $blogs_array_date_string[$key];
             $new->save();
+        }
+
+        $wslider_arr = ['images/fabric_catalogue/cerruti.png', 'images/fabric_catalogue/zara.png', 'images/fabric_catalogue/h&m.png', 'images/fabric_catalogue/bershka.png', 'images/fabric_catalogue/cerruti.png', 'images/fabric_catalogue/zara.png', 'images/fabric_catalogue/h&m.png', 'images/fabric_catalogue/bershka.png', 'images/fabric_catalogue/cerruti.png', 'images/fabric_catalogue/zara.png', 'images/fabric_catalogue/h&m.png', 'images/fabric_catalogue/bershka.png'];
+        for($i = 0; $i < 12; $i++){
+            $wslider = new WoolSlider();
+            $wslider->order = $i + 1;
+            $wslider->image_path = $wslider_arr[$i];
+            $wslider->save();
         }
     }
 }

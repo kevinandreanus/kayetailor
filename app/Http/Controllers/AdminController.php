@@ -11,6 +11,7 @@ use App\OurCoreValue;
 use App\Process;
 use App\Service;
 use App\TopBanner;
+use App\WoolSlider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -172,6 +173,50 @@ class AdminController extends Controller
         return ['data' => $data];
     }
 
+    public function changeOrderWoolSlider($from, $to)
+    {
+        if($from < $to){
+            for($i = $from + 1; $i <= $to; $i++){
+                $sl = WoolSlider::where('order', $i)->first();
+                $sl->order = $i - 1;
+                $sl->image_path = $i - 1;
+                $sl->save();
+            }
+            $sl = WoolSlider::where('order', $from)->first();
+            $sl->order = $to;
+            $sl->save();
+
+            return 1;
+        }
+        if($from > $to){
+            $sl = WoolSlider::where('order', $from)->first();
+            $sl->order = $to;
+            $sl->save();
+
+            for($i = $from - 1; $i >= $to; $i--){
+                $sl = WoolSlider::where('order', $i)->first();
+                $sl->order = $i + 1;
+                $sl->save();
+            }
+            
+            
+            return 2;
+        }
+    }
+
+    public function addWoolSlider(Request $request)
+    {
+        $file = $request->file('image');
+        $filename = uniqid() . $file->getClientOriginalName();
+        $file->move('/home/kayepngh/public_html/images/WoolSlider/', $filename);
+
+        $sl = new WoolSlider();
+        $sl->image_path = 'images/WoolSlider/' . $filename;
+        $sl->save();
+
+        return redirect()->back();
+    }
+
     public function storeFabricHomepage(Request $request)
     {
         $file = $request->file('image');
@@ -301,6 +346,31 @@ class AdminController extends Controller
         $content = $blog->contents;
 
         return view('admin.editblogpage', compact('blog', 'content'));
+    }
+
+    public function editBlog(Request $request)
+    {
+        $blog = blog::find($request->id);
+
+        if($request->frontimage){
+            $file = $request->file('frontimage');
+            $filename = uniqid() . $file->getClientOriginalName();
+            $file->move('/home/kayepngh/public_html/images/blogs/', $filename);
+            $blog->front_image_path = 'images/blogs/' . $filename;
+        }
+        if($request->insideimage){
+            $file = $request->file('insideimage');
+            $filename = uniqid() . $file->getClientOriginalName();
+            $file->move('/home/kayepngh/public_html/images/blogs/', $filename);
+            $blog->back_image_path = 'images/blogs/' . $filename;
+        }
+
+        $blog->title = $request->title;
+        $blog->caption = $request->caption;
+        
+        $blog->save();
+
+        return redirect()->back();
     }
 
     public function addParagraph(Request $request)

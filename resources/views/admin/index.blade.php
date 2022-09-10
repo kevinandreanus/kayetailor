@@ -12,8 +12,39 @@
         table.dataTable tbody td {
             padding: 8px 18px !important;
         }
-
     </style>
+    <style>
+        .carousel-item {
+            height: 40px;
+            width: 100px !important;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .carousel-item {
+                height: 30px;
+                width: 60px !important;
+            }
+        }
+
+        .owl-item {
+            display: flex;
+            justify-content: center;
+        }
+
+
+
+        .owl-carousel .owl-nav {
+            overflow: hidden;
+            height: 0px;
+        }
+
+        .owl-theme .owl-dots .owl-dot.active span,
+        .owl-theme .owl-dots .owl-dot:hover span {
+            background: #5110e9;
+        }
+    </style>
+    <link rel="stylesheet" href="{{ asset('library/owlcarousel/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('library/owlcarousel/owl.theme.default.min.css') }}">
 </head>
 
 <body>
@@ -204,13 +235,15 @@
                             <div class="input-group mb-3">
                                 <div class="custom-file mt-3">
                                     <input type="file" class="custom-file-input" id="ahsiap" name="image">
-                                    <label id="ahsiap-label" class="custom-file-label" for="ahsiap">Choose file</label>
+                                    <label id="ahsiap-label" class="custom-file-label" for="ahsiap">Choose
+                                        file</label>
                                 </div>
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" id="submitServicesHomepage" class="btn btn-primary btn-sm">Submit</button>
+                        <button type="button" id="submitServicesHomepage"
+                            class="btn btn-primary btn-sm">Submit</button>
                     </div>
                 </div>
             </div>
@@ -255,7 +288,8 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" id="submitProcessHomepage" class="btn btn-primary btn-sm">Submit</button>
+                        <button type="button" id="submitProcessHomepage"
+                            class="btn btn-primary btn-sm">Submit</button>
                     </div>
                 </div>
             </div>
@@ -263,6 +297,63 @@
 
         <hr>
         <h3><u>Fabric Catalogue Homepage</u></h3>
+        <div style="text-align: right">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-warning btn-sm" data-toggle="modal"
+                data-target="#modalWoolSlider">
+                Edit <b>Wool</b> Slider
+            </button>
+        </div>
+        <!-- Modal Edit Wool Slider-->
+        <div class="modal fade" id="modalWoolSlider" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Edit Wool Slider</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <button style="float: right" class="btn btn-primary btn-sm" data-toggle="modal"
+                            data-target="#modalAddWoolSlider">Add</button><br>
+                        This image is <b>Dragable</b><br><br>
+                        <ol id="items">
+                            @foreach ($wool_slider as $key => $i)
+                                <li data-id="{{ $i }}"><img style="width: 50px; height:50px;"
+                                        src="{{ asset($i->image_path) }}" alt=""></li>
+                            @endforeach
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{-- Modal Add Wool Slider --}}
+        <div class="modal fade" id="modalAddWoolSlider" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add Wool Slider</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/admin/woolslider/add" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <div class="input-group mb-3">
+                                <div class="custom-file mt-3">
+                                    <input type="file" class="custom-file-input" name="image">
+                                    <label class="custom-file-label" for="ahsiap">Choose file</label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
         <table id="fabrichomepage">
             <thead>
                 <tr>
@@ -305,7 +396,8 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" id="submitFabricHomepage" class="btn btn-primary btn-sm">Submit</button>
+                        <button type="button" id="submitFabricHomepage"
+                            class="btn btn-primary btn-sm">Submit</button>
                     </div>
                 </div>
             </div>
@@ -350,7 +442,8 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" id="submitLookbookHomepage" class="btn btn-primary btn-sm">Submit</button>
+                        <button type="button" id="submitLookbookHomepage"
+                            class="btn btn-primary btn-sm">Submit</button>
                     </div>
                 </div>
             </div>
@@ -381,8 +474,8 @@
             </tbody>
         </table>
         <!-- Modal -->
-        <div class="modal fade" id="modalAddBlogs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
+        <div class="modal fade" id="modalAddBlogs" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -401,14 +494,16 @@
                             <label for="" style="margin-bottom: 0">Front Image</label>
                             <div class="input-group mb-3">
                                 <div class="custom-file mt-1">
-                                    <input type="file" class="custom-file-input" name="frontimage" id="prosess-f">
+                                    <input type="file" class="custom-file-input" name="frontimage"
+                                        id="prosess-f">
                                     <label class="custom-file-label" for="ahsiap">Choose file</label>
                                 </div>
                             </div>
                             <label for="" style="margin-bottom: 0">Back Image</label>
                             <div class="input-group mb-3">
                                 <div class="custom-file mt-1">
-                                    <input type="file" class="custom-file-input" name="insideimage" id="prosess-f">
+                                    <input type="file" class="custom-file-input" name="insideimage"
+                                        id="prosess-f">
                                     <label class="custom-file-label" for="ahsiap">Choose file</label>
                                 </div>
                             </div>
@@ -426,13 +521,82 @@
                 </div>
             </div>
         </div>
+        {{-- Blog Edit Title, aption, Front Image, and Back Image --}}
+        <div class="modal fade" id="modalEditBlogs" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Edit Blogs</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formEditBlogs" action="/admin/blogs/edit" method="POST"
+                            enctype="multipart/form-data">
+                            @csrf
+                            <input type="text" name="id" id="idEditBlg" hidden>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Title</label>
+                                <input type="text" class="form-control" name="title" id="titleEdtBlg">
+                            </div>
+                            <label for="" style="margin-bottom: 0">Front Image</label>
+                            <div class="input-group mb-3">
+                                <div class="custom-file mt-1">
+                                    <input type="file" class="custom-file-input" name="frontimage"
+                                        id="prosess-f">
+                                    <label class="custom-file-label" for="ahsiap">Choose file</label>
+                                </div>
+                            </div>
+                            <label for="" style="margin-bottom: 0">Back Image</label>
+                            <div class="input-group mb-3">
+                                <div class="custom-file mt-1">
+                                    <input type="file" class="custom-file-input" name="insideimage"
+                                        id="prosess-f">
+                                    <label class="custom-file-label" for="ahsiap">Choose file</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Caption</label>
+                                <textarea type="text" class="form-control" name="caption" id="captionEdtBlg"></textarea>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="submitEditBlogs" class="btn btn-primary btn-sm">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="mb-5"></div>
     </div>
 
     <script type="text/javascript" src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="{{ asset('library/owlcarousel/owl.carousel.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
     <script>
+        var Sortable = new Sortable(items, {
+            animation: 150,
+            dataIdAttr: 'data-id',
+            ghostClass: 'blue-background-class',
+            onUpdate: function( /**Event*/ evt) {
+                var from = evt.oldIndex + 1;
+                var to = evt.newIndex + 1;
+                console.log(from, to);
+                $.ajax({
+                    url: '/admin/woolslider/' + from + '/' + to,
+                    success: function(res) {
+                        console.log(res);
+                    }
+                })
+            },
+        });
+
         $('#topbannerhomepage').DataTable({
             lengthChange: false,
             searching: false,
@@ -449,7 +613,8 @@
                 {
                     'data': 'image_path',
                     'render': function(data, type, row) {
-                        return '<a target="_blank" href="' + data + '">View</a>'
+                        return '<a target="_blank" href="' + data + '"><img src="' + data +
+                            '" style="width: 150px; height:90px;"></a>'
                     }
                 },
                 {
@@ -519,7 +684,8 @@
                 {
                     'data': 'image_path',
                     'render': function(data, type, row) {
-                        return '<a target="_blank" href="' + data + '">View</a>'
+                        return '<a target="_blank" href="' + data + '"><img src="' + data +
+                            '" style="width: 90px; height:120px;"></a></a>'
                     }
                 },
                 {
@@ -584,7 +750,8 @@
                 {
                     'data': 'image_path',
                     'render': function(data, type, row) {
-                        return '<a target="_blank" href="' + data + '">View</a>'
+                        return '<a target="_blank" href="' + data + '"><img src="' + data +
+                            '" style="width: 120px; height:120px;"></a></a>'
                     }
                 },
                 {
@@ -627,7 +794,8 @@
                 {
                     'data': 'image_path',
                     'render': function(data, type, row) {
-                        return '<a target="_blank" href="' + data + '">View</a>'
+                        return '<a target="_blank" href="' + data + '"><img src="' + data +
+                            '" style="width: 400px; height:100px;"></a></a>'
                     }
                 },
                 {
@@ -670,7 +838,8 @@
                 {
                     'data': 'image_path',
                     'render': function(data, type, row) {
-                        return '<a target="_blank" href="' + data + '">View</a>'
+                        return '<a target="_blank" href="' + data + '"><img src="' + data +
+                            '" style="width: 90px; height:90px;"></a></a>'
                     }
                 },
                 {
@@ -717,7 +886,8 @@
                 {
                     'data': 'image_path',
                     'render': function(data, type, row) {
-                        return '<a target="_blank" href="' + data + '">View</a>'
+                        return '<a target="_blank" href="' + data + '"><img src="' + data +
+                            '" style="width: 90px; height:90px;"></a></a>'
                     }
                 },
                 {
@@ -758,13 +928,15 @@
                 {
                     'data': 'front_image_path',
                     'render': function(data, type, row) {
-                        return '<a target="_blank" href="' + data + '">View</a>'
+                        return '<a target="_blank" href="' + data + '"><img src="' + data +
+                            '" style="width: 90px; height:90px;"></a></a>'
                     }
                 },
                 {
                     'data': 'back_image_path',
                     'render': function(data, type, row) {
-                        return '<a target="_blank" href="' + data + '">View</a>'
+                        return '<a target="_blank" href="' + data + '"><img src="' + data +
+                            '" style="width: 150px; height:90px;"></a></a>'
                     }
                 },
                 {
@@ -782,10 +954,32 @@
                         return '<a class="btn btn-danger btn-sm" href="/admin/blogs/' +
                             data +
                             '">Delete</a><a class="btn btn-info btn-sm" href="/admin/blogs/page/' +
-                            data + '">Edit Blog Page</a>'
+                            data +
+                            '">Edit Blog Page</a><button type="button" class="btn btn-warning btn-sm btnEditBlog" data-id="' +
+                            data + '">Edit</button>'
                     }
                 }
             ]
+        });
+
+        $('body').on('click', '.btnEditBlog', function() {
+            var title = $(this).parent().prev().prev().prev().text();
+            var caption = $(this).parent().prev().prev().text();
+            var id = $(this).data("id");
+            $('#captionEdtBlg').val(caption);
+            $('#titleEdtBlg').val(title);
+            $('#idEditBlg').val(id);
+            $('#modalEditBlogs').modal("show");
+            console.log();
+        });
+
+        $('#modalEditBlogs').on('hidden.bs.modal', function() {
+            $('#captionEdtBlg').val('');
+            $('#titleEdtBlg').val('');
+        });
+
+        $('#submitEditBlogs').on('click', function() {
+            $('#formEditBlogs').submit();
         });
 
         $('#submitBlogs').on('click', function() {

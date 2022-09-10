@@ -29,7 +29,7 @@
             @endif
         @endif
     @endforeach
-    <div class="text-center mt-5">
+    <div class="text-center mt-5" style="margin-top: 100px !important;">
         <button type="button" class="seemorebtn" data-toggle="modal" data-target="#modalAddImage">
             Add Image
         </button>
