@@ -68,7 +68,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin/fabrichomepage/{id}', 'AdminController@getFabricValues');
     Route::post('/admin/fabrichomepage', 'AdminController@storeFabricHomepage');
     Route::get('/admin/woolslider/{from}/{to}', 'AdminController@changeOrderWoolSlider');
-    Route::get('/admin/woolslider/add', 'AdminController@addWoolSlider');
+    Route::post('/admin/woolslider/add', 'AdminController@addWoolSlider');
     
 
     Route::get('/admin/lookbookhomepage/list', 'AdminController@lookbookHomepageList');
