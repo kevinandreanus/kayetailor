@@ -349,6 +349,7 @@
                                     <label class="custom-file-label" for="ahsiap">Choose file</label>
                                 </div>
                             </div>
+                            <button class="btn btn-primary btn-sm" type="submit">Add</button>
                         </form>
                     </div>
                 </div>
