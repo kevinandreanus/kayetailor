@@ -175,29 +175,31 @@ class AdminController extends Controller
 
     public function changeOrderWoolSlider($from, $to)
     {
+        $sli = WoolSlider::where('order', $from)->first();
         if($from < $to){
             for($i = $from + 1; $i <= $to; $i++){
                 $sl = WoolSlider::where('order', $i)->first();
                 $sl->order = $i - 1;
-                $sl->image_path = $i - 1;
                 $sl->save();
             }
-            $sl = WoolSlider::where('order', $from)->first();
-            $sl->order = $to;
-            $sl->save();
+            
+            $sli->order = $to;
+            $sli->save();
 
             return 1;
         }
         if($from > $to){
-            $sl = WoolSlider::where('order', $from)->first();
-            $sl->order = $to;
-            $sl->save();
+            $sli = WoolSlider::where('order', $from)->first();
+            
 
             for($i = $from - 1; $i >= $to; $i--){
                 $sl = WoolSlider::where('order', $i)->first();
                 $sl->order = $i + 1;
                 $sl->save();
             }
+
+            $sli->order = $to;
+            $sli->save();
             
             
             return 2;
@@ -218,6 +220,13 @@ class AdminController extends Controller
         $sl->save();
 
         return redirect()->back();
+    }
+
+    public function deleteWoolSlider($order)
+    {
+        $sl = WoolSlider::where('order', $order)->first()->delete();
+
+        return 1;
     }
 
     public function storeFabricHomepage(Request $request)

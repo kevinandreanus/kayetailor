@@ -321,10 +321,12 @@
                         This image is <b>Dragable</b><br><br>
                         <ol id="items">
                             @foreach ($wool_slider as $key => $i)
-                                <li data-id="{{ $i }}"><img style="width: 50px; height:50px;"
+                                <li data-id="{{ $i->id }}"><img style="width: 50px; height:50px;"
                                         src="{{ asset($i->image_path) }}" alt=""></li>
                             @endforeach
                         </ol>
+                        <input type="number" class="form-control" placeholder="No." id="wantToDeleteID">
+                        <a id="deleteWoolSlider" class="btn btn-danger btn-sm">Delete</a>
                     </div>
                 </div>
             </div>
@@ -985,6 +987,17 @@
 
         $('#submitBlogs').on('click', function() {
             $('#formBlogs').submit();
+        });
+
+        $('#deleteWoolSlider').on('click', function() {
+            var order = $('#wantToDeleteID').val();
+
+            $.ajax({
+                url: "/admin/wooldelete/" + order,
+                success: function(res) {
+                    $('#items').children().eq(order - 1).remove();
+                }
+            });
         });
     </script>
 </body>
