@@ -95,8 +95,9 @@
                                 @csrf
                                 <input type="text" value="1" name="id" hidden>
                                 <div class="mb-3">
-                                    <input name="image" style="height: 37px;" class="form-control" type="file"
-                                        id="formFile">
+                                    <input name="image" style="height: 37px;" class="form-control formFilez"
+                                        type="file" id="formFile">
+                                    <label class="custom-file-label" for="inputGroupFile02"></label>
                                 </div>
                                 <hr>
                                 <button type="submit" style="float: right" class="btn btn-primary btn-sm">Submit</button>
@@ -192,9 +193,10 @@
                             enctype="multipart/form-data">
                             @csrf
                             <input type="text" value="" id="idPhotoEdt" name="id" hidden>
-                            <div class="mb-3">
-                                <input name="image" style="height: 37px;" class="form-control" type="file"
-                                    id="formFile">
+                            <div class="mb-3 text-center">
+                                <input name="image" style="height: 37px;" class="form-control formFilez"
+                                    type="file" id="formFilez">
+                                <label class="custom-file-label" for="inputGroupFile02"></label>
                             </div>
                             <hr>
                             <button type="submit" style="float: right" class="btn btn-primary btn-sm">Submit</button>
@@ -361,5 +363,11 @@
             $('#idPhotoEdt').val($(this).data('id'));
             $('#modalEditPhto').modal("show");
         });
+
+        $('.formFilez').on('change', function() {
+            //get the file name
+            var fileName = $(this).val().replace('C:\\fakepath\\', " ");
+            $(this).next('.custom-file-label').html(fileName);
+        })
     </script>
 @endpush
