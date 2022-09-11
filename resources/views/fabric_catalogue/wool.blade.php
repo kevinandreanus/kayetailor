@@ -157,6 +157,12 @@
     @endif
     <div id="desktopviewz">
         <div class="bannertopz">
+            @if (Auth::user())
+                <div class="top-right-special">
+                    <button class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#modalMainImg"
+                        id="edtMainImgBtn">Edit</button>
+                </div>
+            @endif
             <img src="{{ asset($data->main_image_path) }}" alt="" width="100%" style="height: 650px;">
             <div class="centered">
                 <h3 style="color: #ac956d !important; font-size: 40px !important;" class="titlecus">FABRIC CATALOGUE
