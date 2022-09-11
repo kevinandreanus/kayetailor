@@ -186,6 +186,37 @@
                 </div>
             </div>
         </div>
+
+        @if (Auth::user())
+            <hr>
+            <div class="text-center">
+                <h3 style="color: #ac956d !important; font-size: 40px !important;" class="titlecus">Mobile Image</h3>
+                <div class="container">
+                    @foreach ($mobile as $key => $i)
+                        @if ($key === 0)
+                            <div class="container-img">
+                                <img class="mt-5" data-id="{{ $i->id }}" src="{{ asset($i->image_path) }}"
+                                    alt="">
+                                <div class="top-right-mobile"><button href=""
+                                        class="btn btn-secondary btn-sm mt-5 edtPhotoMbl"
+                                        data-id="{{ $i->id }}">Edit</button>
+                                </div>
+                            </div>
+                        @else
+                            <div class="container-img">
+                                <img class="mt-3" data-id="{{ $i->id }}" src="{{ asset($i->image_path) }}"
+                                    alt="">
+                                <div class="top-right-mobile"><button href=""
+                                        class="btn btn-secondary btn-sm mt-3 edtPhotoMbl"
+                                        data-id="{{ $i->id }}">Edit</button>
+                                </div>
+                            </div>
+                        @endif
+                    @endforeach
+                </div>
+            </div>
+        @endif
+
         {{-- Modal Edit Photo Desktop --}}
         <div class="modal fade" id="modalEditPhto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
@@ -239,36 +270,8 @@
             </div>
         </div>
         {{-- End of Modal --}}
+
     </div>
-    @if (Auth::user())
-        <hr>
-        <div class="text-center">
-            <h3 style="color: #ac956d !important; font-size: 40px !important;" class="titlecus">Mobile Image</h3>
-            <div class="container">
-                @foreach ($mobile as $key => $i)
-                    @if ($key === 0)
-                        <div class="container-img">
-                            <img class="mt-5" data-id="{{ $i->id }}" src="{{ asset($i->image_path) }}"
-                                alt="">
-                            <div class="top-right-mobile"><button href=""
-                                    class="btn btn-secondary btn-sm mt-5 edtPhotoMbl"
-                                    data-id="{{ $i->id }}">Edit</button>
-                            </div>
-                        </div>
-                    @else
-                        <div class="container-img">
-                            <img class="mt-3" data-id="{{ $i->id }}" src="{{ asset($i->image_path) }}"
-                                alt="">
-                            <div class="top-right-mobile"><button href=""
-                                    class="btn btn-secondary btn-sm mt-3 edtPhotoMbl"
-                                    data-id="{{ $i->id }}">Edit</button>
-                            </div>
-                        </div>
-                    @endif
-                @endforeach
-            </div>
-        </div>
-    @endif
 
 
     <div class="container" id="mobileviewz">
