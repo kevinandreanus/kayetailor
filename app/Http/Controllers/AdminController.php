@@ -217,7 +217,7 @@ class AdminController extends Controller
         $sl = new WoolSlider();
         // Check Biggest Order
         $biggest = WoolSlider::orderBy('order', 'DESC')->first();
-        $sl->order = $biggest + 1;
+        $sl->order = $biggest->order + 1;
         $sl->image_path = 'images/WoolSlider/' . $filename;
         $sl->save();
 
