@@ -78,14 +78,14 @@
                             <form id="formTopBanner" action="/admin/editServiceMainImageInside" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
-                                <input type="text" value="1" name="id">
+                                <input type="text" value="1" name="id" hidden>
                                 <div class="mb-3">
                                     <input name="image" style="height: 37px;" class="form-control" type="file"
                                         id="formFile">
                                 </div>
+                                <hr>
+                                <button type="submit" style="float: right" class="btn btn-primary btn-sm">Submit</button>
                             </form>
-                            <hr>
-                            <button type="submit" style="float: right" class="btn btn-primary btn-sm">Submit</button>
                         </div>
                     </div>
                 </div>
