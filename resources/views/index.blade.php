@@ -189,17 +189,17 @@
         <div class="text-center">
             <div class="d-flex justify-content-center pt-4">
                 <div style="margin-right: 10px">
-                    <a href="/fabric-catalogue/wool"><img style="width: 360px" class="mb-3 fabricnic"
+                    <a href="/fabric-catalogue/wool"><img style="width: 360px; height: 350px;" class="mb-3 fabricnic"
                             src="{{ $fabric[0]->image_path ?? '' }}" alt=""></a><br>
                     <a class="fabricbtn" href="/fabric-catalogue/wool">{{ $fabric[0]->text ?? '' }}</a>
                 </div>
                 <div style="margin-right: 10px">
-                    <a href="/fabric-catalogue/semiwool"><img style="width: 360px" class="mb-3 fabricnic"
+                    <a href="/fabric-catalogue/semiwool"><img style="width: 360px; height: 350px;" class="mb-3 fabricnic"
                             src="{{ $fabric[1]->image_path ?? '' }}" alt=""></a><br>
                     <a class="fabricbtn" href="/fabric-catalogue/semiwool">{{ $fabric[1]->text ?? '' }}</a>
                 </div>
                 <div>
-                    <a href="/fabric-catalogue/linen"><img style="width: 360px" class="mb-3 fabricnic"
+                    <a href="/fabric-catalogue/linen"><img style="width: 360px; height: 350px;" class="mb-3 fabricnic"
                             src="{{ $fabric[2]->image_path ?? '' }}" alt=""></a><br>
                     <a class="fabricbtn" href="/fabric-catalogue/linen">{{ $fabric[2]->text ?? '' }}</a>
                 </div>
@@ -212,20 +212,20 @@
         <div class="text-center">
             <div class="d-flex justify-content-center pt-4" id="lookbookdesktop">
                 <div style="margin-right: 10px">
-                    <a href="/lookbook/wedding"><img style="width: 360px" class="lookbookimg lookbooknich"
-                            src="{{ $lookbook[0]->image_path }}" alt=""></a>
+                    <a href="/lookbook/wedding"><img style="width: 360px; height: 320px;"
+                            class="lookbookimg lookbooknich" src="{{ $lookbook[0]->image_path }}" alt=""></a>
                 </div>
                 <div style="margin-right: 10px">
-                    <a href="/lookbook/daily"><img style="width: 360px" class="lookbookimg lookbooknich"
+                    <a href="/lookbook/daily"><img style="width: 360px; height: 320px;" class="lookbookimg lookbooknich"
                             src="{{ $lookbook[1]->image_path }}" alt=""></a>
                 </div>
                 <div style="margin-right: 10px">
-                    <a href="/lookbook/casual"><img style="width: 360px" class="lookbookimg lookbooknich"
+                    <a href="/lookbook/casual"><img style="width: 360px; height: 320px;" class="lookbookimg lookbooknich"
                             src="{{ $lookbook[2]->image_path }}" alt=""></a>
                 </div>
                 <div>
-                    <a href="/lookbook/ceremony"><img style="width: 360px" class="lookbookimg lookbooknich"
-                            src="{{ $lookbook[3]->image_path }}" alt=""></a>
+                    <a href="/lookbook/ceremony"><img style="width: 360px; height: 320px;"
+                            class="lookbookimg lookbooknich" src="{{ $lookbook[3]->image_path }}" alt=""></a>
                 </div>
             </div>
             <div class="row mt-5 lookbookmobile">
