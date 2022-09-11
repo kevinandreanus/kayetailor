@@ -53,11 +53,26 @@
                 top: 8px;
                 right: 16px;
             }
+
+            input,
+            select,
+            textarea {
+                color: white;
+            }
+
+            .form-control {
+                color: white !important;
+            }
         }
     </style>
 @endpush
 
 @section('content')
+    @if (Auth::user())
+        <input type="text" id="isAdmin" hidden value="1">
+    @else
+        <input type="text" id="isAdmin" hidden value="0">
+    @endif
     <div id="desktopviewz">
         <div class="bannertopz">
             @if (Auth::user())
@@ -101,67 +116,62 @@
 
         </div>
 
-        <div class="text-center mt-5 mb-4" style="margin-top: 100px !important;">
+        <div id="titleContainer" class="text-center mt-5 mb-4" style="margin-top: 100px !important;">
             @if (Auth::user())
-                <h3 style="color: #806e4f !important;" class="titlecus">{{ strtoupper($main_image->title) }} <a
-                        href="" class="btn btn-secondary btn-sm mb-2">Edit</a></h3>
+                <h3 style="color: #806e4f !important;" class="titlecus" id="editableContentTitle">
+                    {{ strtoupper($main_image->title) }} <button id="editTitle"
+                        class="btn btn-secondary btn-sm mb-2">Edit</button></h3>
             @else
                 <h3 style="color: #806e4f !important;" class="titlecus">{{ strtoupper($main_image->title) }}</h3>
             @endif
         </div>
 
         <div class="container">
-            <div class="aboutusdynamic pt-3 pb-5">
-                @foreach ($main_image->paragraphs as $i)
-                    <p style="line-height: 200%;" class="mt-4">{{ $i->paragraph }}
-                        @if (Auth::user())
-                            <a href="" class="btn btn-secondary btn-sm mb-2">Edit</a>
-                        @endif
-                    </p>
-                @endforeach
-                @if (Auth::user())
-                    <a href="" class="btn btn-primary btn-sm mb-2">Add Paragraph</a>
-                @endif
+            <div class="aboutusdynamic pt-3 pb-5" id="containerMainss">
+                <div id="paragraphContainer">
+                    @foreach ($main_image->paragraphs as $i)
+                        <p style="line-height: 200%;" class="mt-4 paragraphEditable" data-id="{{ $i->id }}">
+                            {{ $i->paragraph }}
+                            @if (Auth::user())
+                                <button class="btn btn-secondary btn-sm mb-2 paragraphEditableBtn">Edit</button>
+                                <a href="/admin/deleteServiceParagraph/{{ $i->id }}"
+                                    class="btn btn-danger btn-sm mb-2 paragraphDeleteBtn"
+                                    data-id="{{ $i->id }}">Delete</a>
+                            @endif
+                        </p>
+                    @endforeach
+                </div>
 
+                @if (Auth::user())
+                    <button id="addParagraphBtn" class="btn btn-primary btn-sm mb-2">Add
+                        Paragraph</button>
+                @endif
             </div>
         </div>
 
         <div class="container text-center">
             <div class="row">
                 <div class="col-sm-12 col-md-7" style="margin: 0; padding: 5;">
-                    <div class="container-img">
-                        <img class="mt-2" src="{{ asset('images/services/pic1.png') }}" alt="">
-                        @if (Auth::user())
-                            <div class="top-right"><a href="" class="btn btn-secondary btn-sm mt-3">Edit</a></div>
-                        @endif
-                    </div>
-                    <div class="container-img">
-                        <img class="mt-2" src="{{ asset('images/services/pic1.png') }}" alt="">
-                        @if (Auth::user())
-                            <div class="top-right"><a href="" class="btn btn-secondary btn-sm mt-3">Edit</a></div>
-                        @endif
-                    </div>
+                    @foreach ($desktop_1 as $i)
+                        <div class="container-img">
+                            <img class="mt-2" data-id="1" src="{{ asset($i->image_path) }}" alt="">
+                            @if (Auth::user())
+                                <div class="top-right"><a href="" class="btn btn-secondary btn-sm mt-3">Edit</a>
+                                </div>
+                            @endif
+                        </div>
+                    @endforeach
                 </div>
                 <div class="col-sm-6 col-md-5" style="margin: 0; padding: 5;">
-                    <div class="container-img">
-                        <img class="mt-2" src="{{ asset('images/services/pic2.png') }}" alt="">
-                        @if (Auth::user())
-                            <div class="top-right"><a href="" class="btn btn-secondary btn-sm mt-3">Edit</a></div>
-                        @endif
-                    </div>
-                    <div class="container-img">
-                        <img class="mt-2" src="{{ asset('images/services/pic3.png') }}" alt="">
-                        @if (Auth::user())
-                            <div class="top-right"><a href="" class="btn btn-secondary btn-sm mt-3">Edit</a></div>
-                        @endif
-                    </div>
-                    <div class="container-img">
-                        <img class="mt-2" src="{{ asset('images/services/pic3.png') }}" alt="">
-                        @if (Auth::user())
-                            <div class="top-right"><a href="" class="btn btn-secondary btn-sm mt-3">Edit</a></div>
-                        @endif
-                    </div>
-
+                    @foreach ($desktop_2 as $i)
+                        <div class="container-img">
+                            <img class="mt-2" data-id="3" src="{{ asset($i->image_path) }}" alt="">
+                            @if (Auth::user())
+                                <div class="top-right"><a href="" class="btn btn-secondary btn-sm mt-3">Edit</a>
+                                </div>
+                            @endif
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -172,14 +182,15 @@
     <div class="container" id="mobileviewz">
         <div class="text-center" style="margin-top: 100px">
             <h3 style="color: #806e4f !important;" class="titlecus">SERVICES</h3>
-            <img class="mt-3" src="{{ asset('images/services/pic2.png') }}" alt="">
+            <img class="mt-3" src="{{ asset($main_image->main_image_path) }}" alt="">
 
-            <h3 class="mt-5 titlecus" style="color: #806e4f !important;">SUIT</h3>
-            <p class="lookBookP">For wedding or business occasion, we make modern and classic fit suit.
-                Shirt: Inner for Fullset suit that made from cotton. Tailored & customized for you as well</p>
-            <img class="mt-5" src="{{ asset('images/services/pic1.png') }}" alt="">
-            <img class="mt-3" src="{{ asset('images/services/pic2.png') }}" alt="">
-            <img class="mt-3" src="{{ asset('images/services/pic3.png') }}" alt="">
+            <h3 class="mt-5 titlecus" style="color: #806e4f !important;">{{ strtoupper($main_image->title) }}</h3>
+            @foreach ($main_image->paragraphs as $i)
+                <p class="lookBookP">{{ $i->paragraph }}</p>
+            @endforeach
+            <img class="mt-5" data-id="6" src="{{ asset('images/services/pic1.png') }}" alt="">
+            <img class="mt-3" data-id="7" src="{{ asset('images/services/pic2.png') }}" alt="">
+            <img class="mt-3" data-id="8" src="{{ asset('images/services/pic3.png') }}" alt="">
             <br>
         </div>
 
@@ -188,8 +199,128 @@
 
 @push('custom-js')
     <script>
+        var isAdmin = $('#isAdmin').val();
+
         $('#edtMainImgBtn').on('click', function() {
             $('#modalMainImg').modal("show");
+        });
+
+        $('#titleContainer').on('click', '#editTitle', function() {
+            $(this).html('');
+
+            var text = $('#editableContentTitle').text().trim();
+            $('#editableContentTitle').html("<input id='editTitleInput' type='text' value='" +
+                text + "'></input>")
+        });
+
+        $('#titleContainer').on('focusout', '#editTitleInput', function() {
+            var text = $('#editTitleInput').val();
+
+            $.ajax({
+                type: "POST",
+                url: '/admin/editServiceTitle',
+                data: {
+                    'id': 1,
+                    'text': text
+                },
+                success: function(res) {
+                    $('#editableContentTitle').html(`<h3 style="color: #806e4f !important;" class="titlecus" id="editableContentTitle">
+                    ` + text + ` <button id="editTitle"
+                        class="btn btn-secondary btn-sm mb-2">Edit</button></h3>`);
+                }
+            });
+
+        });
+
+        $('#paragraphContainer').on('click', '.paragraphEditableBtn', function() {
+            $(this).html('');
+            var id = $(this).closest('.paragraphEditable').data('id');
+            $('.paragraphDeleteBtn[data-id="' + id + '"]').remove();
+
+
+            var text = $(this).closest('.paragraphEditable').text().trim();
+
+
+            $(this).closest('.paragraphEditable').html(
+                "<textarea class='form-control editParagraphInput' data-id='" + id +
+                "'>" +
+                text + "</textarea>");
+
+            $('.paragraphEditable[data-id="' + id + '"]').focus();
+        });
+
+        $('#paragraphContainer').on('focusout', '.editParagraphInput', function() {
+            var text = $('.editParagraphInput').val();
+            var id = $(this).data('id');
+
+            $.ajax({
+                type: "POST",
+                url: '/admin/editServiceParagraph',
+                data: {
+                    'id': $(this).data('id'),
+                    'text': text
+                },
+                success: function(res) {
+                    if (isAdmin == 1) {
+                        $($('.paragraphEditable[data-id="' + id + '"]')).html(
+                            `<p style="line-height: 200%;" data-id="` + id +
+                            `" class="mt-4 paragraphEditable">` +
+                            text +
+                            `<button class="btn btn-secondary btn-sm mb-2 ms-2 paragraphEditableBtn">Edit</button><a href="/admin/deleteServiceParagraph/` +
+                            id + `"
+                                    class="btn btn-danger btn-sm mb-2 paragraphDeleteBtn" data-id="` + id + `">Delete</a>
+                    </p>`);
+                    } else {
+                        $($('.paragraphEditable[data-id="' + id + '"]')).html(
+                            `<p style="line-height: 200%;" class="mt-4 paragraphEditable">` +
+                            text + `
+                    </p>`);
+                    }
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    console.log(XMLHttpRequest);
+                }
+            });
+
+        });
+
+        $('#containerMainss').on('click', '#addParagraphBtn', function() {
+            $(this).hide();
+            $("<textarea class='form-control addParagraphInput'></textarea>").insertBefore($(this));
+        });
+
+        $('#containerMainss').on('focusout', '.addParagraphInput', function() {
+            var text = $('.addParagraphInput').val();
+
+            $.ajax({
+                type: 'POST',
+                url: '/admin/addServiceParagraph',
+                data: {
+                    'service_id': 1,
+                    'text': text
+                },
+                success: function(res) {
+                    $('.addParagraphInput').remove();
+                    $('#addParagraphBtn').show();
+                    if (isAdmin == 1) {
+                        $('#paragraphContainer').append(
+                            `<p style="line-height: 200%;" class="mt-4 paragraphEditable" data-id="` +
+                            res +
+                            `">` + text +
+                            `<button class="btn btn-secondary btn-sm mb-2 ms-2 paragraphEditableBtn">Edit</button><a href="/admin/deleteServiceParagraph/` +
+                            res + `"
+                                    class="btn btn-danger btn-sm mb-2 paragraphDeleteBtn" data-id="` + res +
+                            `">Delete</a></p>`
+                        );
+                    } else {
+                        $('#paragraphContainer').append(
+                            `<p style="line-height: 200%;" class="mt-4 paragraphEditable" data-id="` +
+                            res +
+                            `">` + text +
+                            `</p>`)
+                    }
+                }
+            });
         });
     </script>
 @endpush

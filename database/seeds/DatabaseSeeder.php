@@ -7,6 +7,7 @@ use App\LookBook;
 use App\OurCoreValue;
 use App\Process;
 use App\Service;
+use App\ServiceInside;
 use App\ServiceInsideParagraph;
 use App\TopBanner;
 use App\User;
@@ -70,8 +71,27 @@ class DatabaseSeeder extends Seeder
             $p->service_id = $new->id;
             $p->paragraph = $service_paragraph_arr[$key];
             $p->save();
-            
         };
+        
+        $service_inside_suit_desktop = ['images/services/pic1.png', 'images/services/pic1.png', 'images/services/pic2.png', 'images/services/pic3.png', 'images/services/pic3.png'];
+        $service_inside_suit_mobile = ['images/services/pic1.png', 'images/services/pic2.png', 'images/services/pic3.png'];
+        // Desktop Image Inside Suit
+        foreach($service_inside_suit_desktop as $e){
+            $i = new ServiceInside();
+            $i->service_id = 1;
+            $i->type = 'Desktop';
+            $i->image_path = $e;
+            $i->save();
+        }
+        // Mobile Image Inside Suit
+        foreach($service_inside_suit_mobile as $e){
+            $i = new ServiceInside();
+            $i->service_id = 1;
+            $i->type = 'Mobile';
+            $i->image_path = $e;
+            $i->save();
+        }
+
 
         $process = new Process();
         $process->image_path = "images/process/11.PNG";

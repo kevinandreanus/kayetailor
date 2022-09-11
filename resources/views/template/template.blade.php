@@ -374,11 +374,11 @@
     <script src="https://kit.fontawesome.com/1b71a3858f.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
         $(function() {
-            // $('#myDiv').floatingWhatsApp({
-            //     phone: '6282311115888'
-            // });
-
-
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
         });
     </script>
     @stack('custom-js')

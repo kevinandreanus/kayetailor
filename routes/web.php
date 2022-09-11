@@ -8,6 +8,7 @@ use App\LookBook;
 use App\OurCoreValue;
 use App\Process;
 use App\Service;
+use App\ServiceInside;
 use App\WoolSlider;
 use Illuminate\Support\Facades\Route;
 
@@ -86,6 +87,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/admin/addImage', 'AdminController@addImage');
 
     Route::post('/admin/editServiceMainImageInside', 'AdminController@editServiceMainImageInside');
+    Route::post('/admin/editServiceTitle', 'AdminController@editServiceTitle');
+    Route::post('/admin/editServiceParagraph', 'AdminController@editServiceParagraph');
+    Route::post('/admin/addServiceParagraph', 'AdminController@addServiceParagraph');
+    Route::get('/admin/deleteServiceParagraph/{id}', 'AdminController@deleteServiceParagraph');
 });
 
 Route::get('/admin/topbanner/list', 'AdminController@topBannerList');
@@ -126,7 +131,11 @@ Route::get('/', function () {
 
 Route::get('/services/suit', function () {
     $main_image = Service::find(1);
-    return view('services/suit', compact('main_image'));
+
+    $desktop_1 = ServiceInside::where([['service_id', '=', 1], ['type', '=', 'Desktop']])->take(2)->get();
+    $desktop_2 = ServiceInside::where([['service_id', '=', 1], ['type', '=', 'Desktop']])->skip(2)->take(3)->get();
+    $mobile = ServiceInside::where([['service_id', '=', 1], ['type', '=', 'Mobile']])->get();
+    return view('services/suit', compact('main_image', 'desktop_1', 'desktop_2', 'mobile'));
 });
 
 Route::get('/services/shirt', function () {

@@ -10,4 +10,9 @@ class Service extends Model
     {
         return $this->hasMany(ServiceInsideParagraph::class);
     }
+
+    public function inside_images()
+    {
+        return $this->hasMany(ServiceInside::class);
+    }
 }

@@ -10,6 +10,7 @@ use App\LookBook;
 use App\OurCoreValue;
 use App\Process;
 use App\Service;
+use App\ServiceInsideParagraph;
 use App\TopBanner;
 use App\WoolSlider;
 use Illuminate\Http\Request;
@@ -238,7 +239,42 @@ class AdminController extends Controller
         $edit = Service::find($request->id);
         $edit->main_image_path = 'images/service/inside/' . $filename;
         $edit->save();
-        
+
+        return redirect()->back();
+    }
+
+    public function editServiceTitle(Request $request)
+    {
+        $s = Service::find($request->id);
+        $s->title = $request->text;
+        $s->save();
+
+        return 1;
+    }
+
+    public function editServiceParagraph(Request $request)
+    {
+        $s = ServiceInsideParagraph::find($request->id);
+        $s->paragraph = $request->text;
+        $s->save();
+
+        return 1;
+    }
+
+    public function addServiceParagraph(Request $request)
+    {
+        $s = new ServiceInsideParagraph();
+        $s->service_id = $request->service_id;
+        $s->paragraph = $request->text;
+        $s->save();
+
+        return $s->id;
+    }
+
+    public function deleteServiceParagraph($id)
+    {
+        ServiceInsideParagraph::find($id)->delete();
+
         return redirect()->back();
     }
 
