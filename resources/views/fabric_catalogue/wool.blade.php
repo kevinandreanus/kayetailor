@@ -266,7 +266,7 @@
                         <h5 class="modal-title" id="exampleModalLabel">Edit Main Image</h5>
                     </div>
                     <div class="modal-body">
-                        <form id="formTopBanner" action="/admin/editServiceMainImageInside" method="POST"
+                        <form id="formTopBanner" action="/admin/editFabricMainImageInside" method="POST"
                             enctype="multipart/form-data">
                             @csrf
                             <input type="text" value="1" name="id" hidden>
@@ -293,7 +293,7 @@
                         <h5 class="modal-title" id="exampleModalLabel">Edit Photo</h5>
                     </div>
                     <div class="modal-body">
-                        <form id="formTopBanner" action="/admin/editPhotoServicesDesktop" method="POST"
+                        <form id="formTopBanner" action="/admin/editPhotoFabricsDesktop" method="POST"
                             enctype="multipart/form-data">
                             @csrf
                             <input type="text" value="" id="idPhotoEdt" name="id" hidden>
@@ -320,7 +320,7 @@
                         <h5 class="modal-title" id="exampleModalLabel">Edit Photo</h5>
                     </div>
                     <div class="modal-body">
-                        <form id="formTopBanner" action="/admin/editPhotoServicesDesktop" method="POST"
+                        <form id="formTopBanner" action="/admin/editPhotoFabricsDesktop" method="POST"
                             enctype="multipart/form-data">
                             @csrf
                             <input type="text" value="" id="idPhotoEdtMbl" name="id" hidden>
