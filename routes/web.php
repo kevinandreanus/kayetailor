@@ -92,6 +92,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/admin/addServiceParagraph', 'AdminController@addServiceParagraph');
     Route::get('/admin/deleteServiceParagraph/{id}', 'AdminController@deleteServiceParagraph');
     Route::post('/admin/editPhotoServicesDesktop', 'AdminController@editPhotoServicesDesktop');
+    Route::post('/admin/editPhotoServicesMobile', 'AdminController@editPhotoServicesMobile');
 });
 
 Route::get('/admin/topbanner/list', 'AdminController@topBannerList');

@@ -54,6 +54,12 @@
                 right: 16px;
             }
 
+            .top-right-mobile {
+                position: absolute;
+                top: 8px;
+                right: 165px;
+            }
+
             input,
             select,
             textarea {
@@ -180,7 +186,7 @@
                 </div>
             </div>
         </div>
-        {{-- Modal Edit Photo --}}
+        {{-- Modal Edit Photo Desktop --}}
         <div class="modal fade" id="modalEditPhto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -206,7 +212,63 @@
             </div>
         </div>
         {{-- End of Modal --}}
+
+        {{-- Modal Edit Photo Mobile --}}
+        <div class="modal fade" id="modalEditPhtoMbl" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Edit Photo</h5>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formTopBanner" action="/admin/editPhotoServicesDesktop" method="POST"
+                            enctype="multipart/form-data">
+                            @csrf
+                            <input type="text" value="" id="idPhotoEdtMbl" name="id" hidden>
+                            <div class="mb-3 text-center">
+                                <input name="image" style="height: 37px;" class="form-control formFilez"
+                                    type="file" id="formFilez">
+                                <label class="custom-file-label" for="inputGroupFile02"></label>
+                            </div>
+                            <hr>
+                            <button type="submit" style="float: right" class="btn btn-primary btn-sm">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{-- End of Modal --}}
     </div>
+    @if (Auth::user())
+        <hr>
+        <div class="text-center">
+            <h3 style="color: #ac956d !important; font-size: 40px !important;" class="titlecus">Mobile Image</h3>
+            <div class="container">
+                @foreach ($mobile as $key => $i)
+                    @if ($key === 0)
+                        <div class="container-img">
+                            <img class="mt-5" data-id="{{ $i->id }}" src="{{ asset($i->image_path) }}"
+                                alt="">
+                            <div class="top-right-mobile"><button href=""
+                                    class="btn btn-secondary btn-sm mt-5 edtPhotoMbl"
+                                    data-id="{{ $i->id }}">Edit</button>
+                            </div>
+                        </div>
+                    @else
+                        <div class="container-img">
+                            <img class="mt-3" data-id="{{ $i->id }}" src="{{ asset($i->image_path) }}"
+                                alt="">
+                            <div class="top-right-mobile"><button href=""
+                                    class="btn btn-secondary btn-sm mt-3 edtPhotoMbl"
+                                    data-id="{{ $i->id }}">Edit</button>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
+            </div>
+        </div>
+    @endif
 
 
     <div class="container" id="mobileviewz">
@@ -369,5 +431,10 @@
             var fileName = $(this).val().replace('C:\\fakepath\\', " ");
             $(this).next('.custom-file-label').html(fileName);
         })
+
+        $('.edtPhotoMbl').on('click', function() {
+            $('#idPhotoEdtMbl').val($(this).data('id'));
+            $('#modalEditPhtoMbl').modal("show");
+        });
     </script>
 @endpush
