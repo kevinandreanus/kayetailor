@@ -3,6 +3,8 @@
 use App\AboutUsHomepageText;
 use App\blog;
 use App\FabricCatalogue;
+use App\FabricInside;
+use App\FabricInsideParagraph;
 use App\LookBook;
 use App\OurCoreValue;
 use App\Process;
@@ -61,10 +63,12 @@ class DatabaseSeeder extends Seeder
         $services_pic_arr = ['images/services/pic2.png', 'images/services/shirt.PNG', 'images/services/batik.png', 'images/services/cheongsam.png', 'images/services/trouser.png', 'images/services/alteration.png'];
         $service_paragraph_arr = ['For wedding or business occasion, we make modern and classic fit suit. Shirt: Inner for Fullset suit that made from cotton. Tailored & customized for you as well', 'Inner for Fullset suit that made from cotton. Tailored & customized for you as well', 'We provide tailoring for Batik as batik is part of our culture Changsan: We prodivde Sateen Cheongsam for chinese tradition of Sangjit ceremony', 'We prodivde Sateen Cheongsam for chinese tradition of Sangjit ceremony', 'Made by yours truly so you can use as well for business occasion or casual look', "We believe every fabric from Kaye Brother's Tailor deserve more wearing time, whether you are getting bigger or slimmer, we can help re-adjust the size just for you"];
         $service_title_arr = ['Suit', 'Shirt', 'Batik', 'Cheongsam', 'Trouser', 'Alteration'];
+        $service_routes = ['/services/suit', '/services/shirt', '/services/batik', '/services/cheongsam', '/services/trouser', '/services/alteration'];
         foreach($services_array as $key => $s){
             $new = new Service();
             $new->title = $service_title_arr[$key];
             $new->image_path = $s;
+            $new->route = $service_routes[$key];
             $new->main_image_path = $services_pic_arr[$key];
             $new->save();
             $p = new ServiceInsideParagraph();
@@ -76,6 +80,7 @@ class DatabaseSeeder extends Seeder
         $service_inside_suit_desktop = ['images/services/pic1.png', 'images/services/pic1.png', 'images/services/pic2.png', 'images/services/pic3.png', 'images/services/pic3.png'];
         $service_inside_suit_mobile = ['images/services/pic1.png', 'images/services/pic2.png', 'images/services/pic3.png'];
         $service_alteration = ['images/services/alterpic.png', 'images/services/pic2.png'];
+        
         // Desktop Image Inside Suit
         foreach($service_inside_suit_desktop as $e){
             $i = new ServiceInside();
@@ -173,6 +178,52 @@ class DatabaseSeeder extends Seeder
             $i->save();
         }
 
+        // Fabric Catalogue Wool
+        foreach($service_inside_suit_desktop as $e){
+            $i = new FabricInside();
+            $i->fabric_catalogue_id = 1;
+            $i->type = 'Desktop';
+            $i->image_path = $e;
+            $i->save();
+        }
+        foreach($service_inside_suit_mobile as $e){
+            $i = new FabricInside();
+            $i->fabric_catalogue_id = 1;
+            $i->type = 'Mobile';
+            $i->image_path = $e;
+            $i->save();
+        }
+        // Fabric Catalogue Semi-Wool
+        foreach($service_inside_suit_desktop as $e){
+            $i = new FabricInside();
+            $i->fabric_catalogue_id = 2;
+            $i->type = 'Desktop';
+            $i->image_path = $e;
+            $i->save();
+        }
+        foreach($service_inside_suit_mobile as $e){
+            $i = new FabricInside();
+            $i->fabric_catalogue_id = 2;
+            $i->type = 'Mobile';
+            $i->image_path = $e;
+            $i->save();
+        }
+        // Fabric Catalogue Linen
+        foreach($service_inside_suit_desktop as $e){
+            $i = new FabricInside();
+            $i->fabric_catalogue_id = 3;
+            $i->type = 'Desktop';
+            $i->image_path = $e;
+            $i->save();
+        }
+        foreach($service_inside_suit_mobile as $e){
+            $i = new FabricInside();
+            $i->fabric_catalogue_id = 3;
+            $i->type = 'Mobile';
+            $i->image_path = $e;
+            $i->save();
+        }
+
 
         $process = new Process();
         $process->image_path = "images/process/11.PNG";
@@ -180,12 +231,20 @@ class DatabaseSeeder extends Seeder
 
         $fabric_img_array = ["images/fabric_catalogue/wool.PNG", "images/fabric_catalogue/semiwool.PNG", "images/fabric_catalogue/linen.PNG"];
         $fabric_txt_array = ["Wool", "Semi-Wool", "Linen"];
-
+        $main_img_arr = ['images/fabric_catalogue/wool2.PNG', 'images/fabric_catalogue/semiwool2.PNG', 'images/fabric_catalogue/linen2.PNG'];
+        $routes_fabr = ['/fabric-catalogue/wool', '/fabric-catalogue/semiwool', '/fabric-catalogue/linen'];
+        $fab_paragraph = ['Wool is one of the most common fabrics for suits. Light weight wools are suitable for tropical climates, on the other side heavy weight wools are great to keep you warm on cold temperature . They are so durable and breathable.', 'Semiwool came from 50-70% wool and mixture from another fabrics. They have soft feeling and good warmth , yet luxurious feels', "Linen is popular for summertime fabric, because linen breathes very easily. It' really suitable for Indonesia's tropical weather"];
         foreach($fabric_img_array as $key => $f){
             $new = new FabricCatalogue();
             $new->image_path = $f;
+            $new->main_image_path = $main_img_arr[$key];
+            $new->route = $routes_fabr[$key];
             $new->text = $fabric_txt_array[$key];
             $new->save();
+            $p = new FabricInsideParagraph();
+            $p->fabric_catalogue_id = $new->id;
+            $p->paragraph = $fab_paragraph[$key];
+            $p->save();
         };
 
         $lookbook_array = ["images/look_book/wedding.PNG", "images/look_book/daily.PNG", "images/look_book/casual.PNG", "images/look_book/ceremony.PNG"];

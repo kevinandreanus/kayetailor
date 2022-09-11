@@ -3,6 +3,7 @@
 use App\AboutUsHomepageText;
 use App\blog;
 use App\FabricCatalogue;
+use App\FabricInside;
 use App\Http\Controllers\PHPMailerController;
 use App\LookBook;
 use App\OurCoreValue;
@@ -93,6 +94,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin/deleteServiceParagraph/{id}', 'AdminController@deleteServiceParagraph');
     Route::post('/admin/editPhotoServicesDesktop', 'AdminController@editPhotoServicesDesktop');
     Route::post('/admin/editPhotoServicesMobile', 'AdminController@editPhotoServicesMobile');
+
+    Route::post('/admin/editFabricParagraph', 'AdminController@editFabricParagraph');
+    Route::post('/admin/addFabricParagraph', 'AdminController@addFabricParagraph');
+    Route::get('/admin/deleteFabricParagraph/{id}', 'AdminController@deleteFabricParagraph');
+    Route::post('/admin/editPhotoFabricsDesktop', 'AdminController@editPhotoFabricsDesktop');
+    Route::post('/admin/editPhotoFabricsMobile', 'AdminController@editPhotoFabricsMobile');
 });
 
 Route::get('/admin/topbanner/list', 'AdminController@topBannerList');
@@ -197,13 +204,25 @@ Route::get('/lookbook/ceremony', function(){
 
 Route::get('/fabric-catalogue/wool', function(){
     $wool_slider = WoolSlider::orderBy('order', 'ASC')->get();
-    return view('fabric_catalogue.wool', compact('wool_slider'));
+    $data = FabricCatalogue::find(1);
+    $desktop_1 = FabricInside::where([['fabric_catalogue_id', '=', 1], ['type', '=', 'Desktop']])->take(2)->get();
+    $desktop_2 = FabricInside::where([['fabric_catalogue_id', '=', 1], ['type', '=', 'Desktop']])->skip(2)->take(3)->get();
+    $mobile = FabricInside::where([['fabric_catalogue_id', '=', 1], ['type', '=', 'Mobile']])->get();
+    return view('fabric_catalogue.wool', compact('wool_slider', 'data', 'desktop_1', 'desktop_2', 'mobile'));
 });
 Route::get('/fabric-catalogue/semiwool', function(){
-    return view('fabric_catalogue.semiwool');
+    $data = FabricCatalogue::find(2);
+    $desktop_1 = FabricInside::where([['fabric_catalogue_id', '=', 2], ['type', '=', 'Desktop']])->take(2)->get();
+    $desktop_2 = FabricInside::where([['fabric_catalogue_id', '=', 2], ['type', '=', 'Desktop']])->skip(2)->take(3)->get();
+    $mobile = FabricInside::where([['fabric_catalogue_id', '=', 2], ['type', '=', 'Mobile']])->get();
+    return view('fabric_catalogue.semiwool', compact('data'));
 });
 Route::get('/fabric-catalogue/linen', function(){
-    return view('fabric_catalogue.linen');
+    $data = FabricCatalogue::find(3);
+    $desktop_1 = FabricInside::where([['fabric_catalogue_id', '=', 3], ['type', '=', 'Desktop']])->take(2)->get();
+    $desktop_2 = FabricInside::where([['fabric_catalogue_id', '=', 3], ['type', '=', 'Desktop']])->skip(2)->take(3)->get();
+    $mobile = FabricInside::where([['fabric_catalogue_id', '=', 3], ['type', '=', 'Mobile']])->get();
+    return view('fabric_catalogue.linen', compact('data'));
 });
 
 Route::get('/testing', function(){

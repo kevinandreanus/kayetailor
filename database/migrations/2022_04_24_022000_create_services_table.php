@@ -18,6 +18,7 @@ class CreateServicesTable extends Migration
             $table->string('title');
             $table->string('image_path');
             $table->string('main_image_path');
+            $table->string('route');
             $table->timestamps();
         });
     }

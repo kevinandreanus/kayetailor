@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFabricCataloguesTable extends Migration
+class CreateFabricInsidesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateFabricCataloguesTable extends Migration
      */
     public function up()
     {
-        Schema::create('fabric_catalogues', function (Blueprint $table) {
+        Schema::create('fabric_insides', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('fabric_catalogue_id');
+            $table->string('type'); // Desktop, Mobile
             $table->string('image_path');
-            $table->string('text');
-            $table->string('main_image_path');
-            $table->string('route');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreateFabricCataloguesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fabric_catalogues');
+        Schema::dropIfExists('fabric_insides');
     }
 }

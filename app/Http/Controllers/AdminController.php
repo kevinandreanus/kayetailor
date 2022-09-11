@@ -6,6 +6,8 @@ use App\AboutUsHomepageText;
 use App\blog;
 use App\BlogContent;
 use App\FabricCatalogue;
+use App\FabricInside;
+use App\FabricInsideParagraph;
 use App\LookBook;
 use App\OurCoreValue;
 use App\Process;
@@ -287,6 +289,67 @@ class AdminController extends Controller
 
         $s = ServiceInside::find($request->id);
         $s->image_path = 'images/service/inside/' . $filename;
+        $s->save();
+        
+        return redirect()->back();
+    }
+
+    public function editFabricMainImageInside(Request $request)
+    {
+        $file = $request->file('image');
+        $filename = uniqid() . $file->getClientOriginalName();
+        $file->move('/home/kayepngh/public_html/images/fabric/inside/', $filename);
+
+        $edit = FabricCatalogue::find($request->id);
+        $edit->main_image_path = 'images/fabric/inside/' . $filename;
+        $edit->save();
+
+        return redirect()->back();
+    }
+
+    public function editFabricTitle(Request $request)
+    {
+        $s = FabricCatalogue::find($request->id);
+        $s->title = $request->text;
+        $s->save();
+
+        return 1;
+    }
+
+    public function editFabricParagraph(Request $request)
+    {
+        $s = FabricInsideParagraph::find($request->id);
+        $s->paragraph = $request->text;
+        $s->save();
+
+        return 1;
+    }
+
+    public function addFabricParagraph(Request $request)
+    {
+        $s = new FabricInsideParagraph();
+        $s->fabric_catalogue_id = $request->fabric_catalogue_id;
+        $s->paragraph = $request->text;
+        $s->save();
+
+        return $s->id;
+    }
+
+    public function deleteFabricParagraph($id)
+    {
+        FabricInsideParagraph::find($id)->delete();
+
+        return redirect()->back();
+    }
+
+    public function editPhotoFabricsDesktop(Request $request)
+    {
+        $file = $request->file('image');
+        $filename = uniqid() . $file->getClientOriginalName();
+        $file->move('/home/kayepngh/public_html/images/fabric/inside/', $filename);
+
+        $s = FabricInside::find($request->id);
+        $s->image_path = 'images/fabric/inside/' . $filename;
         $s->save();
         
         return redirect()->back();

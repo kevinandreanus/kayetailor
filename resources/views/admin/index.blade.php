@@ -762,7 +762,8 @@
                     'render': function(data, type, row) {
                         return '<button type="button" class="btn btn-info btn-sm btn-edit-core" data-toggle="modal" data-target="#modalServicesHomepage" data-id="' +
                             data +
-                            '">Edit</button><a class="btn btn-warning btn-sm" href="">Edit Inside</a>'
+                            '">Edit</button><a class="btn btn-warning btn-sm" href="' + row.route +
+                            '">Edit Inside</a>'
                     }
                 }
             ]
@@ -853,7 +854,8 @@
                     'data': 'id',
                     'render': function(data, type, row) {
                         return '<button type="button" class="btn btn-info btn-sm btn-edit-core" data-toggle="modal" data-target="#modalFabricHomepage" data-id="' +
-                            data + '">Edit</button>'
+                            data + '">Edit</button><a class="btn btn-warning btn-sm" href="' + row.route +
+                            '">Edit Inside</a>'
                     }
                 }
             ]
