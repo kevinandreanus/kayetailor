@@ -10,6 +10,7 @@ use App\LookBook;
 use App\OurCoreValue;
 use App\Process;
 use App\Service;
+use App\ServiceInside;
 use App\ServiceInsideParagraph;
 use App\TopBanner;
 use App\WoolSlider;
@@ -275,6 +276,19 @@ class AdminController extends Controller
     {
         ServiceInsideParagraph::find($id)->delete();
 
+        return redirect()->back();
+    }
+
+    public function editPhotoServicesDesktop(Request $request)
+    {
+        $file = $request->file('image');
+        $filename = uniqid() . $file->getClientOriginalName();
+        $file->move('/home/kayepngh/public_html/images/service/inside/', $filename);
+
+        $s = ServiceInside::find($request->id);
+        $s->image_path = 'images/service/inside/' . $filename;
+        $s->save();
+        
         return redirect()->back();
     }
 

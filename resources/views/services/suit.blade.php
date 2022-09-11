@@ -156,7 +156,9 @@
                         <div class="container-img">
                             <img class="mt-2" data-id="1" src="{{ asset($i->image_path) }}" alt="">
                             @if (Auth::user())
-                                <div class="top-right"><a href="" class="btn btn-secondary btn-sm mt-3">Edit</a>
+                                <div class="top-right"><button href=""
+                                        class="btn btn-secondary btn-sm mt-3 editPhotoDeskt"
+                                        data-id="{{ $i->id }}">Edit</button>
                                 </div>
                             @endif
                         </div>
@@ -167,7 +169,9 @@
                         <div class="container-img">
                             <img class="mt-2" data-id="3" src="{{ asset($i->image_path) }}" alt="">
                             @if (Auth::user())
-                                <div class="top-right"><a href="" class="btn btn-secondary btn-sm mt-3">Edit</a>
+                                <div class="top-right"><button href=""
+                                        class="btn btn-secondary btn-sm mt-3 editPhotoDeskt"
+                                        data-id="{{ $i->id }}">Edit</button>
                                 </div>
                             @endif
                         </div>
@@ -175,7 +179,31 @@
                 </div>
             </div>
         </div>
-
+        {{-- Modal Edit Photo --}}
+        <div class="modal fade" id="modalEditPhto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Edit Photo</h5>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formTopBanner" action="/admin/editPhotoServicesDesktop" method="POST"
+                            enctype="multipart/form-data">
+                            @csrf
+                            <input type="text" value="" id="idPhotoEdt" name="id" hidden>
+                            <div class="mb-3">
+                                <input name="image" style="height: 37px;" class="form-control" type="file"
+                                    id="formFile">
+                            </div>
+                            <hr>
+                            <button type="submit" style="float: right" class="btn btn-primary btn-sm">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{-- End of Modal --}}
     </div>
 
 
@@ -188,9 +216,15 @@
             @foreach ($main_image->paragraphs as $i)
                 <p class="lookBookP">{{ $i->paragraph }}</p>
             @endforeach
-            <img class="mt-5" data-id="6" src="{{ asset('images/services/pic1.png') }}" alt="">
-            <img class="mt-3" data-id="7" src="{{ asset('images/services/pic2.png') }}" alt="">
-            <img class="mt-3" data-id="8" src="{{ asset('images/services/pic3.png') }}" alt="">
+            @foreach ($mobile as $key => $i)
+                @if ($key === 0)
+                    <img class="mt-5" data-id="{{ $i->id }}" src="{{ asset($i->image_path) }}"
+                        alt="">
+                @else
+                    <img class="mt-3" data-id="{{ $i->id }}" src="{{ asset($i->image_path) }}"
+                        alt="">
+                @endif
+            @endforeach
             <br>
         </div>
 
@@ -321,6 +355,11 @@
                     }
                 }
             });
+        });
+
+        $('.editPhotoDeskt').on('click', function() {
+            $('#idPhotoEdt').val($(this).data('id'));
+            $('#modalEditPhto').modal("show");
         });
     </script>
 @endpush
