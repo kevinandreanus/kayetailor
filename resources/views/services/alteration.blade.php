@@ -42,7 +42,7 @@
 @section('content')
     <div id="desktopviewz">
         <div class="bannertopz">
-            <img src="{{ asset('images/services/alteration.png') }}" alt="" width="100%" style="height: 650px;">
+            <img src="{{ asset($main_image->main_image_path) }}" alt="" width="100%" style="height: 650px;">
             <div class="centered">
                 <h3 style="color: #ac956d !important; font-size: 40px !important;" class="titlecus">SERVICES</h3>
             </div>
@@ -52,7 +52,7 @@
 
         </div>
         <div class="text-center mt-5 mb-4" style="margin-top: 100px !important;">
-            <h3 style="color: #806e4f !important;" class="titlecus">ALTERATION</h3>
+            <h3 style="color: #806e4f !important;" class="titlecus">{{ strtoupper($main_image->title) }}</h3>
         </div>
         <div class="container">
             <div class="aboutusdynamic pt-3 pb-5">

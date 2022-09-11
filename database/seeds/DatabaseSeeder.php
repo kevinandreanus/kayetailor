@@ -7,6 +7,7 @@ use App\LookBook;
 use App\OurCoreValue;
 use App\Process;
 use App\Service;
+use App\ServiceInsideParagraph;
 use App\TopBanner;
 use App\User;
 use App\WoolSlider;
@@ -56,11 +57,20 @@ class DatabaseSeeder extends Seeder
         };
 
         $services_array = ["images/services/5.PNG", "images/services/6.PNG", "images/services/7.PNG", "images/services/8.PNG", "images/services/9.PNG", "images/services/10.PNG"];
-
-        foreach($services_array as $s){
+        $services_pic_arr = ['images/services/pic2.png', 'images/services/shirt.PNG', 'images/services/batik.png', 'images/services/cheongsam.png', 'images/services/trouser.png', 'images/services/alteration.png'];
+        $service_paragraph_arr = ['For wedding or business occasion, we make modern and classic fit suit. Shirt: Inner for Fullset suit that made from cotton. Tailored & customized for you as well', 'Inner for Fullset suit that made from cotton. Tailored & customized for you as well', 'We provide tailoring for Batik as batik is part of our culture Changsan: We prodivde Sateen Cheongsam for chinese tradition of Sangjit ceremony', 'We prodivde Sateen Cheongsam for chinese tradition of Sangjit ceremony', 'Made by yours truly so you can use as well for business occasion or casual look', "We believe every fabric from Kaye Brother's Tailor deserve more wearing time, whether you are getting bigger or slimmer, we can help re-adjust the size just for you"];
+        $service_title_arr = ['Suit', 'Shirt', 'Batik', 'Cheongsam', 'Trouser', 'Alteration'];
+        foreach($services_array as $key => $s){
             $new = new Service();
+            $new->title = $service_title_arr[$key];
             $new->image_path = $s;
+            $new->main_image_path = $services_pic_arr[$key];
             $new->save();
+            $p = new ServiceInsideParagraph();
+            $p->service_id = $new->id;
+            $p->paragraph = $service_paragraph_arr[$key];
+            $p->save();
+            
         };
 
         $process = new Process();

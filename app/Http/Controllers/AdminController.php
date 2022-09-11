@@ -229,6 +229,19 @@ class AdminController extends Controller
         return 1;
     }
 
+    public function editServiceMainImageInside(Request $request)
+    {
+        $file = $request->file('image');
+        $filename = uniqid() . $file->getClientOriginalName();
+        $file->move('/home/kayepngh/public_html/images/service/inside/', $filename);
+
+        $edit = Service::find($request->id);
+        $edit->main_image_path = 'images/service/inside/' . $filename;
+        $edit->save();
+        
+        return redirect()->back();
+    }
+
     public function storeFabricHomepage(Request $request)
     {
         $file = $request->file('image');

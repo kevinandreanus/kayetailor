@@ -84,6 +84,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::post('/admin/addParagraph', 'AdminController@addParagraph');
     Route::post('/admin/addImage', 'AdminController@addImage');
+
+    Route::post('/admin/editServiceMainImageInside', 'AdminController@editServiceMainImageInside');
 });
 
 Route::get('/admin/topbanner/list', 'AdminController@topBannerList');
@@ -123,27 +125,33 @@ Route::get('/', function () {
 });
 
 Route::get('/services/suit', function () {
-    return view('services/suit');
+    $main_image = Service::find(1);
+    return view('services/suit', compact('main_image'));
 });
 
 Route::get('/services/shirt', function () {
-    return view('services/shirt');
+    $main_image = Service::find(2);
+    return view('services/shirt', compact('main_image'));
 });
 
 Route::get('/services/batik', function () {
-    return view('services/batik');
+    $main_image = Service::find(3);
+    return view('services/batik', compact('main_image'));
 });
 
 Route::get('/services/cheongsam', function () {
-    return view('services/cheongsam');
+    $main_image = Service::find(4);
+    return view('services/cheongsam', compact('main_image'));
 });
 
 Route::get('/services/trouser', function () {
-    return view('services/trouser');
+    $main_image = Service::find(5);
+    return view('services/trouser', compact('main_image'));
 });
 
 Route::get('/services/alteration', function () {
-    return view('services/alteration');
+    $main_image = Service::find(6);
+    return view('services/alteration', compact('main_image'));
 });
 
 
