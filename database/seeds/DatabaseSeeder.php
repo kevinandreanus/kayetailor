@@ -75,6 +75,7 @@ class DatabaseSeeder extends Seeder
         
         $service_inside_suit_desktop = ['images/services/pic1.png', 'images/services/pic1.png', 'images/services/pic2.png', 'images/services/pic3.png', 'images/services/pic3.png'];
         $service_inside_suit_mobile = ['images/services/pic1.png', 'images/services/pic2.png', 'images/services/pic3.png'];
+        $service_alteration = ['images/services/alterpic.png', 'images/services/pic2.png'];
         // Desktop Image Inside Suit
         foreach($service_inside_suit_desktop as $e){
             $i = new ServiceInside();
@@ -87,6 +88,86 @@ class DatabaseSeeder extends Seeder
         foreach($service_inside_suit_mobile as $e){
             $i = new ServiceInside();
             $i->service_id = 1;
+            $i->type = 'Mobile';
+            $i->image_path = $e;
+            $i->save();
+        }
+        // Desktop Image Inside Shirt
+        foreach($service_inside_suit_desktop as $e){
+            $i = new ServiceInside();
+            $i->service_id = 2;
+            $i->type = 'Desktop';
+            $i->image_path = $e;
+            $i->save();
+        }
+        // Mobile Image Inside Shirt
+        foreach($service_inside_suit_mobile as $e){
+            $i = new ServiceInside();
+            $i->service_id = 2;
+            $i->type = 'Mobile';
+            $i->image_path = $e;
+            $i->save();
+        }
+        // Desktop Image Inside Batik
+        foreach($service_inside_suit_desktop as $e){
+            $i = new ServiceInside();
+            $i->service_id = 3;
+            $i->type = 'Desktop';
+            $i->image_path = $e;
+            $i->save();
+        }
+        // Mobile Image Inside Batik
+        foreach($service_inside_suit_mobile as $e){
+            $i = new ServiceInside();
+            $i->service_id = 3;
+            $i->type = 'Mobile';
+            $i->image_path = $e;
+            $i->save();
+        }
+        // Desktop Image Inside Cheongsam
+        foreach($service_inside_suit_desktop as $e){
+            $i = new ServiceInside();
+            $i->service_id = 4;
+            $i->type = 'Desktop';
+            $i->image_path = $e;
+            $i->save();
+        }
+        // Mobile Image Inside Cheongsam
+        foreach($service_inside_suit_mobile as $e){
+            $i = new ServiceInside();
+            $i->service_id = 4;
+            $i->type = 'Mobile';
+            $i->image_path = $e;
+            $i->save();
+        }
+        // Desktop Image Inside Trouser
+        foreach($service_inside_suit_desktop as $e){
+            $i = new ServiceInside();
+            $i->service_id = 5;
+            $i->type = 'Desktop';
+            $i->image_path = $e;
+            $i->save();
+        }
+        // Mobile Image Inside Trouser
+        foreach($service_inside_suit_mobile as $e){
+            $i = new ServiceInside();
+            $i->service_id = 5;
+            $i->type = 'Mobile';
+            $i->image_path = $e;
+            $i->save();
+        }
+        // Desktop Image Inside Alteration
+        foreach($service_inside_suit_desktop as $e){
+            $i = new ServiceInside();
+            $i->service_id = 6;
+            $i->type = 'Desktop';
+            $i->image_path = $e;
+            $i->save();
+        }
+        // Mobile Image Inside Alteration
+        foreach($service_alteration as $e){
+            $i = new ServiceInside();
+            $i->service_id = 6;
             $i->type = 'Mobile';
             $i->image_path = $e;
             $i->save();

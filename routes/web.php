@@ -142,27 +142,42 @@ Route::get('/services/suit', function () {
 
 Route::get('/services/shirt', function () {
     $main_image = Service::find(2);
-    return view('services/shirt', compact('main_image'));
+    $desktop_1 = ServiceInside::where([['service_id', '=', 2], ['type', '=', 'Desktop']])->take(2)->get();
+    $desktop_2 = ServiceInside::where([['service_id', '=', 2], ['type', '=', 'Desktop']])->skip(2)->take(3)->get();
+    $mobile = ServiceInside::where([['service_id', '=', 2], ['type', '=', 'Mobile']])->get();
+    return view('services/shirt', compact('main_image', 'desktop_1', 'desktop_2', 'mobile'));
 });
 
 Route::get('/services/batik', function () {
     $main_image = Service::find(3);
-    return view('services/batik', compact('main_image'));
+    $desktop_1 = ServiceInside::where([['service_id', '=', 3], ['type', '=', 'Desktop']])->take(2)->get();
+    $desktop_2 = ServiceInside::where([['service_id', '=', 3], ['type', '=', 'Desktop']])->skip(2)->take(3)->get();
+    $mobile = ServiceInside::where([['service_id', '=', 3], ['type', '=', 'Mobile']])->get();
+    return view('services/batik', compact('main_image', 'desktop_1', 'desktop_2', 'mobile'));
 });
 
 Route::get('/services/cheongsam', function () {
     $main_image = Service::find(4);
-    return view('services/cheongsam', compact('main_image'));
+    $desktop_1 = ServiceInside::where([['service_id', '=', 4], ['type', '=', 'Desktop']])->take(2)->get();
+    $desktop_2 = ServiceInside::where([['service_id', '=', 4], ['type', '=', 'Desktop']])->skip(2)->take(3)->get();
+    $mobile = ServiceInside::where([['service_id', '=', 4], ['type', '=', 'Mobile']])->get();
+    return view('services/cheongsam', compact('main_image', 'desktop_1', 'desktop_2', 'mobile'));
 });
 
 Route::get('/services/trouser', function () {
     $main_image = Service::find(5);
-    return view('services/trouser', compact('main_image'));
+    $desktop_1 = ServiceInside::where([['service_id', '=', 5], ['type', '=', 'Desktop']])->take(2)->get();
+    $desktop_2 = ServiceInside::where([['service_id', '=', 5], ['type', '=', 'Desktop']])->skip(2)->take(3)->get();
+    $mobile = ServiceInside::where([['service_id', '=', 5], ['type', '=', 'Mobile']])->get();
+    return view('services/trouser', compact('main_image', 'desktop_1', 'desktop_2', 'mobile'));
 });
 
 Route::get('/services/alteration', function () {
     $main_image = Service::find(6);
-    return view('services/alteration', compact('main_image'));
+    $desktop_1 = ServiceInside::where([['service_id', '=', 6], ['type', '=', 'Desktop']])->take(2)->get();
+    $desktop_2 = ServiceInside::where([['service_id', '=', 6], ['type', '=', 'Desktop']])->skip(2)->take(3)->get();
+    $mobile = ServiceInside::where([['service_id', '=', 6], ['type', '=', 'Mobile']])->get();
+    return view('services/alteration', compact('main_image', 'desktop_1', 'desktop_2', 'mobile'));
 });
 
 
