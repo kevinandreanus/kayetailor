@@ -129,10 +129,11 @@
 
         <div class="container text-center">
             <div class="row">
-                <div class="col-sm-12 col-md-7" style="margin: 0; padding: 5;">
+                <div class="col-sm-12 col-md-7 row_1_real" style="margin: 0; padding: 5;">
                     @foreach ($row_1 as $i)
                         <div class="container-img">
-                            <img class="mt-2" data-id="2" src="{{ asset($i->image_path) }}" alt="">
+                            <img class="mt-2 row_1_ct" data-id="{{ $i->id }}" src="{{ asset($i->image_path) }}"
+                                alt="">
                             @if (Auth::user())
                                 <div class="top-right"><button href=""
                                         class="btn btn-secondary btn-sm mt-3 editPhotoDeskt"
@@ -149,10 +150,11 @@
                         <button class="btn btn-primary" id="addRow1Btn">Add Image</button>
                     @endif
                 </div>
-                <div class="col-sm-6 col-md-5" style="margin: 0; padding: 5;">
+                <div class="col-sm-6 col-md-5 row_2_real" style="margin: 0; padding: 5;">
                     @foreach ($row_2 as $i)
                         <div class="container-img">
-                            <img class="mt-2" data-id="3" src="{{ asset($i->image_path) }}" alt="">
+                            <img class="mt-2 row_2_ct" data-id="{{ $i->id }}" src="{{ asset($i->image_path) }}"
+                                alt="">
                             @if (Auth::user())
                                 <div class="top-right"><button href=""
                                         class="btn btn-secondary btn-sm mt-3 editPhotoDeskt"
@@ -385,15 +387,17 @@
             @foreach ($data->paragraphs as $i)
                 <p class="center-justified">{{ $i->paragraph }}</p>
             @endforeach
-            @foreach ($mobile as $key => $i)
-                @if ($key === 0)
-                    <img class="mt-5" data-id="{{ $i->id }}" src="{{ asset($i->image_path) }}"
-                        alt="">
-                @else
-                    <img class="mt-3" data-id="{{ $i->id }}" src="{{ asset($i->image_path) }}"
-                        alt="">
-                @endif
-            @endforeach
+            <div class="real_mobile">
+                @foreach ($mobile as $key => $i)
+                    @if ($key === 0)
+                        <img class="mt-5 mobile_ct" data-id="{{ $i->id }}" src="{{ asset($i->image_path) }}"
+                            alt="">
+                    @else
+                        <img class="mt-3 mobile_ct" data-id="{{ $i->id }}" src="{{ asset($i->image_path) }}"
+                            alt="">
+                    @endif
+                @endforeach
+            </div>
             <br>
         </div>
         <div class="text-center mt-5">
@@ -402,6 +406,15 @@
     </div>
 @endsection
 @push('custom-js')
+    @if ($isMobile == 1)
+        <script>
+            var urlnya = '/admin/lb2more';
+        </script>
+    @else
+        <script>
+            var urlnya = '/admin/lb5more';
+        </script>
+    @endif
     <script>
         var isAdmin = $('#isAdmin').val();
 
@@ -551,6 +564,56 @@
         });
         $('#addMobileBtn').on('click', function() {
             $('#modalAddMobile').modal("show");
+        });
+
+        $('.seemorebtn').on('click', function(e) {
+            e.preventDefault();
+            row_1 = [];
+            row_2 = [];
+            mobile = [];
+            $.each($('.row_1_ct'), function(i, v) {
+                row_1.push($(v).data('id'))
+            });
+            $.each($('.row_2_ct'), function(i, v) {
+                row_2.push($(v).data('id'))
+            });
+            $.each($('.mobile_ct'), function(i, v) {
+                mobile.push($(v).data('id'))
+            });
+            $.ajax({
+                method: 'post',
+                url: urlnya,
+                data: {
+                    data: {
+                        'look_book_id': 2,
+                        'row_1': row_1,
+                        'row_2': row_2,
+                        'mobile': mobile
+                    }
+                },
+                success: function(result) {
+
+                    $.each(result.row_1, function(i, v) {
+                        $('.row_1_real').append(`<img class="mt-2 row_1_ct" data-id="` + v.id +
+                            `" src="/` + v.image_path + `"
+                            alt="">`);
+                    });
+                    $.each(result.row_2, function(i, v) {
+                        $('.row_2_real').append(`<img class="mt-2 row_2_ct" data-id="` + v.id +
+                            `" src="/` + v.image_path + `"
+                            alt="">`);
+                    });
+                    $.each(result.mobile, function(i, v) {
+                        $('.real_mobile').append(`<img class="mt-3 mobile_ct" data-id="` + v
+                            .id + `" src="/` + v.image_path + `"
+                            alt="">`);
+                    });
+
+                },
+                error: function(xhr, ajaxOptions, thrownError) {
+                    console.log(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+                }
+            });
         });
     </script>
 @endpush

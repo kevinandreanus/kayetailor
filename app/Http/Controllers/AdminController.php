@@ -558,6 +558,32 @@ class AdminController extends Controller
         return $more;
     }
 
+    public function lb2more(Request $request)
+    {
+        $mobile = $request->data['mobile'];
+        $validation = implode(",",$mobile);
+        $look_book_id = $request->data['look_book_id'];
+        
+        $more_mobile = DB::select("SELECT * FROM look_book_insides WHERE id not in ($validation) AND row_id = 3 AND `type` = 'Mobile' AND look_book_id = $look_book_id ORDER BY created_at DESC LIMIT 2");
+        
+
+        return ['mobile' => $more_mobile];
+    }
+
+    public function lb5more(Request $request)
+    {
+        $row_1 = $request->data['row_1'];
+        $row_2 = $request->data['row_2'];
+        $validation_1 = implode(",",$row_1);
+        $validation_2 = implode(",",$row_2);
+        $look_book_id = $request->data['look_book_id'];
+        
+        $more_row_1 = DB::select("SELECT * FROM look_book_insides WHERE id not in ($validation_1) AND row_id = 1 AND `type` = 'Desktop' AND look_book_id = $look_book_id ORDER BY created_at DESC LIMIT 2");
+        $more_row_2 = DB::select("SELECT * FROM look_book_insides WHERE id not in ($validation_2) AND row_id = 2 AND `type` = 'Desktop' AND look_book_id = $look_book_id ORDER BY created_at DESC LIMIT 3");
+
+        return ['row_1' => $more_row_1, 'row_2' => $more_row_2];
+    }
+
     public function storeBlogs(Request $request)
     {
         $a = new blog();

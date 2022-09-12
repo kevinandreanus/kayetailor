@@ -120,6 +120,8 @@ Route::get('/admin/topbanner/list', 'AdminController@topBannerList');
 Route::get('/admin/blogs/list/top2', 'AdminController@blogsListTop2');
 Route::post('/admin/blogs/2more', 'AdminController@blogs2more');
 Route::post('/admin/blogs/4more', 'AdminController@blogs4more');
+Route::post('/admin/lb2more', 'AdminController@lb2more');
+Route::post('/admin/lb5more', 'AdminController@lb5more');
 
 Route::get('/blog/{id}', function($id){
     $blog = blog::find($id);
@@ -205,10 +207,18 @@ Route::get('/services/alteration', function () {
 
 Route::get('/lookbook/wedding', function(){
     $data = LookBook::find(1);
-    $row_1 = LookBookInside::where([['look_book_id', '=', 1], ['type', '=', 'Desktop'], ['row_id', '=', 1]])->get();
-    $row_2 = LookBookInside::where([['look_book_id', '=', 1], ['type', '=', 'Desktop'], ['row_id', '=', 2]])->get();
-    $mobile = LookBookInside::where([['look_book_id', '=', 1], ['type', '=', 'Mobile']])->get();
-    return view('look_book.wedding', compact('data', 'row_1', 'row_2', 'mobile'));
+    $row_1 = LookBookInside::where([['look_book_id', '=', 1], ['type', '=', 'Desktop'], ['row_id', '=', 1]])->limit(2)->get();
+    $row_2 = LookBookInside::where([['look_book_id', '=', 1], ['type', '=', 'Desktop'], ['row_id', '=', 2]])->limit(3)->get();
+    $mobile = LookBookInside::where([['look_book_id', '=', 1], ['type', '=', 'Mobile']])->limit(2)->get();
+
+    $useragent=$_SERVER['HTTP_USER_AGENT'];
+
+    if(is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile")) == true){
+        $isMobile = 1;
+    }else{
+        $isMobile = 0;
+    }
+    return view('look_book.wedding', compact('data', 'row_1', 'row_2', 'mobile', 'isMobile'));
 });
 
 Route::get('/lookbook/daily', function(){
