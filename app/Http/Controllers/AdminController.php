@@ -9,6 +9,8 @@ use App\FabricCatalogue;
 use App\FabricInside;
 use App\FabricInsideParagraph;
 use App\LookBook;
+use App\LookBookInside;
+use App\LookBookInsideParagraph;
 use App\OurCoreValue;
 use App\Process;
 use App\Service;
@@ -368,6 +370,67 @@ class AdminController extends Controller
         $edit->save();
 
         return redirect()->back();
+    }
+
+    public function editLookBookMainImageInside(Request $request)
+    {
+        $file = $request->file('image');
+        $filename = uniqid() . $file->getClientOriginalName();
+        $file->move('/home/kayepngh/public_html/images/lookbook/inside/', $filename);
+
+        $edit = LookBook::find($request->id);
+        $edit->main_image_path = 'images/lookbook/inside/' . $filename;
+        $edit->save();
+
+        return redirect()->back();
+    }
+
+    public function editLookBookParagraph(Request $request)
+    {
+        $s = LookBookInsideParagraph::find($request->id);
+        $s->paragraph = $request->text;
+        $s->save();
+
+        return 1;
+    }
+
+    public function addLookBookParagraph(Request $request)
+    {
+        $s = new LookBookInsideParagraph();
+        $s->look_book_id = $request->look_book_id;
+        $s->paragraph = $request->text;
+        $s->save();
+
+        return $s->id;
+    }
+
+    public function deleteLookBookParagraph($id)
+    {
+        LookBookInsideParagraph::find($id)->delete();
+
+        return redirect()->back();
+    }
+
+    public function editPhotoLookBooksDesktop(Request $request)
+    {
+        $file = $request->file('image');
+        $filename = uniqid() . $file->getClientOriginalName();
+        $file->move('/home/kayepngh/public_html/images/lookbook/inside/', $filename);
+
+        $s = LookBookInside::find($request->id);
+        $s->image_path = 'images/lookbook/inside/' . $filename;
+        $s->save();
+        
+        return redirect()->back();
+    }
+
+    public function editLookBookTitle(Request $request)
+    {
+        $s = LookBook::find($request->id);
+        $s->title = $request->text;
+        $s->save();
+
+        return 1;
     }
 
     public function getFabricValues($id)

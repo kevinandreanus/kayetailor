@@ -6,6 +6,8 @@ use App\FabricCatalogue;
 use App\FabricInside;
 use App\FabricInsideParagraph;
 use App\LookBook;
+use App\LookBookInside;
+use App\LookBookInsideParagraph;
 use App\OurCoreValue;
 use App\Process;
 use App\Service;
@@ -251,6 +253,10 @@ class DatabaseSeeder extends Seeder
         $route_lb = ['/lookbook/wedding', 'lookbook/daily', '/lookbook/casual', '/lookbook/ceremony'];
         $img_ins_lb = ['images/look_book/wedding2.PNG', 'images/look_book/daily2.PNG', 'images/look_book/casual2.PNG', 'images/look_book/ceremony2.PNG'];
         $title_lb = ['Wedding', 'Daily', 'Casual', 'Ceremony'];
+        $lb_paragraph = ['Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur voluptas at laudantium veritatis nostrum, natus consequuntur magnam ipsa, reiciendis molestias praesentium neque sint similique eos inventore qui officia! Nostrum molestiae voluptate, asperiores odio tempora, dicta ducimus illo culpa, soluta unde facilis corporis in distinctio nemo qui ut error aperiam? Est itaque iste sed quis tempora! Autem, reprehenderit. Sed possimus laborum, dicta est placeat veritatis ratione fugit voluptates molestiae facilis cupiditate odit at explicabo veniam molestias hic laboriosam quae dolorum? Possimus quas, placeat cumque, facere perferendis maiores quisquam tenetur neque fuga quibusdam, adipisci necessitatibus asperiores! Ullam rerum nulla placeat quas natus, inventore distinctio fugit sunt? Eaque quo saepe quis aut reprehenderit, dignissimos vel laudantium laborum debitis temporibus! Eveniet,', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur voluptas at laudantium veritatis nostrum, natus consequuntur magnam ipsa, reiciendis molestias praesentium neque sint similique eos inventore qui officia! Nostrum molestiae voluptate, asperiores odio tempora, dicta ducimus illo culpa, soluta unde facilis corporis in distinctio nemo qui ut error aperiam? Est itaque iste sed quis tempora! Autem, reprehenderit. Sed possimus laborum, dicta est placeat veritatis ratione fugit voluptates molestiae facilis cupiditate odit at explicabo veniam molestias hic laboriosam quae dolorum? Possimus quas, placeat cumque, facere perferendis maiores quisquam tenetur neque fuga quibusdam, adipisci necessitatibus asperiores! Ullam rerum nulla placeat quas natus, inventore distinctio fugit sunt? Eaque quo saepe quis aut reprehenderit, dignissimos vel laudantium laborum debitis temporibus! Eveniet,', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur voluptas at laudantium veritatis nostrum, natus consequuntur magnam ipsa, reiciendis molestias praesentium neque sint similique eos inventore qui officia! Nostrum molestiae voluptate, asperiores odio tempora, dicta ducimus illo culpa, soluta unde facilis corporis in distinctio nemo qui ut error aperiam? Est itaque iste sed quis tempora! Autem, reprehenderit. Sed possimus laborum, dicta est placeat veritatis ratione fugit voluptates molestiae facilis cupiditate odit at explicabo veniam molestias hic laboriosam quae dolorum? Possimus quas, placeat cumque, facere perferendis maiores quisquam tenetur neque fuga quibusdam, adipisci necessitatibus asperiores! Ullam rerum nulla placeat quas natus, inventore distinctio fugit sunt? Eaque quo saepe quis aut reprehenderit, dignissimos vel laudantium laborum debitis temporibus! Eveniet,', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur voluptas at laudantium veritatis nostrum, natus consequuntur magnam ipsa, reiciendis molestias praesentium neque sint similique eos inventore qui officia! Nostrum molestiae voluptate, asperiores odio tempora, dicta ducimus illo culpa, soluta unde facilis corporis in distinctio nemo qui ut error aperiam? Est itaque iste sed quis tempora! Autem, reprehenderit. Sed possimus laborum, dicta est placeat veritatis ratione fugit voluptates molestiae facilis cupiditate odit at explicabo veniam molestias hic laboriosam quae dolorum? Possimus quas, placeat cumque, facere perferendis maiores quisquam tenetur neque fuga quibusdam, adipisci necessitatibus asperiores! Ullam rerum nulla placeat quas natus, inventore distinctio fugit sunt? Eaque quo saepe quis aut reprehenderit, dignissimos vel laudantium laborum debitis temporibus! Eveniet,'];
+        $lb_inside_desktop_row_1 = ['images/services/pic1.png', 'images/services/pic1.png'];
+        $lb_inside_desktop_row_2 = ['images/services/pic2.png', 'images/services/pic3.png', 'images/services/pic3.png'];
+        $lb_inside_mobile = ['images/services/alterpic.PNG', 'images/services/pic2.png'];
         foreach($lookbook_array as $key => $m){
             $new = new LookBook();
             $new->route = $route_lb[$key];
@@ -258,7 +264,114 @@ class DatabaseSeeder extends Seeder
             $new->title = $title_lb[$key];
             $new->image_path = $m;
             $new->save();
+            $p = new LookBookInsideParagraph();
+            $p->look_book_id = $new->id;
+            $p->paragraph = $lb_paragraph[$key];
+            $p->save();
         }
+
+        // LookBook Wedding
+        foreach($lb_inside_desktop_row_1 as $e){
+            $i = new LookBookInside();
+            $i->look_book_id = 1;
+            $i->row_id = 1;
+            $i->type = 'Desktop';
+            $i->image_path = $e;
+            $i->save();
+        }
+        foreach($lb_inside_desktop_row_2 as $e){
+            $i = new LookBookInside();
+            $i->look_book_id = 1;
+            $i->row_id = 2;
+            $i->type = 'Desktop';
+            $i->image_path = $e;
+            $i->save();
+        }
+        foreach($lb_inside_mobile as $e){
+            $i = new LookBookInside();
+            $i->look_book_id = 1;
+            $i->type = 'Mobile';
+            $i->row_id = 3;
+            $i->image_path = $e;
+            $i->save();
+        }
+        // LookBook Daily
+        foreach($lb_inside_desktop_row_1 as $e){
+            $i = new LookBookInside();
+            $i->look_book_id = 2;
+            $i->row_id = 1;
+            $i->type = 'Desktop';
+            $i->image_path = $e;
+            $i->save();
+        }
+        foreach($lb_inside_desktop_row_2 as $e){
+            $i = new LookBookInside();
+            $i->look_book_id = 2;
+            $i->row_id = 2;
+            $i->type = 'Desktop';
+            $i->image_path = $e;
+            $i->save();
+        }
+        foreach($lb_inside_mobile as $e){
+            $i = new LookBookInside();
+            $i->look_book_id = 2;
+            $i->type = 'Mobile';
+            $i->row_id = 3;
+            $i->image_path = $e;
+            $i->save();
+        }
+        // LookBook Casual
+        foreach($lb_inside_desktop_row_1 as $e){
+            $i = new LookBookInside();
+            $i->look_book_id = 3;
+            $i->row_id = 1;
+            $i->type = 'Desktop';
+            $i->image_path = $e;
+            $i->save();
+        }
+        foreach($lb_inside_desktop_row_2 as $e){
+            $i = new LookBookInside();
+            $i->look_book_id = 3;
+            $i->row_id = 2;
+            $i->type = 'Desktop';
+            $i->image_path = $e;
+            $i->save();
+        }
+        foreach($lb_inside_mobile as $e){
+            $i = new LookBookInside();
+            $i->look_book_id = 3;
+            $i->type = 'Mobile';
+            $i->row_id = 3;
+            $i->image_path = $e;
+            $i->save();
+        }
+        // LookBook Ceremony
+        foreach($lb_inside_desktop_row_1 as $e){
+            $i = new LookBookInside();
+            $i->look_book_id = 4;
+            $i->row_id = 1;
+            $i->type = 'Desktop';
+            $i->image_path = $e;
+            $i->save();
+        }
+        foreach($lb_inside_desktop_row_2 as $e){
+            $i = new LookBookInside();
+            $i->look_book_id = 4;
+            $i->row_id = 2;
+            $i->type = 'Desktop';
+            $i->image_path = $e;
+            $i->save();
+        }
+        foreach($lb_inside_mobile as $e){
+            $i = new LookBookInside();
+            $i->look_book_id = 4;
+            $i->row_id = 3;
+            $i->type = 'Mobile';
+            $i->image_path = $e;
+            $i->save();
+        }
+
+        
 
         $blogs_array_frontimage = ["images/blogs/blog1.PNG", "images/blogs/blog2.PNG"];
         $blogs_array_insideimage = ["images/blogs/bloginside1.jpg", "images/blogs/bloginside2.jpg"];

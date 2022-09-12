@@ -6,6 +6,7 @@ use App\FabricCatalogue;
 use App\FabricInside;
 use App\Http\Controllers\PHPMailerController;
 use App\LookBook;
+use App\LookBookInside;
 use App\OurCoreValue;
 use App\Process;
 use App\Service;
@@ -101,6 +102,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin/deleteFabricParagraph/{id}', 'AdminController@deleteFabricParagraph');
     Route::post('/admin/editPhotoFabricsDesktop', 'AdminController@editPhotoFabricsDesktop');
     Route::post('/admin/editPhotoFabricsMobile', 'AdminController@editPhotoFabricsMobile');
+
+    Route::post('/admin/editLookBookMainImageInside', 'AdminController@editLookBookMainImageInside');
+    Route::post('/admin/editLookBookParagraph', 'AdminController@editLookBookParagraph');
+    Route::post('/admin/editLookBookTitle', 'AdminController@editLookBookTitle');
+    Route::post('/admin/addLookBookParagraph', 'AdminController@addLookBookParagraph');
+    Route::get('/admin/deleteLookBookParagraph/{id}', 'AdminController@deleteLookBookParagraph');
+    Route::post('/admin/editPhotoLookBooksDesktop', 'AdminController@editPhotoLookBooksDesktop');
+    Route::post('/admin/editPhotoLookBooksMobile', 'AdminController@editPhotoLookBooksMobile');
 });
 
 Route::get('/admin/topbanner/list', 'AdminController@topBannerList');
@@ -191,15 +200,25 @@ Route::get('/services/alteration', function () {
 
 
 Route::get('/lookbook/wedding', function(){
-    return view('look_book.wedding');
+    $data = LookBook::find(1);
+    $row_1 = LookBookInside::where([['look_book_id', '=', 1], ['type', '=', 'Desktop'], ['row_id', '=', 1]])->get();
+    $row_2 = LookBookInside::where([['look_book_id', '=', 1], ['type', '=', 'Desktop'], ['row_id', '=', 2]])->get();
+    $mobile = LookBookInside::where([['look_book_id', '=', 1], ['type', '=', 'Mobile']])->get();
+    return view('look_book.wedding', compact('data', 'row_1', 'row_2', 'mobile'));
 });
+
 Route::get('/lookbook/daily', function(){
+    $data = LookBook::find(2);
     return view('look_book.daily');
 });
+
 Route::get('/lookbook/casual', function(){
+    $data = LookBook::find(3);
     return view('look_book.casual');
 });
+
 Route::get('/lookbook/ceremony', function(){
+    $data = LookBook::find(4);
     return view('look_book.ceremony');
 });
 
