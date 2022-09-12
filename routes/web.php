@@ -223,26 +223,53 @@ Route::get('/lookbook/wedding', function(){
 
 Route::get('/lookbook/daily', function(){
     $data = LookBook::find(2);
-    $row_1 = LookBookInside::where([['look_book_id', '=', 2], ['type', '=', 'Desktop'], ['row_id', '=', 1]])->get();
-    $row_2 = LookBookInside::where([['look_book_id', '=', 2], ['type', '=', 'Desktop'], ['row_id', '=', 2]])->get();
-    $mobile = LookBookInside::where([['look_book_id', '=', 2], ['type', '=', 'Mobile']])->get();
-    return view('look_book.daily', compact('data', 'row_1', 'row_2', 'mobile'));
+    $row_1 = LookBookInside::where([['look_book_id', '=', 2], ['type', '=', 'Desktop'], ['row_id', '=', 1]])->limit(2)->get();
+    $row_2 = LookBookInside::where([['look_book_id', '=', 2], ['type', '=', 'Desktop'], ['row_id', '=', 2]])->limit(3)->get();
+    $mobile = LookBookInside::where([['look_book_id', '=', 2], ['type', '=', 'Mobile']])->limit(2)->get();
+
+    $useragent=$_SERVER['HTTP_USER_AGENT'];
+
+    if(is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile")) == true){
+        $isMobile = 1;
+    }else{
+        $isMobile = 0;
+    }
+    
+    return view('look_book.daily', compact('data', 'row_1', 'row_2', 'mobile', 'isMobile'));
 });
 
 Route::get('/lookbook/casual', function(){
     $data = LookBook::find(3);
-    $row_1 = LookBookInside::where([['look_book_id', '=', 3], ['type', '=', 'Desktop'], ['row_id', '=', 1]])->get();
-    $row_2 = LookBookInside::where([['look_book_id', '=', 3], ['type', '=', 'Desktop'], ['row_id', '=', 2]])->get();
-    $mobile = LookBookInside::where([['look_book_id', '=', 3], ['type', '=', 'Mobile']])->get();
-    return view('look_book.casual', compact('data', 'row_1', 'row_2', 'mobile'));
+    $row_1 = LookBookInside::where([['look_book_id', '=', 3], ['type', '=', 'Desktop'], ['row_id', '=', 1]])->limit(2)->get();
+    $row_2 = LookBookInside::where([['look_book_id', '=', 3], ['type', '=', 'Desktop'], ['row_id', '=', 2]])->limit(3)->get();
+    $mobile = LookBookInside::where([['look_book_id', '=', 3], ['type', '=', 'Mobile']])->limit(2)->get();
+
+    $useragent=$_SERVER['HTTP_USER_AGENT'];
+
+    if(is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile")) == true){
+        $isMobile = 1;
+    }else{
+        $isMobile = 0;
+    }
+
+    return view('look_book.casual', compact('data', 'row_1', 'row_2', 'mobile', 'isMobile'));
 });
 
 Route::get('/lookbook/ceremony', function(){
     $data = LookBook::find(4);
-    $row_1 = LookBookInside::where([['look_book_id', '=', 4], ['type', '=', 'Desktop'], ['row_id', '=', 1]])->get();
-    $row_2 = LookBookInside::where([['look_book_id', '=', 4], ['type', '=', 'Desktop'], ['row_id', '=', 2]])->get();
-    $mobile = LookBookInside::where([['look_book_id', '=', 4], ['type', '=', 'Mobile']])->get();
-    return view('look_book.ceremony', compact('data', 'row_1', 'row_2', 'mobile'));
+    $row_1 = LookBookInside::where([['look_book_id', '=', 4], ['type', '=', 'Desktop'], ['row_id', '=', 1]])->limit(2)->get();
+    $row_2 = LookBookInside::where([['look_book_id', '=', 4], ['type', '=', 'Desktop'], ['row_id', '=', 2]])->limit(3)->get();
+    $mobile = LookBookInside::where([['look_book_id', '=', 4], ['type', '=', 'Mobile']])->limit(2)->get();
+
+    $useragent=$_SERVER['HTTP_USER_AGENT'];
+
+    if(is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile")) == true){
+        $isMobile = 1;
+    }else{
+        $isMobile = 0;
+    }
+
+    return view('look_book.ceremony', compact('data', 'row_1', 'row_2', 'mobile', 'isMobile'));
 });
 
 Route::get('/fabric-catalogue/wool', function(){
