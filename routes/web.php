@@ -213,16 +213,25 @@ Route::get('/lookbook/wedding', function(){
 
 Route::get('/lookbook/daily', function(){
     $data = LookBook::find(2);
+    $row_1 = LookBookInside::where([['look_book_id', '=', 2], ['type', '=', 'Desktop'], ['row_id', '=', 1]])->get();
+    $row_2 = LookBookInside::where([['look_book_id', '=', 2], ['type', '=', 'Desktop'], ['row_id', '=', 2]])->get();
+    $mobile = LookBookInside::where([['look_book_id', '=', 2], ['type', '=', 'Mobile']])->get();
     return view('look_book.daily');
 });
 
 Route::get('/lookbook/casual', function(){
     $data = LookBook::find(3);
+    $row_1 = LookBookInside::where([['look_book_id', '=', 3], ['type', '=', 'Desktop'], ['row_id', '=', 1]])->get();
+    $row_2 = LookBookInside::where([['look_book_id', '=', 3], ['type', '=', 'Desktop'], ['row_id', '=', 2]])->get();
+    $mobile = LookBookInside::where([['look_book_id', '=', 3], ['type', '=', 'Mobile']])->get();
     return view('look_book.casual');
 });
 
 Route::get('/lookbook/ceremony', function(){
     $data = LookBook::find(4);
+    $row_1 = LookBookInside::where([['look_book_id', '=', 4], ['type', '=', 'Desktop'], ['row_id', '=', 1]])->get();
+    $row_2 = LookBookInside::where([['look_book_id', '=', 4], ['type', '=', 'Desktop'], ['row_id', '=', 2]])->get();
+    $mobile = LookBookInside::where([['look_book_id', '=', 4], ['type', '=', 'Mobile']])->get();
     return view('look_book.ceremony');
 });
 
