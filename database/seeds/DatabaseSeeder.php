@@ -250,8 +250,12 @@ class DatabaseSeeder extends Seeder
         $lookbook_array = ["images/look_book/wedding.PNG", "images/look_book/daily.PNG", "images/look_book/casual.PNG", "images/look_book/ceremony.PNG"];
         $route_lb = ['/lookbook/wedding', 'lookbook/daily', '/lookbook/casual', '/lookbook/ceremony'];
         $img_ins_lb = ['images/look_book/wedding2.PNG', 'images/look_book/daily2.PNG', 'images/look_book/casual2.PNG', 'images/look_book/ceremony2.PNG'];
-        foreach($lookbook_array as $m){
+        $title_lb = ['Wedding', 'Daily', 'Casual', 'Ceremony'];
+        foreach($lookbook_array as $key => $m){
             $new = new LookBook();
+            $new->route = $route_lb[$key];
+            $new->main_image_path = $img_ins_lb[$key];
+            $new->title = $title_lb[$key];
             $new->image_path = $m;
             $new->save();
         }
