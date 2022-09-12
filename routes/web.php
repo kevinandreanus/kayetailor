@@ -113,6 +113,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/admin/addPhotoLookBookRow1', 'AdminController@addPhotoLookBookRow1');
     Route::post('/admin/addPhotoLookBookRow2', 'AdminController@addPhotoLookBookRow2');
     Route::post('/admin/addPhotoLookBookMobile', 'AdminController@addPhotoLookBookMobile');
+    Route::get('/admin/deletePhotoLookBook/{id}', 'AdminController@deletePhotoLookBook');
 });
 
 Route::get('/admin/topbanner/list', 'AdminController@topBannerList');

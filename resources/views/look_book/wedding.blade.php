@@ -138,6 +138,10 @@
                                         class="btn btn-secondary btn-sm mt-3 editPhotoDeskt"
                                         data-id="{{ $i->id }}">Edit</button>
                                 </div>
+                                <div class="top-right">
+                                    <a href="/admin/deletePhotoLookBook/{{ $i->id }}"
+                                        class="btn btn-danger btn-sm mt-5">Delete</a>
+                                </div>
                             @endif
                         </div>
                     @endforeach
@@ -153,6 +157,11 @@
                                 <div class="top-right"><button href=""
                                         class="btn btn-secondary btn-sm mt-3 editPhotoDeskt"
                                         data-id="{{ $i->id }}">Edit</button>
+
+                                </div>
+                                <div class="top-right">
+                                    <a href="/admin/deletePhotoLookBook/{{ $i->id }}"
+                                        class="btn btn-danger btn-sm mt-5">Delete</a>
                                 </div>
                             @endif
                         </div>
@@ -182,8 +191,8 @@
                             @csrf
                             <input type="text" value="1" name="id" hidden>
                             <div class="mb-3">
-                                <input name="image" style="height: 37px;" class="form-control formFilez" type="file"
-                                    id="formFile">
+                                <input name="image" style="height: 37px;" class="form-control formFilez"
+                                    type="file" id="formFile">
                                 <label class="custom-file-label" for="inputGroupFile02"></label>
                             </div>
                             <hr>
@@ -339,6 +348,10 @@
                                         class="btn btn-secondary btn-sm mt-5 edtPhotoMbl"
                                         data-id="{{ $i->id }}">Edit</button>
                                 </div>
+                                <div class="top-right-mobile">
+                                    <a href="/admin/deletePhotoLookBook/{{ $i->id }}"
+                                        class="btn btn-danger btn-sm" style="margin-top: 80px;">Delete</a>
+                                </div>
                             </div>
                         @else
                             <div class="container-img">
@@ -347,6 +360,10 @@
                                 <div class="top-right-mobile"><button href=""
                                         class="btn btn-secondary btn-sm mt-3 edtPhotoMbl"
                                         data-id="{{ $i->id }}">Edit</button>
+                                </div>
+                                <div class="top-right-mobile">
+                                    <a href="/admin/deletePhotoLookBook/{{ $i->id }}"
+                                        class="btn btn-danger btn-sm mt-5">Delete</a>
                                 </div>
                             </div>
                         @endif

@@ -481,6 +481,12 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
+    public function deletePhotoLookBook($id)
+    {
+        $s = LookBookInside::find($id)->delete();
+        return redirect()->back();
+    }
+
     public function getFabricValues($id)
     {
         $data = FabricCatalogue::find($id);
