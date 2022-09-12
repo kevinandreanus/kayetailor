@@ -15,6 +15,9 @@ class CreateLookBooksTable extends Migration
     {
         Schema::create('look_books', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('main_image_path');
+            $table->string('route');
             $table->string('image_path');
             $table->timestamps();
         });
