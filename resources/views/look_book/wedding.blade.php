@@ -141,6 +141,9 @@
                             @endif
                         </div>
                     @endforeach
+                    @if (Auth::user())
+                        <button class="btn btn-primary" id="addRow1Btn">Add Image</button>
+                    @endif
                 </div>
                 <div class="col-sm-6 col-md-5" style="margin: 0; padding: 5;">
                     @foreach ($row_2 as $i)
@@ -154,6 +157,9 @@
                             @endif
                         </div>
                     @endforeach
+                    @if (Auth::user())
+                        <button class="btn btn-primary" id="addRow2Btn">Add Image</button>
+                    @endif
                 </div>
             </div>
         </div>
@@ -240,24 +246,137 @@
             </div>
         </div>
         {{-- End of Modal --}}
+        {{-- Modal Add Photo Row 1 --}}
+        <div class="modal fade" id="modalAddRow1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add Photo</h5>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formTopBanner" action="/admin/addPhotoLookBookRow1" method="POST"
+                            enctype="multipart/form-data">
+                            @csrf
+                            <input type="text" value="1" name="id" hidden>
+                            <div class="mb-3 text-center">
+                                <input name="image" style="height: 37px;" class="form-control formFilez"
+                                    type="file" id="formFilez">
+                                <label class="custom-file-label" for="inputGroupFile02"></label>
+                            </div>
+                            <hr>
+                            <button type="submit" style="float: right" class="btn btn-primary btn-sm">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{-- End of Modal --}}
+        {{-- Modal Add Photo Row 2 --}}
+        <div class="modal fade" id="modalAddRow2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add Photo</h5>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formTopBanner" action="/admin/addPhotoLookBookRow2" method="POST"
+                            enctype="multipart/form-data">
+                            @csrf
+                            <input type="text" value="1" name="id" hidden>
+                            <div class="mb-3 text-center">
+                                <input name="image" style="height: 37px;" class="form-control formFilez"
+                                    type="file" id="formFilez">
+                                <label class="custom-file-label" for="inputGroupFile02"></label>
+                            </div>
+                            <hr>
+                            <button type="submit" style="float: right" class="btn btn-primary btn-sm">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{-- End of Modal --}}
+        {{-- Modal Add Photo Mobile --}}
+        <div class="modal fade" id="modalAddMobile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add Photo</h5>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formTopBanner" action="/admin/addPhotoLookBookMobile" method="POST"
+                            enctype="multipart/form-data">
+                            @csrf
+                            <input type="text" value="1" name="id" hidden>
+                            <div class="mb-3 text-center">
+                                <input name="image" style="height: 37px;" class="form-control formFilez"
+                                    type="file" id="formFilez">
+                                <label class="custom-file-label" for="inputGroupFile02"></label>
+                            </div>
+                            <hr>
+                            <button type="submit" style="float: right" class="btn btn-primary btn-sm">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{-- End of Modal --}}
+
+        @if (Auth::user())
+            <hr>
+            <div class="text-center">
+                <h3 style="color: #ac956d !important; font-size: 40px !important;" class="titlecus">Mobile Image</h3>
+                <div class="container">
+                    @foreach ($mobile as $key => $i)
+                        @if ($key === 0)
+                            <div class="container-img">
+                                <img class="mt-5" data-id="{{ $i->id }}" src="{{ asset($i->image_path) }}"
+                                    alt="">
+                                <div class="top-right-mobile"><button href=""
+                                        class="btn btn-secondary btn-sm mt-5 edtPhotoMbl"
+                                        data-id="{{ $i->id }}">Edit</button>
+                                </div>
+                            </div>
+                        @else
+                            <div class="container-img">
+                                <img class="mt-3" data-id="{{ $i->id }}" src="{{ asset($i->image_path) }}"
+                                    alt="">
+                                <div class="top-right-mobile"><button href=""
+                                        class="btn btn-secondary btn-sm mt-3 edtPhotoMbl"
+                                        data-id="{{ $i->id }}">Edit</button>
+                                </div>
+                            </div>
+                        @endif
+                    @endforeach
+                    @if (Auth::user())
+                        <button class="btn btn-primary" id="addMobileBtn">Add Image</button>
+                    @endif
+                </div>
+            </div>
+        @endif
     </div>
 
     <div class="container" id="mobileviewz">
         <div class="text-center" style="margin-top: 100px">
             <h3 style="color: #806e4f !important;" class="titlecus">LOOK BOOK</h3>
-            <img class="mt-3" src="{{ asset('images/look_book/wedding2.PNG') }}" alt="">
+            <img class="mt-3" src="{{ asset($data->main_image_path) }}" alt="">
 
-            <h3 class="mt-5 titlecus" style="color: #806e4f !important;">WEDDING</h3>
-            <p class="center-justified">Lorem ipsum dolor sit amet,
-                consectetuer adipiscing elit,
-                sed
-                diam nonummy nibh
-                euismod
-                tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
-                nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-                Duis autem vel eum.</p>
-            <img class="mt-5" src="{{ asset('images/look_book/wedding3.PNG') }}" alt="">
-            <img class="mt-3" src="{{ asset('images/look_book/wedding4.PNG') }}" alt="">
+            <h3 class="mt-5 titlecus" style="color: #806e4f !important;">{{ strtoupper($data->title) }}</h3>
+            @foreach ($data->paragraphs as $i)
+                <p class="center-justified">{{ $i->paragraph }}</p>
+            @endforeach
+            @foreach ($mobile as $key => $i)
+                @if ($key === 0)
+                    <img class="mt-5" data-id="{{ $i->id }}" src="{{ asset($i->image_path) }}"
+                        alt="">
+                @else
+                    <img class="mt-3" data-id="{{ $i->id }}" src="{{ asset($i->image_path) }}"
+                        alt="">
+                @endif
+            @endforeach
             <br>
         </div>
         <div class="text-center mt-5">
@@ -405,6 +524,16 @@
         $('.edtPhotoMbl').on('click', function() {
             $('#idPhotoEdtMbl').val($(this).data('id'));
             $('#modalEditPhtoMbl').modal("show");
+        });
+
+        $('#addRow1Btn').on('click', function() {
+            $('#modalAddRow1').modal("show");
+        });
+        $('#addRow2Btn').on('click', function() {
+            $('#modalAddRow2').modal("show");
+        });
+        $('#addMobileBtn').on('click', function() {
+            $('#modalAddMobile').modal("show");
         });
     </script>
 @endpush

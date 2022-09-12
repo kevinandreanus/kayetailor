@@ -433,6 +433,54 @@ class AdminController extends Controller
         return 1;
     }
 
+    public function addPhotoLookBookRow1(Request $request)
+    {
+        $file = $request->file('image');
+        $filename = uniqid() . $file->getClientOriginalName();
+        $file->move('/home/kayepngh/public_html/images/lookbook/inside/', $filename);
+
+        $s = LookBookInside::find($request->id);
+        $s->row_id = 1;
+        $s->look_book_id = $request->id;
+        $s->type = 'Desktop';
+        $s->image_path = 'images/lookbook/inside/' . $filename;
+        $s->save();
+        
+        return redirect()->back();
+    }
+
+    public function addPhotoLookBookRow2(Request $request)
+    {
+        $file = $request->file('image');
+        $filename = uniqid() . $file->getClientOriginalName();
+        $file->move('/home/kayepngh/public_html/images/lookbook/inside/', $filename);
+
+        $s = LookBookInside::find($request->id);
+        $s->row_id = 2;
+        $s->look_book_id = $request->id;
+        $s->type = 'Desktop';
+        $s->image_path = 'images/lookbook/inside/' . $filename;
+        $s->save();
+        
+        return redirect()->back();
+    }
+
+    public function addPhotoLookBookMobile(Request $request)
+    {
+        $file = $request->file('image');
+        $filename = uniqid() . $file->getClientOriginalName();
+        $file->move('/home/kayepngh/public_html/images/lookbook/inside/', $filename);
+
+        $s = LookBookInside::find($request->id);
+        $s->row_id = 3;
+        $s->look_book_id = $request->id;
+        $s->type = 'Mobile';
+        $s->image_path = 'images/lookbook/inside/' . $filename;
+        $s->save();
+        
+        return redirect()->back();
+    }
+
     public function getFabricValues($id)
     {
         $data = FabricCatalogue::find($id);
