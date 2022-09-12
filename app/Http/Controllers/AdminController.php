@@ -439,7 +439,7 @@ class AdminController extends Controller
         $filename = uniqid() . $file->getClientOriginalName();
         $file->move('/home/kayepngh/public_html/images/lookbook/inside/', $filename);
 
-        $s = LookBookInside::find($request->id);
+        $s = new LookBookInside();
         $s->row_id = 1;
         $s->look_book_id = $request->id;
         $s->type = 'Desktop';
@@ -455,7 +455,7 @@ class AdminController extends Controller
         $filename = uniqid() . $file->getClientOriginalName();
         $file->move('/home/kayepngh/public_html/images/lookbook/inside/', $filename);
 
-        $s = LookBookInside::find($request->id);
+        $s = new LookBookInside();
         $s->row_id = 2;
         $s->look_book_id = $request->id;
         $s->type = 'Desktop';
@@ -471,7 +471,7 @@ class AdminController extends Controller
         $filename = uniqid() . $file->getClientOriginalName();
         $file->move('/home/kayepngh/public_html/images/lookbook/inside/', $filename);
 
-        $s = LookBookInside::find($request->id);
+        $s = new LookBookInside();
         $s->row_id = 3;
         $s->look_book_id = $request->id;
         $s->type = 'Mobile';
