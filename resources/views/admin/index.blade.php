@@ -426,7 +426,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Edit Fabric Catalogue</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Edit Look Book</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -435,7 +435,7 @@
                         <form id="formLookbookHomepage" action="/admin/lookbookhomepage" method="POST"
                             enctype="multipart/form-data">
                             @csrf
-                            <input type="text" name="id" id="idlookbook" hidden>
+                            <input type="text" name="id" id="idlookbook">
                             <div class="input-group mb-3">
                                 <div class="custom-file mt-3">
                                     <input type="file" class="custom-file-input" name="image" id="prosess-f">
