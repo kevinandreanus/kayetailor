@@ -21,12 +21,12 @@ class PHPMailerController extends Controller
 
             $mail->SMTPDebug = 1;
             $mail->isSMTP();
-            $mail->Host = 'kayetailor.com';
+            $mail->Host = 'smtp.gmail.com';
             $mail->SMTPAuth = true;
-            $mail->Username = 'admin@kayetailor.com';
-            $mail->Password = 'qwe123!@#';
-            // $mail->SMTPSecure = 'tls';
-            $mail->Port = 26;
+            $mail->Username = 'kevinandreanus10@gmail.com';
+            $mail->Password = 'hqjhaqgejhgytwwa';
+            $mail->SMTPSecure = 'tls';
+            $mail->Port = 587;
             
             $mail->setFrom('admin@kayetailor.com', 'Admin KayeTailor');
             $mail->addAddress('kevinandreanus10@gmail.com');
