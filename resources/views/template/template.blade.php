@@ -301,7 +301,7 @@
             </section>
 
         </footer>
-        <div class="bottomleft"><a href="https://api.whatsapp.com/send?phone=6282311115888" target="_blank"><img
+        <div class="bottomleft"><a href="https://api.whatsapp.com/send?phone=6281213169595" target="_blank"><img
                     class="walogoni" src="/images/walogo.png" alt=""></a></div>
     </div>
     <div class="mt-5" id="desktopfooter">
@@ -327,7 +327,7 @@
                         style="display: inline; margin-right: 20px;font-family: 'EB Garamond', serif; color: black !important;">
                         <a class="footerbtnya" style="font-family: 'EB Garamond', serif; color: black !important;"
                             href="
-                            https://api.whatsapp.com/send?phone=6282311115888"><i
+                            https://api.whatsapp.com/send?phone=6281213169595"><i
                                 class="fa fa-whatsapp"></i> 0812
                             1316 9595</a>
                     </li>
@@ -353,7 +353,7 @@
                 asdasd</p>
             <p></p> --}}
         </div>
-        <div class="bottomleft"><a href="https://api.whatsapp.com/send?phone=6282311115888" target="_blank"><img
+        <div class="bottomleft"><a href="https://api.whatsapp.com/send?phone=6281213169595" target="_blank"><img
                     class="walogoni" src="/images/walogo.png" alt=""></a></div>
     </div>
 
