@@ -37,16 +37,16 @@ class PHPMailerController extends Controller
             $mail->Body = "Name: ".$request->name."\r\n"."Email: ".$request->email."\r\n"."Subject: ".$request->subject."\r\n"."Message:\r\n".$request->message;
 
             if(!$mail->send()) {
-                // return back()->with("failed", "Email not sent.")->withErrors($mail->ErrorInfo);
-                return 'gagal';
+                return back()->with("failed", "Email not sent.")->withErrors($mail->ErrorInfo);
+                // return 'gagal';
             }else {
-                // return back()->with("success", "Email has been sent.");
-                return 'sukses';
+                return back()->with("success", "Email has been sent.");
+                // return 'sukses';
             }
 
         } catch (Exception $e) {
-            //  return back()->with('error','Message could not be sent.');
-            return 'gagal banget';
+             return back()->with('error','Message could not be sent.');
+            // return 'gagal banget';
         }
 
     }
