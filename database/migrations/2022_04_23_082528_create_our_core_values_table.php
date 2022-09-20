@@ -16,7 +16,7 @@ class CreateOurCoreValuesTable extends Migration
         Schema::create('our_core_values', function (Blueprint $table) {
             $table->id();
             $table->string('image_path');
-            $table->string('text');
+            $table->string('text')->nullable();
             $table->timestamps();
         });
     }
