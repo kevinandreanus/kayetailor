@@ -21,7 +21,7 @@ class PHPMailerController extends Controller
 
             $mail->SMTPDebug = 1;
             $mail->isSMTP();
-            $mail->Host = 'mail.kayetailor.com';
+            $mail->Host = 'kayetailor.com';
             $mail->SMTPAuth = true;
             $mail->Username = 'admin@kayetailor.com';
             $mail->Password = 'qwe123!@#';
