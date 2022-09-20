@@ -26,10 +26,10 @@ class PHPMailerController extends Controller
             $mail->Username = 'admin@kayetailor.com';
             $mail->Password = 'qwe123!@#';
             $mail->SMTPSecure = 'tls';
-            $mail->Port = 587;
+            $mail->Port = 465;
             
             $mail->setFrom('admin@kayetailor.com', 'Admin KayeTailor');
-            $mail->addAddress('info.kayetailor@gmail.com');
+            $mail->addAddress('kevinandreanus10@gmail.com');
 
             // $mail->isHTML(true);
 
