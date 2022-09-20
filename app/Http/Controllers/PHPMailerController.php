@@ -29,7 +29,7 @@ class PHPMailerController extends Controller
             $mail->Port = 587;
             
             $mail->setFrom('admin@kayetailor.com', 'Admin KayeTailor');
-            $mail->addAddress('kevinandreanus10@gmail.com');
+            $mail->addAddress('info.kayetailor@gmail.com');
 
             // $mail->isHTML(true);
 
